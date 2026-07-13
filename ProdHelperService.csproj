@@ -5,8 +5,9 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>RelayService</RootNamespace>
-    <AssemblyName>RelayService</AssemblyName>
+    <RootNamespace>ProdHelperService</RootNamespace>
+    <AssemblyName>ProdHelperService</AssemblyName>
+    <AssemblyTitle>ProdHelperService</AssemblyTitle>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +15,18 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="ProdHelperService.Controllers\ProdHelperService.Controllers.csproj" />
+  </ItemGroup>
+
+  <!-- Sibling project folders are nested under this one; without this, this
+       project's default file glob would also try to compile their .cs files. -->
+  <ItemGroup>
+    <Compile Remove="ProdHelperService.Controllers\**\*.cs" />
+    <Compile Remove="ProdHelperService.TestApp\**\*.cs" />
   </ItemGroup>
 
   <ItemGroup>

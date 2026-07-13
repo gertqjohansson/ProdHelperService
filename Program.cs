@@ -1,6 +1,9 @@
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using ProdHelperService.Controllers;
+using ProdHelperService.Controllers.Interface;
 
-namespace RelayService;
+namespace ProdHelperService;
 
 public class Program
 {
@@ -23,6 +26,11 @@ public class Program
         string key = relaySection["Key"]
             ?? throw new InvalidOperationException("Relay:Key is not configured.");
 
+        var services = new ServiceCollection();
+        services.AddProdHelperControllers();
+        using var provider = services.BuildServiceProvider();
+        var dispatcher = provider.GetRequiredService<IControllerDispatcher>();
+
         using var cts = new CancellationTokenSource();
         Console.CancelKeyPress += (_, e) =>
         {
@@ -30,7 +38,7 @@ public class Program
             cts.Cancel();
         };
 
-        var listener = new RelayListener(relayNamespace, connectionName, keyName, key);
+        var listener = new RelayListener(relayNamespace, connectionName, keyName, key, dispatcher);
 
         Console.WriteLine("=== Azure Relay Hybrid Connection Service ===");
         Console.WriteLine($"Namespace : {relayNamespace}");

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ProdHelperService.csproj" />
+  <Project Path="ProdHelperService.Controllers\ProdHelperService.Controllers.csproj" />
+  <Project Path="ProdHelperService.TestApp\ProdHelperService.TestApp.csproj" />
+</Solution>
