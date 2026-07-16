@@ -15,4 +15,12 @@
     <ProjectReference Include="..\ProdHelperService.Contracts\ProdHelperService.Contracts.csproj" />
   </ItemGroup>
 
+  <!-- Small flag PNGs for the language submenu, pre-rasterized from the same flag-icons
+       SVGs the web client uses (see client/src/i18n/languages.js) — kept as plain embedded
+       PNGs rather than an SVG-rendering NuGet dependency, consistent with this project
+       staying dependency-light. -->
+  <ItemGroup>
+    <EmbeddedResource Include="Flags\*.png" />
+  </ItemGroup>
+
 </Project>

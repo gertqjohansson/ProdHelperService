@@ -76,4 +76,13 @@
   <data name="CallErrorHeading" xml:space="preserve">
     <value>Viga {0} kutsumisel:</value>
   </data>
+  <data name="MenuLabel" xml:space="preserve">
+    <value>Menüü</value>
+  </data>
+  <data name="GuestLabel" xml:space="preserve">
+    <value>Külaline</value>
+  </data>
+  <data name="ItemSelectedFormat" xml:space="preserve">
+    <value>{0} valitud</value>
+  </data>
 </root>

@@ -76,4 +76,13 @@
   <data name="CallErrorHeading" xml:space="preserve">
     <value>Σφάλμα κατά την κλήση του {0}:</value>
   </data>
+  <data name="MenuLabel" xml:space="preserve">
+    <value>Μενού</value>
+  </data>
+  <data name="GuestLabel" xml:space="preserve">
+    <value>Επισκέπτης</value>
+  </data>
+  <data name="ItemSelectedFormat" xml:space="preserve">
+    <value>Επιλέχθηκε {0}</value>
+  </data>
 </root>

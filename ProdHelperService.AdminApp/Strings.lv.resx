@@ -76,4 +76,13 @@
   <data name="CallErrorHeading" xml:space="preserve">
     <value>Kļūda, izsaucot {0}:</value>
   </data>
+  <data name="MenuLabel" xml:space="preserve">
+    <value>Izvēlne</value>
+  </data>
+  <data name="GuestLabel" xml:space="preserve">
+    <value>Viesis</value>
+  </data>
+  <data name="ItemSelectedFormat" xml:space="preserve">
+    <value>{0} izvēlēts</value>
+  </data>
 </root>

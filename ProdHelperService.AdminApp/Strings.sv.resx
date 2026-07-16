@@ -76,4 +76,13 @@
   <data name="CallErrorHeading" xml:space="preserve">
     <value>Fel vid anrop av {0}:</value>
   </data>
+  <data name="MenuLabel" xml:space="preserve">
+    <value>Meny</value>
+  </data>
+  <data name="GuestLabel" xml:space="preserve">
+    <value>Gäst</value>
+  </data>
+  <data name="ItemSelectedFormat" xml:space="preserve">
+    <value>{0} valt</value>
+  </data>
 </root>

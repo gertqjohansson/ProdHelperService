@@ -76,4 +76,13 @@
   <data name="CallErrorHeading" xml:space="preserve">
     <value>Hiba a(z) {0} hívásakor:</value>
   </data>
+  <data name="MenuLabel" xml:space="preserve">
+    <value>Menü</value>
+  </data>
+  <data name="GuestLabel" xml:space="preserve">
+    <value>Vendég</value>
+  </data>
+  <data name="ItemSelectedFormat" xml:space="preserve">
+    <value>{0} kiválasztva</value>
+  </data>
 </root>

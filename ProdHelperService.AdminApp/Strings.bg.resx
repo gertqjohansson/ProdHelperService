@@ -76,4 +76,13 @@
   <data name="CallErrorHeading" xml:space="preserve">
     <value>Грешка при извикване на {0}:</value>
   </data>
+  <data name="MenuLabel" xml:space="preserve">
+    <value>Меню</value>
+  </data>
+  <data name="GuestLabel" xml:space="preserve">
+    <value>Гост</value>
+  </data>
+  <data name="ItemSelectedFormat" xml:space="preserve">
+    <value>{0} избрано</value>
+  </data>
 </root>

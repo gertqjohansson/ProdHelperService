@@ -17,12 +17,17 @@ internal static class Strings
     public static string Try1ButtonText => Get("Try1ButtonText");
     public static string Try2ButtonText => Get("Try2ButtonText");
     public static string LanguageMenuText => Get("LanguageMenuText");
+    public static string MenuLabel => Get("MenuLabel");
+    public static string GuestLabel => Get("GuestLabel");
 
     public static string CallSuccessHeading(string relativeUrl, Uri? baseAddress) =>
         string.Format(CultureInfo.CurrentUICulture, Get("CallSuccessHeading"), relativeUrl, baseAddress);
 
     public static string CallErrorHeading(string relativeUrl) =>
         string.Format(CultureInfo.CurrentUICulture, Get("CallErrorHeading"), relativeUrl);
+
+    public static string ItemSelectedFormat(string item) =>
+        string.Format(CultureInfo.CurrentUICulture, Get("ItemSelectedFormat"), item);
 
     private static string Get(string name) =>
         ResourceManager.GetString(name, CultureInfo.CurrentUICulture) ?? name;

@@ -135,4 +135,13 @@
   <data name="CallErrorHeading" xml:space="preserve">
     <value>Error calling {0}:</value>
   </data>
+  <data name="MenuLabel" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="GuestLabel" xml:space="preserve">
+    <value>Guest</value>
+  </data>
+  <data name="ItemSelectedFormat" xml:space="preserve">
+    <value>{0} selected</value>
+  </data>
 </root>
