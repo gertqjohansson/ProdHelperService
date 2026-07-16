@@ -8,6 +8,7 @@
     <Nullable>enable</Nullable>
     <RootNamespace>ProdHelperService.AdminApp</RootNamespace>
     <AssemblyName>ProdHelperService.AdminApp</AssemblyName>
+    <NeutralLanguage>en</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>

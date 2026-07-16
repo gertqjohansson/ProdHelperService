@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace ProdHelperService.AdminApp;
 
 internal static class Program
@@ -9,9 +11,21 @@ internal static class Program
     [STAThread]
     private static void Main()
     {
+        AppSettings settings = AppSettings.Load();
+        ApplyCulture(settings.Culture);
+
         using var httpClient = new HttpClient { BaseAddress = new Uri(LocalApiBaseUrl) };
 
         ApplicationConfiguration.Initialize();
-        Application.Run(new MainForm(httpClient));
+        Application.Run(new MainForm(httpClient, settings));
+    }
+
+    private static void ApplyCulture(string cultureCode)
+    {
+        var culture = CultureInfo.GetCultureInfo(cultureCode);
+        Thread.CurrentThread.CurrentUICulture = culture;
+        Thread.CurrentThread.CurrentCulture = culture;
+        // Safety net for any code path that doesn't flow ExecutionContext.
+        CultureInfo.DefaultThreadCurrentUICulture = culture;
     }
 }
