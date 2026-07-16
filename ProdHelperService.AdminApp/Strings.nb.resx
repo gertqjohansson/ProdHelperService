@@ -85,4 +85,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>{0} valgt</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>E-post</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Passord</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Bekreft passord</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Visningsnavn (valgfritt)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Logg inn</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Registrer</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Logg ut</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Trenger du en konto?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Har du allerede en konto?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Logg inn</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Opprett konto</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Angi en gyldig e-postadresse.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>Passordene stemmer ikke overens.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>Kontoen er opprettet. Du kan nå logge inn.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Lukk</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Tofaktorautentisering</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Angi den 6-sifrede koden fra autentiseringsappen din.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Bekreftelseskode</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Bekreft</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Tofaktorautentisering</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Skann denne QR-koden med Microsoft Authenticator (eller en annen autentiseringsapp), og angi deretter koden som vises, for å aktivere tofaktorautentisering.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>Tofaktorautentisering er aktivert. Angi passordet ditt for å deaktivere den.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Aktiver</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Deaktiver</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Lagre disse gjenopprettingskodene på et trygt sted. Hver kan brukes én gang for å logge inn hvis du mister tilgangen til autentiseringsappen din.</value>
+  </data>
 </root>

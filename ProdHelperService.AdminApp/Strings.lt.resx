@@ -85,4 +85,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>Pasirinkta {0}</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>El. paštas</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Slaptažodis</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Patvirtinkite slaptažodį</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Rodomas vardas (neprivaloma)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Prisijungti</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Registruotis</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Atsijungti</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Reikia paskyros?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Jau turite paskyrą?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Prisijungti</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Sukurti paskyrą</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Įveskite galiojantį el. pašto adresą.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>Slaptažodžiai nesutampa.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>Paskyra sukurta. Dabar galite prisijungti.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Uždaryti</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Dviejų veiksnių autentifikavimas</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Įveskite 6 skaitmenų kodą iš savo autentifikavimo programėlės.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Autentifikavimo kodas</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Patvirtinti</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Dviejų veiksnių autentifikavimas</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Nuskaitykite šį QR kodą su „Microsoft Authenticator“ (arba kita autentifikavimo programėle), tada įveskite rodomą kodą, kad įjungtumėte dviejų veiksnių autentifikavimą.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>Dviejų veiksnių autentifikavimas įjungtas. Įveskite slaptažodį, kad jį išjungtumėte.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Įjungti</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Išjungti</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Išsaugokite šiuos atkūrimo kodus saugioje vietoje. Kiekvienas gali būti panaudotas vieną kartą prisijungimui, jei prarasite prieigą prie autentifikavimo programėlės.</value>
+  </data>
 </root>

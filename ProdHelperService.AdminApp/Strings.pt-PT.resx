@@ -85,4 +85,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>{0} selecionado</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Palavra-passe</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Confirmar palavra-passe</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Nome a apresentar (opcional)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Iniciar sessão</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Registar</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Terminar sessão</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Precisa de uma conta?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Já tem uma conta?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Iniciar sessão</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Criar conta</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Introduza um endereço de e-mail válido.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>As palavras-passe não coincidem.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>Conta criada. Já pode iniciar sessão.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Autenticação de dois fatores</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Introduza o código de 6 dígitos da sua aplicação de autenticação.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Código de autenticação</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Verificar</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Autenticação de dois fatores</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Digitalize este código QR com o Microsoft Authenticator (ou outra aplicação de autenticação) e introduza o código apresentado para ativar a autenticação de dois fatores.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>A autenticação de dois fatores está ativada. Introduza a sua palavra-passe para a desativar.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Ativar</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Desativar</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Guarde estes códigos de recuperação num local seguro. Cada um pode ser usado uma vez para iniciar sessão se perder o acesso à sua aplicação de autenticação.</value>
+  </data>
 </root>

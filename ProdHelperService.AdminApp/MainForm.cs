@@ -1,8 +1,8 @@
 using System.Globalization;
 using System.Net.Http.Json;
-using System.Reflection;
 using System.Text.Json;
 using ProdHelperService.Contracts;
+using ProdHelperService.Contracts.Auth;
 
 namespace ProdHelperService.AdminApp;
 
@@ -23,9 +23,12 @@ public class MainForm : Form
 
     private readonly HttpClient _httpClient;
     private readonly AppSettings _settings;
+    private readonly AuthApiClient _authApiClient;
+    private readonly AuthSession _session;
     private readonly CultureInfo _dateCulture;
 
     private readonly MenuStrip _menuStrip;
+    private readonly ToolStripMenuItem _userMenuItem;
     private readonly Button _try1Button;
     private readonly Button _try2Button;
     private readonly TextBox _output;
@@ -33,10 +36,12 @@ public class MainForm : Form
     private readonly Label _footerClock;
     private readonly System.Windows.Forms.Timer _footerTimer;
 
-    public MainForm(HttpClient httpClient, AppSettings settings)
+    public MainForm(HttpClient httpClient, AppSettings settings, AuthApiClient authApiClient, AuthSession session)
     {
         _httpClient = httpClient;
         _settings = settings;
+        _authApiClient = authApiClient;
+        _session = session;
         _dateCulture = CultureInfo.GetCultureInfo(
             SupportedLanguages.All.FirstOrDefault(l => l.Code == _settings.Culture).DateCulture ?? "en-GB");
 
@@ -45,7 +50,10 @@ public class MainForm : Form
         Height = 440 + TopBarHeight + FooterHeight;
         StartPosition = FormStartPosition.CenterScreen;
 
+        _userMenuItem = new ToolStripMenuItem { Image = BuildUserIcon(), ForeColor = Color.White, Alignment = ToolStripItemAlignment.Right };
         _menuStrip = BuildMenuStrip();
+        RebuildUserMenu();
+
         _footer = BuildFooter(out _footerClock);
         _footerTimer = new System.Windows.Forms.Timer { Interval = 1000 };
         _footerTimer.Tick += (_, _) => UpdateFooterClock();
@@ -101,15 +109,27 @@ public class MainForm : Form
             Strings.ItemSelectedFormat("Service"), "Service", MessageBoxButtons.OK, MessageBoxIcon.Information);
         menuItem.DropDownItems.Add(serviceItem);
 
-        var guestItem = new ToolStripMenuItem(Strings.GuestLabel, BuildUserIcon())
-        {
-            ForeColor = Color.White,
-            Alignment = ToolStripItemAlignment.Right,
-        };
+        menuStrip.Items.Add(menuItem);
+        menuStrip.Items.Add(_userMenuItem);
+        return menuStrip;
+    }
+
+    // Rebuilds the right-hand user menu's label and dropdown from the current
+    // AuthSession — called at construction and again after an MFA change.
+    // Every MainForm instance is only ever shown in an authenticated state
+    // (Program.cs's loop gates login before constructing one, and
+    // LogoutAsync() below closes this instance entirely rather than
+    // reverting it to a logged-out state), so the unauthenticated branch
+    // here never actually renders for the user.
+    private void RebuildUserMenu()
+    {
+        _userMenuItem.Text = _session.IsAuthenticated ? _session.DisplayName ?? _session.Email : Strings.GuestLabel;
+        _userMenuItem.DropDownItems.Clear();
+
         var languageItem = new ToolStripMenuItem(Strings.LanguageMenuText) { ForeColor = Color.White };
         foreach (var (code, nativeName, flagResourceName, _) in SupportedLanguages.All)
         {
-            var item = new ToolStripMenuItem(nativeName, LoadFlagImage(flagResourceName))
+            var item = new ToolStripMenuItem(nativeName, EmbeddedImages.LoadFlagImage(flagResourceName))
             {
                 ForeColor = Color.White,
                 Checked = code == _settings.Culture,
@@ -122,11 +142,59 @@ public class MainForm : Form
             };
             languageItem.DropDownItems.Add(item);
         }
-        guestItem.DropDownItems.Add(languageItem);
+        _userMenuItem.DropDownItems.Add(languageItem);
 
-        menuStrip.Items.Add(menuItem);
-        menuStrip.Items.Add(guestItem);
-        return menuStrip;
+        if (_session.IsAuthenticated)
+        {
+            var mfaItem = new ToolStripMenuItem(Strings.AuthMfaSetupTitle) { ForeColor = Color.White };
+            mfaItem.Click += (_, _) => OpenMfaSetup();
+            _userMenuItem.DropDownItems.Add(mfaItem);
+
+            var logoutItem = new ToolStripMenuItem(Strings.AuthLogoutButtonText) { ForeColor = Color.White };
+            logoutItem.Click += async (_, _) => await LogoutAsync();
+            _userMenuItem.DropDownItems.Add(logoutItem);
+        }
+    }
+
+    private void OpenMfaSetup()
+    {
+        using var mfaSetupForm = new MfaSetupForm(_authApiClient, _session);
+        if (mfaSetupForm.ShowDialog(this) == DialogResult.OK)
+        {
+            PersistRefreshToken();
+            RebuildUserMenu();
+        }
+    }
+
+    private async Task LogoutAsync()
+    {
+        try
+        {
+            if (_session is { RefreshToken: not null, AccessToken: not null })
+            {
+                await _authApiClient.LogoutAsync(new LogoutRequest { RefreshToken = _session.RefreshToken }, _session.AccessToken);
+            }
+        }
+        catch
+        {
+            // Best-effort — clear local state regardless of whether the
+            // server call succeeds.
+        }
+
+        _session.Clear();
+        _settings.EncryptedRefreshToken = null;
+        _settings.Save();
+
+        // Closing (rather than showing LoginForm on top of this instance)
+        // means nothing is left open in the background - Program.cs's loop
+        // sees the cleared session and shows a fresh LoginForm next.
+        Close();
+    }
+
+    private void PersistRefreshToken()
+    {
+        _settings.EncryptedRefreshToken = TokenStore.Protect(_session.RefreshToken);
+        _settings.Save();
     }
 
     private Panel BuildFooter(out Label clockLabel)
@@ -173,18 +241,6 @@ public class MainForm : Form
         g.FillEllipse(brush, 5, 1, 6, 6);
         g.FillEllipse(brush, 2, 8, 12, 10);
         return bmp;
-    }
-
-    // Flag PNGs are embedded resources (Flags\{code}.png), pre-rasterized from the same
-    // flag-icons SVGs the web client uses — see SupportedLanguages.cs.
-    private static Image? LoadFlagImage(string flagResourceName)
-    {
-        string resourceName = $"ProdHelperService.AdminApp.Flags.{flagResourceName}.png";
-        using Stream? resourceStream = typeof(MainForm).Assembly.GetManifestResourceStream(resourceName);
-        if (resourceStream is null) return null;
-
-        using var bitmap = new Bitmap(resourceStream);
-        return new Bitmap(bitmap); // clone so the resource stream can be safely disposed
     }
 
     private async Task CallController(string relativeUrl, ParametersRequest request)

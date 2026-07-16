@@ -10,6 +10,10 @@ public sealed class AppSettings
 
     public string Culture { get; set; } = "en";
 
+    // DPAPI-encrypted (current user + machine only) via TokenStore — never
+    // stored in plain text. Null when logged out.
+    public string? EncryptedRefreshToken { get; set; }
+
     public static AppSettings Load()
     {
         try

@@ -85,4 +85,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>{0} valt</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>E-post</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Lösenord</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Bekräfta lösenord</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Visningsnamn (valfritt)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Logga in</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Registrera</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Logga ut</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Behöver du ett konto?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Har du redan ett konto?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Logga in</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Skapa konto</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Ange en giltig e-postadress.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>Lösenorden matchar inte.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>Kontot har skapats. Du kan nu logga in.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Stäng</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Tvåfaktorsautentisering</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Ange den 6-siffriga koden från din autentiseringsapp.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Autentiseringskod</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Verifiera</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Tvåfaktorsautentisering</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Skanna den här QR-koden med Microsoft Authenticator (eller en annan autentiseringsapp), ange sedan koden som visas för att aktivera tvåfaktorsautentisering.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>Tvåfaktorsautentisering är aktiverad. Ange ditt lösenord för att inaktivera den.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Aktivera</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Inaktivera</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Spara dessa återställningskoder på ett säkert ställe. Var och en kan användas en gång för att logga in om du förlorar åtkomst till din autentiseringsapp.</value>
+  </data>
 </root>

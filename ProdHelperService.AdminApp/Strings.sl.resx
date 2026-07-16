@@ -85,4 +85,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>{0} izbrano</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>E-pošta</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Geslo</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Potrdi geslo</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Prikazano ime (neobvezno)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Registracija</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Odjava</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Potrebujete račun?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Že imate račun?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Ustvari račun</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Vnesite veljaven e-poštni naslov.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>Gesli se ne ujemata.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>Račun je ustvarjen. Zdaj se lahko prijavite.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Zapri</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Dvofaktorska avtentikacija</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Vnesite 6-mestno kodo iz svoje aplikacije za avtentikacijo.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Koda za avtentikacijo</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Preveri</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Dvofaktorska avtentikacija</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Skenirajte to kodo QR z aplikacijo Microsoft Authenticator (ali drugo aplikacijo za avtentikacijo) in nato vnesite prikazano kodo, da omogočite dvofaktorsko avtentikacijo.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>Dvofaktorska avtentikacija je omogočena. Za onemogočitev vnesite geslo.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Omogoči</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Onemogoči</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Te obnovitvene kode shranite na varno mesto. Vsako je mogoče uporabiti enkrat za prijavo, če izgubite dostop do aplikacije za avtentikacijo.</value>
+  </data>
 </root>

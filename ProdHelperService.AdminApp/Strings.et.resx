@@ -85,4 +85,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>{0} valitud</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>E-post</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Parool</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Kinnita parool</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Kuvatav nimi (valikuline)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Logi sisse</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Registreeru</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Logi välja</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Kas vajate kontot?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Kas teil on juba konto?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Logi sisse</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Loo konto</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Sisestage kehtiv e-posti aadress.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>Paroolid ei ühti.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>Konto on loodud. Nüüd saate sisse logida.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Sulge</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Kaheastmeline autentimine</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Sisestage oma autentimisrakenduse 6-kohaline kood.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Autentimiskood</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Kinnita</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Kaheastmeline autentimine</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Skannige see QR-kood Microsoft Authenticatoriga (või muu autentimisrakendusega) ja sisestage seejärel kuvatud kood, et lubada kaheastmeline autentimine.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>Kaheastmeline autentimine on lubatud. Selle keelamiseks sisestage parool.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Luba</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Keela</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Salvestage need taastekoodid turvalisse kohta. Igaüht saab kasutada üks kord sisselogimiseks, kui kaotate juurdepääsu oma autentimisrakendusele.</value>
+  </data>
 </root>

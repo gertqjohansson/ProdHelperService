@@ -85,4 +85,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>{0} wybrany</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Hasło</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Potwierdź hasło</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Nazwa wyświetlana (opcjonalnie)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Zaloguj się</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Zarejestruj się</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Wyloguj się</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Potrzebujesz konta?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Masz już konto?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Zaloguj się</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Utwórz konto</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Podaj prawidłowy adres e-mail.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>Hasła nie są zgodne.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>Konto utworzone. Możesz się teraz zalogować.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Uwierzytelnianie dwuskładnikowe</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Podaj 6-cyfrowy kod z aplikacji uwierzytelniającej.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Kod uwierzytelniający</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Zweryfikuj</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Uwierzytelnianie dwuskładnikowe</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Zeskanuj ten kod QR aplikacją Microsoft Authenticator (lub inną aplikacją uwierzytelniającą), a następnie podaj wyświetlony kod, aby włączyć uwierzytelnianie dwuskładnikowe.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>Uwierzytelnianie dwuskładnikowe jest włączone. Podaj hasło, aby je wyłączyć.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Włącz</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Wyłącz</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Zapisz te kody odzyskiwania w bezpiecznym miejscu. Każdego można użyć jednorazowo do zalogowania się, jeśli utracisz dostęp do aplikacji uwierzytelniającej.</value>
+  </data>
 </root>

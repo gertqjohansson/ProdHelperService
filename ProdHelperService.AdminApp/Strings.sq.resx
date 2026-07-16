@@ -85,4 +85,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>{0} u zgjodh</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Fjalëkalimi</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Konfirmo fjalëkalimin</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Emri i shfaqur (opsional)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Hyr</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Regjistrohu</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Keni nevojë për një llogari?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Keni tashmë një llogari?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Hyr</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Krijo llogari</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Vendosni një adresë email të vlefshme.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>Fjalëkalimet nuk përputhen.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>Llogaria u krijua. Tani mund të hyni.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Mbyll</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Vërtetimi me dy faktorë</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Vendosni kodin 6-shifror nga aplikacioni juaj i vërtetimit.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Kodi i vërtetimit</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Verifiko</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Vërtetimi me dy faktorë</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Skanoni këtë kod QR me Microsoft Authenticator (ose një aplikacion tjetër vërtetimi), pastaj vendosni kodin e shfaqur për të aktivizuar vërtetimin me dy faktorë.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>Vërtetimi me dy faktorë është aktivizuar. Vendosni fjalëkalimin tuaj për ta çaktivizuar.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Aktivizo</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Çaktivizo</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Ruani këto kode rikuperimi në një vend të sigurt. Secili mund të përdoret një herë për t'u identifikuar nëse humbisni qasjen te aplikacioni juaj i vërtetimit.</value>
+  </data>
 </root>

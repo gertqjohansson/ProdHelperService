@@ -85,4 +85,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>{0} izvēlēts</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>E-pasts</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Parole</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Apstipriniet paroli</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Attēlotais vārds (neobligāts)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Pieteikties</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Reģistrēties</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Izrakstīties</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Nepieciešams konts?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Jau ir konts?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Pieteikties</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Izveidot kontu</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Ievadiet derīgu e-pasta adresi.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>Paroles nesakrīt.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>Konts izveidots. Tagad varat pieteikties.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Aizvērt</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Divfaktoru autentifikācija</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Ievadiet 6 ciparu kodu no savas autentifikācijas lietotnes.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Autentifikācijas kods</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Pārbaudīt</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Divfaktoru autentifikācija</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Skenējiet šo QR kodu ar Microsoft Authenticator (vai citu autentifikācijas lietotni) un pēc tam ievadiet parādīto kodu, lai iespējotu divfaktoru autentifikāciju.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>Divfaktoru autentifikācija ir iespējota. Ievadiet paroli, lai to atspējotu.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Iespējot</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Atspējot</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Saglabājiet šos atkopšanas kodus drošā vietā. Katru var izmantot vienu reizi, lai pieteiktos, ja zaudējat piekļuvi autentifikācijas lietotnei.</value>
+  </data>
 </root>

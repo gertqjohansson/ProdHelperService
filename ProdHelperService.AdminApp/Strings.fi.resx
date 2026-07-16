@@ -85,4 +85,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>{0} valittu</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>Sähköposti</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Salasana</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Vahvista salasana</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Näyttönimi (valinnainen)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Kirjaudu sisään</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Rekisteröidy</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Kirjaudu ulos</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Tarvitsetko tilin?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Onko sinulla jo tili?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Kirjaudu sisään</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Luo tili</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Anna kelvollinen sähköpostiosoite.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>Salasanat eivät täsmää.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>Tili luotu. Voit nyt kirjautua sisään.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Sulje</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Kaksivaiheinen tunnistautuminen</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Anna todennussovelluksesi 6-numeroinen koodi.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Vahvistuskoodi</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Vahvista</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Kaksivaiheinen tunnistautuminen</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Skannaa tämä QR-koodi Microsoft Authenticatorilla (tai muulla todennussovelluksella) ja anna sitten näytetty koodi ottaaksesi kaksivaiheisen tunnistautumisen käyttöön.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>Kaksivaiheinen tunnistautuminen on käytössä. Anna salasanasi poistaaksesi sen käytöstä.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Ota käyttöön</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Poista käytöstä</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Tallenna nämä palautuskoodit turvalliseen paikkaan. Kutakin voi käyttää kerran kirjautumiseen, jos menetät pääsyn todennussovellukseesi.</value>
+  </data>
 </root>

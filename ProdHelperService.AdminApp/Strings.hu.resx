@@ -85,4 +85,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>{0} kiválasztva</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Jelszó</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Jelszó megerősítése</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Megjelenített név (nem kötelező)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Bejelentkezés</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Regisztráció</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Kijelentkezés</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Nincs még fiókja?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Már van fiókja?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Bejelentkezés</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Fiók létrehozása</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Adjon meg egy érvényes e-mail címet.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>A jelszavak nem egyeznek.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>A fiók létrejött. Most már bejelentkezhet.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Bezárás</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Kétfaktoros hitelesítés</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Adja meg a hitelesítő alkalmazásban megjelenő 6 jegyű kódot.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Hitelesítési kód</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Ellenőrzés</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Kétfaktoros hitelesítés</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Olvassa be ezt a QR-kódot a Microsoft Authenticatorral (vagy másik hitelesítő alkalmazással), majd adja meg a megjelenő kódot a kétfaktoros hitelesítés bekapcsolásához.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>A kétfaktoros hitelesítés be van kapcsolva. A kikapcsolásához adja meg a jelszavát.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Bekapcsolás</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Kikapcsolás</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Mentse el ezeket a helyreállítási kódokat biztonságos helyre. Mindegyik egyszer használható bejelentkezésre, ha elveszíti a hozzáférést a hitelesítő alkalmazásához.</value>
+  </data>
 </root>

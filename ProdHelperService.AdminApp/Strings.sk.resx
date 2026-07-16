@@ -85,4 +85,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>{0} vybraté</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Heslo</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Potvrďte heslo</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Zobrazované meno (voliteľné)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Prihlásiť sa</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Registrovať</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Odhlásiť sa</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Potrebujete účet?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Už máte účet?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Prihlásiť sa</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Vytvoriť účet</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Zadajte platnú e-mailovú adresu.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>Heslá sa nezhodujú.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>Účet bol vytvorený. Teraz sa môžete prihlásiť.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Zavrieť</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Dvojfaktorové overenie</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Zadajte 6-miestny kód z vašej overovacej aplikácie.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Overovací kód</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Overiť</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Dvojfaktorové overenie</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Naskenujte tento QR kód pomocou Microsoft Authenticator (alebo inej overovacej aplikácie) a potom zadajte zobrazený kód na aktiváciu dvojfaktorového overenia.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>Dvojfaktorové overenie je aktivované. Na jeho deaktiváciu zadajte heslo.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Aktivovať</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Deaktivovať</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Uložte si tieto obnovovacie kódy na bezpečné miesto. Každý z nich možno použiť raz na prihlásenie, ak stratíte prístup k overovacej aplikácii.</value>
+  </data>
 </root>

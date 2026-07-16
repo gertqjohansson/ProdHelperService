@@ -85,4 +85,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>{0} избрано</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>Имейл</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Парола</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Потвърдете паролата</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Показвано име (незадължително)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Изход</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Нямате акаунт?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Вече имате акаунт?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Създаване на акаунт</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Въведете валиден имейл адрес.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>Паролите не съвпадат.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>Акаунтът е създаден. Вече можете да влезете.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Затвори</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Двуфакторно удостоверяване</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Въведете 6-цифрения код от приложението си за удостоверяване.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Код за удостоверяване</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Потвърди</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Двуфакторно удостоверяване</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Сканирайте този QR код с Microsoft Authenticator (или друго приложение за удостоверяване), след което въведете показания код, за да активирате двуфакторното удостоверяване.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>Двуфакторното удостоверяване е активирано. Въведете паролата си, за да го деактивирате.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Активиране</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Деактивиране</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Запазете тези кодове за възстановяване на сигурно място. Всеки от тях може да се използва веднъж за вход, ако загубите достъп до приложението си за удостоверяване.</value>
+  </data>
 </root>

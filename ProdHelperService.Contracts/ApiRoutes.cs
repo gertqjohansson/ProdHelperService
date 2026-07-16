@@ -7,4 +7,14 @@ public static class ApiRoutes
 {
     public const string OeeCalculate = "Oee/Calculate";
     public const string PlannerGetInteruption = "Planner/GetInteruption";
+
+    public const string AuthRegister = "Auth/Register";
+    public const string AuthHasUsers = "Auth/HasUsers";
+    public const string AuthLogin = "Auth/Login";
+    public const string AuthVerifyMfa = "Auth/VerifyMfa";
+    public const string AuthRefresh = "Auth/Refresh";
+    public const string AuthLogout = "Auth/Logout";
+    public const string AuthMfaAuthenticatorSetup = "Auth/Mfa/Authenticator/Setup";
+    public const string AuthMfaAuthenticatorEnable = "Auth/Mfa/Authenticator/Enable";
+    public const string AuthMfaAuthenticatorDisable = "Auth/Mfa/Authenticator/Disable";
 }

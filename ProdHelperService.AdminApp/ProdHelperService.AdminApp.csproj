@@ -21,6 +21,7 @@
        staying dependency-light. -->
   <ItemGroup>
     <EmbeddedResource Include="Flags\*.png" />
+    <EmbeddedResource Include="Images\*.png" />
   </ItemGroup>
 
 </Project>

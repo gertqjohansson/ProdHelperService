@@ -144,4 +144,79 @@
   <data name="ItemSelectedFormat" xml:space="preserve">
     <value>{0} selected</value>
   </data>
+  <data name="AuthEmailLabel" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="AuthPasswordLabel" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="AuthConfirmPasswordLabel" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="AuthDisplayNameLabel" xml:space="preserve">
+    <value>Display name (optional)</value>
+  </data>
+  <data name="AuthLoginButtonText" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="AuthRegisterButtonText" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="AuthLogoutButtonText" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="AuthNeedAccountText" xml:space="preserve">
+    <value>Need an account?</value>
+  </data>
+  <data name="AuthHaveAccountText" xml:space="preserve">
+    <value>Already have an account?</value>
+  </data>
+  <data name="AuthLoginTitle" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="AuthRegisterTitle" xml:space="preserve">
+    <value>Create account</value>
+  </data>
+  <data name="AuthEmailInvalidMessage" xml:space="preserve">
+    <value>Enter a valid email address.</value>
+  </data>
+  <data name="AuthPasswordMismatchMessage" xml:space="preserve">
+    <value>Passwords do not match.</value>
+  </data>
+  <data name="AuthRegisterSuccessMessage" xml:space="preserve">
+    <value>Account created. You can now log in.</value>
+  </data>
+  <data name="AuthCloseButtonText" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="AuthMfaTitle" xml:space="preserve">
+    <value>Two-factor authentication</value>
+  </data>
+  <data name="AuthMfaDescription" xml:space="preserve">
+    <value>Enter the 6-digit code from your authenticator app.</value>
+  </data>
+  <data name="AuthMfaCodeLabel" xml:space="preserve">
+    <value>Authentication code</value>
+  </data>
+  <data name="AuthVerifyButtonText" xml:space="preserve">
+    <value>Verify</value>
+  </data>
+  <data name="AuthMfaSetupTitle" xml:space="preserve">
+    <value>Two-factor authentication</value>
+  </data>
+  <data name="AuthMfaSetupDescription" xml:space="preserve">
+    <value>Scan this QR code with Microsoft Authenticator (or another authenticator app), then enter the code it shows to enable two-factor authentication.</value>
+  </data>
+  <data name="AuthMfaAlreadyEnabledMessage" xml:space="preserve">
+    <value>Two-factor authentication is enabled. Enter your password to disable it.</value>
+  </data>
+  <data name="AuthMfaEnableButtonText" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="AuthMfaDisableButtonText" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
+    <value>Save these recovery codes somewhere safe. Each can be used once to sign in if you lose access to your authenticator app.</value>
+  </data>
 </root>
