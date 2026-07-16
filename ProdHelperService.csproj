@@ -1,7 +1,6 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -16,17 +15,20 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="ProdHelperService.Controllers\ProdHelperService.Controllers.csproj" />
+    <ProjectReference Include="ProdHelperService.Contracts\ProdHelperService.Contracts.csproj" />
   </ItemGroup>
 
   <!-- Sibling project folders are nested under this one; without this, this
        project's default file glob would also try to compile their .cs files. -->
   <ItemGroup>
     <Compile Remove="ProdHelperService.Controllers\**\*.cs" />
-    <Compile Remove="ProdHelperService.TestApp\**\*.cs" />
+    <Compile Remove="ProdHelperService.AdminApp\**\*.cs" />
+    <Compile Remove="ProdHelperService.Contracts\**\*.cs" />
   </ItemGroup>
 
   <ItemGroup>

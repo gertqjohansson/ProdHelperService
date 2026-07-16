@@ -1,31 +1,30 @@
+using System.Net.Http.Json;
 using System.Text.Json;
-using ProdHelperService.Controllers.Interface;
+using ProdHelperService.Contracts;
 
-namespace ProdHelperService.TestApp;
+namespace ProdHelperService.AdminApp;
 
-// Calls IOeeController / IPlannerController directly, in-process — no Azure
-// Relay, no RelayListener involved. Useful for quickly exercising controller
-// logic without needing relay connectivity configured. The controllers are
-// resolved from the DI container in Program.cs and injected here, the same
-// way RelayListener gets them via IControllerDispatcher.
+// Calls the controllers over HTTP, against the local Kestrel API that
+// ProdHelperService hosts for Swagger/testing (see Program.cs in that
+// project) — no Azure Relay, no RelayListener, and no direct reference to
+// ProdHelperService.Controllers involved. ProdHelperService must be running
+// (`dotnet run` in that project) for these calls to succeed.
 public class MainForm : Form
 {
     private static readonly string[] Try1Parameters = ["id", "1,1", "Start", "2026-07-01", "end", "2026-07-12"];
     private static readonly string[] Try2Parameters = ["id", "5,2", "Start", "2026-07-01", "end", "2026-07-12", "break", "true"];
 
-    private readonly IOeeController _oeeController;
-    private readonly IPlannerController _plannerController;
+    private readonly HttpClient _httpClient;
 
     private readonly Button _try1Button;
     private readonly Button _try2Button;
     private readonly TextBox _output;
 
-    public MainForm(IOeeController oeeController, IPlannerController plannerController)
+    public MainForm(HttpClient httpClient)
     {
-        _oeeController = oeeController;
-        _plannerController = plannerController;
+        _httpClient = httpClient;
 
-        Text = "ProdHelperService Test App";
+        Text = "ProdHelperService Admin App";
         Width = 640;
         Height = 440;
         StartPosition = FormStartPosition.CenterScreen;
@@ -45,30 +44,33 @@ public class MainForm : Form
             Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom
         };
 
-        _try1Button.Click += (_, _) => CallController(
-            "Oee/Calculate",
-            () => _oeeController.Calculate(Try1Parameters));
+        _try1Button.Click += async (_, _) => await CallController(
+            ApiRoutes.OeeCalculate,
+            new ParametersRequest { Parameters = Try1Parameters });
 
-        _try2Button.Click += (_, _) => CallController(
-            "Planner/GetInteruption",
-            () => _plannerController.GetInteruption(Try2Parameters));
+        _try2Button.Click += async (_, _) => await CallController(
+            ApiRoutes.PlannerGetInteruption,
+            new ParametersRequest { Parameters = Try2Parameters });
 
         Controls.Add(_try1Button);
         Controls.Add(_try2Button);
         Controls.Add(_output);
     }
 
-    private void CallController(string label, Func<object> call)
+    private async Task CallController(string relativeUrl, ParametersRequest request)
     {
         try
         {
-            object result = call();
-            string json = JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true });
-            _output.Text = $"Called {label} directly (no relay/listener involved){Environment.NewLine}{Environment.NewLine}{json}";
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync(relativeUrl, request);
+            response.EnsureSuccessStatusCode();
+
+            using JsonDocument doc = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
+            string json = JsonSerializer.Serialize(doc, new JsonSerializerOptions { WriteIndented = true });
+            _output.Text = $"Called {relativeUrl} via HTTP ({_httpClient.BaseAddress}){Environment.NewLine}{Environment.NewLine}{json}";
         }
         catch (Exception ex)
         {
-            _output.Text = $"Error calling {label}:{Environment.NewLine}{ex}";
+            _output.Text = $"Error calling {relativeUrl}:{Environment.NewLine}{ex}";
         }
     }
 }

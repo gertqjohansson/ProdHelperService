@@ -1,51 +1,43 @@
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi;
+using ProdHelperService;
 using ProdHelperService.Controllers;
-using ProdHelperService.Controllers.Interface;
 
-namespace ProdHelperService;
+var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddEnvironmentVariables(prefix: "RELAY_");
 
-public class Program
+builder.Services.AddProdHelperControllers();
+builder.Services.AddHostedService<RelayListenerHostedService>();
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(options =>
 {
-    public static async Task Main(string[] args)
+    options.SwaggerDoc("v1", new OpenApiInfo
     {
-        IConfiguration config = new ConfigurationBuilder()
-            .SetBasePath(AppContext.BaseDirectory)
-            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: false)
-            .AddEnvironmentVariables(prefix: "RELAY_")
-            .Build();
+        Title = "ProdHelperService API",
+        Version = "v1",
+        Description = "Local-only documentation and test surface for the same controllers " +
+                      "the Azure Relay listener dispatches to. Calling an endpoint here does " +
+                      "not go through Azure Relay at all."
+    });
+});
 
-        var relaySection = config.GetSection("Relay");
+int localApiPort = builder.Configuration.GetValue("LocalApi:Port", 5080);
+builder.WebHost.UseUrls($"http://localhost:{localApiPort}");
 
-        string relayNamespace = relaySection["Namespace"]
-            ?? throw new InvalidOperationException("Relay:Namespace is not configured.");
-        string connectionName = relaySection["ConnectionName"]
-            ?? throw new InvalidOperationException("Relay:ConnectionName is not configured.");
-        string keyName = relaySection["KeyName"]
-            ?? throw new InvalidOperationException("Relay:KeyName is not configured.");
-        string key = relaySection["Key"]
-            ?? throw new InvalidOperationException("Relay:Key is not configured.");
+var app = builder.Build();
 
-        var services = new ServiceCollection();
-        services.AddProdHelperControllers();
-        using var provider = services.BuildServiceProvider();
-        var dispatcher = provider.GetRequiredService<IControllerDispatcher>();
+// Kestrel here only binds to localhost for docs/testing, so Swagger is left
+// on unconditionally rather than gated behind an environment check.
+app.UseSwagger();
+app.UseSwaggerUI();
 
-        using var cts = new CancellationTokenSource();
-        Console.CancelKeyPress += (_, e) =>
-        {
-            e.Cancel = true;
-            cts.Cancel();
-        };
+app.MapControllers();
 
-        var listener = new RelayListener(relayNamespace, connectionName, keyName, key, dispatcher);
+Console.WriteLine("=== ProdHelperService ===");
+Console.WriteLine($"Swagger UI : http://localhost:{localApiPort}/swagger");
+Console.WriteLine($"Relay      : {builder.Configuration["Relay:Namespace"]}/{builder.Configuration["Relay:ConnectionName"]}");
+Console.WriteLine("Press Ctrl+C to stop.");
+Console.WriteLine();
 
-        Console.WriteLine("=== Azure Relay Hybrid Connection Service ===");
-        Console.WriteLine($"Namespace : {relayNamespace}");
-        Console.WriteLine($"Connection: {connectionName}");
-        Console.WriteLine("Press Ctrl+C to stop.");
-        Console.WriteLine();
-
-        await listener.RunAsync(cts.Token);
-    }
-}
+app.Run();
