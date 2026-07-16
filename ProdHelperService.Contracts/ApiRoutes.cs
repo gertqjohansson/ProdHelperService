@@ -11,6 +11,8 @@ public static class ApiRoutes
     public const string AuthRegister = "Auth/Register";
     public const string AuthHasUsers = "Auth/HasUsers";
     public const string AuthLogin = "Auth/Login";
+    public const string AuthForgotPassword = "Auth/ForgotPassword";
+    public const string AuthResetPassword = "Auth/ResetPassword";
     public const string AuthVerifyMfa = "Auth/VerifyMfa";
     public const string AuthRefresh = "Auth/Refresh";
     public const string AuthLogout = "Auth/Logout";

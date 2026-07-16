@@ -160,4 +160,40 @@
   <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
     <value>Guarde estes códigos de recuperação num local seguro. Cada um pode ser usado uma vez para iniciar sessão se perder o acesso à sua aplicação de autenticação.</value>
   </data>
+  <data name="AuthForgotPasswordLinkText" xml:space="preserve">
+    <value>Esqueceu-se da palavra-passe?</value>
+  </data>
+  <data name="AuthForgotPasswordTitle" xml:space="preserve">
+    <value>Repor a palavra-passe</value>
+  </data>
+  <data name="AuthForgotPasswordDescription" xml:space="preserve">
+    <value>Introduza o seu endereço de e-mail e enviaremos um código para repor a sua palavra-passe.</value>
+  </data>
+  <data name="AuthForgotPasswordButtonText" xml:space="preserve">
+    <value>Enviar código de reposição</value>
+  </data>
+  <data name="AuthForgotPasswordSuccessMessage" xml:space="preserve">
+    <value>Se este e-mail estiver registado, foi enviado um código de reposição. Verifique a sua caixa de entrada.</value>
+  </data>
+  <data name="AuthResetPasswordTitle" xml:space="preserve">
+    <value>Escolha uma nova palavra-passe</value>
+  </data>
+  <data name="AuthResetPasswordDescription" xml:space="preserve">
+    <value>Introduza o código do e-mail juntamente com a sua nova palavra-passe.</value>
+  </data>
+  <data name="AuthResetCodeLabel" xml:space="preserve">
+    <value>Código de reposição</value>
+  </data>
+  <data name="AuthNewPasswordLabel" xml:space="preserve">
+    <value>Nova palavra-passe</value>
+  </data>
+  <data name="AuthConfirmNewPasswordLabel" xml:space="preserve">
+    <value>Confirmar nova palavra-passe</value>
+  </data>
+  <data name="AuthResetPasswordButtonText" xml:space="preserve">
+    <value>Repor palavra-passe</value>
+  </data>
+  <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
+    <value>A sua palavra-passe foi reposta. Já pode iniciar sessão.</value>
+  </data>
 </root>

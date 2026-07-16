@@ -160,4 +160,40 @@
   <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
     <value>Spremite ove kodove za oporavak na sigurno mjesto. Svaki se može upotrijebiti jednom za prijavu ako izgubite pristup aplikaciji za autentifikaciju.</value>
   </data>
+  <data name="AuthForgotPasswordLinkText" xml:space="preserve">
+    <value>Zaboravili ste lozinku?</value>
+  </data>
+  <data name="AuthForgotPasswordTitle" xml:space="preserve">
+    <value>Poništi lozinku</value>
+  </data>
+  <data name="AuthForgotPasswordDescription" xml:space="preserve">
+    <value>Unesite svoju adresu e-pošte i poslat ćemo vam kod za poništavanje lozinke.</value>
+  </data>
+  <data name="AuthForgotPasswordButtonText" xml:space="preserve">
+    <value>Pošalji kod za poništavanje</value>
+  </data>
+  <data name="AuthForgotPasswordSuccessMessage" xml:space="preserve">
+    <value>Ako je ova adresa e-pošte registrirana, poslan je kod za poništavanje. Provjerite svoj pretinac.</value>
+  </data>
+  <data name="AuthResetPasswordTitle" xml:space="preserve">
+    <value>Odaberite novu lozinku</value>
+  </data>
+  <data name="AuthResetPasswordDescription" xml:space="preserve">
+    <value>Unesite kod iz e-pošte zajedno s novom lozinkom.</value>
+  </data>
+  <data name="AuthResetCodeLabel" xml:space="preserve">
+    <value>Kod za poništavanje</value>
+  </data>
+  <data name="AuthNewPasswordLabel" xml:space="preserve">
+    <value>Nova lozinka</value>
+  </data>
+  <data name="AuthConfirmNewPasswordLabel" xml:space="preserve">
+    <value>Potvrdi novu lozinku</value>
+  </data>
+  <data name="AuthResetPasswordButtonText" xml:space="preserve">
+    <value>Poništi lozinku</value>
+  </data>
+  <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
+    <value>Vaša lozinka je poništena. Sada se možete prijaviti.</value>
+  </data>
 </root>

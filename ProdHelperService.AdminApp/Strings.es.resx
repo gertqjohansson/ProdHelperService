@@ -160,4 +160,40 @@
   <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
     <value>Guarda estos códigos de recuperación en un lugar seguro. Cada uno se puede usar una vez para iniciar sesión si pierdes el acceso a tu aplicación de autenticación.</value>
   </data>
+  <data name="AuthForgotPasswordLinkText" xml:space="preserve">
+    <value>¿Olvidaste tu contraseña?</value>
+  </data>
+  <data name="AuthForgotPasswordTitle" xml:space="preserve">
+    <value>Restablece tu contraseña</value>
+  </data>
+  <data name="AuthForgotPasswordDescription" xml:space="preserve">
+    <value>Introduce tu dirección de correo electrónico y te enviaremos un código para restablecer tu contraseña.</value>
+  </data>
+  <data name="AuthForgotPasswordButtonText" xml:space="preserve">
+    <value>Enviar código de restablecimiento</value>
+  </data>
+  <data name="AuthForgotPasswordSuccessMessage" xml:space="preserve">
+    <value>Si ese correo está registrado, se ha enviado un código de restablecimiento. Revisa tu bandeja de entrada.</value>
+  </data>
+  <data name="AuthResetPasswordTitle" xml:space="preserve">
+    <value>Elige una nueva contraseña</value>
+  </data>
+  <data name="AuthResetPasswordDescription" xml:space="preserve">
+    <value>Introduce el código del correo electrónico junto con tu nueva contraseña.</value>
+  </data>
+  <data name="AuthResetCodeLabel" xml:space="preserve">
+    <value>Código de restablecimiento</value>
+  </data>
+  <data name="AuthNewPasswordLabel" xml:space="preserve">
+    <value>Nueva contraseña</value>
+  </data>
+  <data name="AuthConfirmNewPasswordLabel" xml:space="preserve">
+    <value>Confirmar nueva contraseña</value>
+  </data>
+  <data name="AuthResetPasswordButtonText" xml:space="preserve">
+    <value>Restablecer contraseña</value>
+  </data>
+  <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
+    <value>Tu contraseña se ha restablecido. Ya puedes iniciar sesión.</value>
+  </data>
 </root>

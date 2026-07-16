@@ -110,6 +110,16 @@ public class LoginForm : Form
         };
         registerLink.LinkClicked += OnRegisterLinkClicked;
 
+        var forgotPasswordLink = new LinkLabel
+        {
+            Text = Strings.AuthForgotPasswordLinkText,
+            Left = contentLeft,
+            Top = 305 + layoutShift,
+            Width = contentWidth,
+            TextAlign = ContentAlignment.MiddleCenter,
+        };
+        forgotPasswordLink.LinkClicked += OnForgotPasswordLinkClicked;
+
         // Self-registration is only offered for first-run bootstrap (no users
         // in the database yet) - stays hidden until that's confirmed, and
         // fails safe (stays hidden) if the check can't be completed at all.
@@ -139,6 +149,7 @@ public class LoginForm : Form
         _card.Controls.Add(_loginButton);
         _card.Controls.Add(switchLabel);
         _card.Controls.Add(registerLink);
+        _card.Controls.Add(forgotPasswordLink);
 
         Controls.Add(_card);
         Controls.Add(BuildLanguageButton());
@@ -235,6 +246,17 @@ public class LoginForm : Form
             _emailBox.Text = registerForm.RegisteredEmail ?? _emailBox.Text;
             _statusLabel.ForeColor = TealPrimary;
             _statusLabel.Text = Strings.AuthRegisterSuccessMessage;
+        }
+    }
+
+    private void OnForgotPasswordLinkClicked(object? sender, EventArgs e)
+    {
+        using var forgotForm = new ForgotPasswordForm(_authApiClient);
+        if (forgotForm.ShowDialog(this) == DialogResult.OK)
+        {
+            _emailBox.Text = forgotForm.ResetEmail ?? _emailBox.Text;
+            _statusLabel.ForeColor = TealPrimary;
+            _statusLabel.Text = Strings.AuthResetPasswordSuccessMessage;
         }
     }
 }

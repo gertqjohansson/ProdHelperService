@@ -160,4 +160,40 @@
   <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
     <value>Salvestage need taastekoodid turvalisse kohta. Igaüht saab kasutada üks kord sisselogimiseks, kui kaotate juurdepääsu oma autentimisrakendusele.</value>
   </data>
+  <data name="AuthForgotPasswordLinkText" xml:space="preserve">
+    <value>Unustasite parooli?</value>
+  </data>
+  <data name="AuthForgotPasswordTitle" xml:space="preserve">
+    <value>Lähtestage oma parool</value>
+  </data>
+  <data name="AuthForgotPasswordDescription" xml:space="preserve">
+    <value>Sisestage oma e-posti aadress ja saadame teile koodi parooli lähtestamiseks.</value>
+  </data>
+  <data name="AuthForgotPasswordButtonText" xml:space="preserve">
+    <value>Saada lähtestamiskood</value>
+  </data>
+  <data name="AuthForgotPasswordSuccessMessage" xml:space="preserve">
+    <value>Kui see e-post on registreeritud, on lähtestamiskood saadetud. Kontrollige oma postkasti.</value>
+  </data>
+  <data name="AuthResetPasswordTitle" xml:space="preserve">
+    <value>Valige uus parool</value>
+  </data>
+  <data name="AuthResetPasswordDescription" xml:space="preserve">
+    <value>Sisestage e-kirjast saadud kood koos oma uue parooliga.</value>
+  </data>
+  <data name="AuthResetCodeLabel" xml:space="preserve">
+    <value>Lähtestamiskood</value>
+  </data>
+  <data name="AuthNewPasswordLabel" xml:space="preserve">
+    <value>Uus parool</value>
+  </data>
+  <data name="AuthConfirmNewPasswordLabel" xml:space="preserve">
+    <value>Kinnita uus parool</value>
+  </data>
+  <data name="AuthResetPasswordButtonText" xml:space="preserve">
+    <value>Lähtesta parool</value>
+  </data>
+  <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
+    <value>Teie parool on lähtestatud. Nüüd saate sisse logida.</value>
+  </data>
 </root>

@@ -18,6 +18,12 @@ public class AuthApiClient(HttpClient httpClient)
     public Task<LoginResponse> LoginAsync(LoginRequest request) =>
         SendAsync<LoginResponse>(ApiRoutes.AuthLogin, request, accessToken: null);
 
+    public Task ForgotPasswordAsync(ForgotPasswordRequest request) =>
+        SendAsync(ApiRoutes.AuthForgotPassword, request, accessToken: null);
+
+    public Task ResetPasswordAsync(ResetPasswordRequest request) =>
+        SendAsync(ApiRoutes.AuthResetPassword, request, accessToken: null);
+
     public Task<TokenResponse> VerifyMfaAsync(VerifyMfaRequest request) =>
         SendAsync<TokenResponse>(ApiRoutes.AuthVerifyMfa, request, accessToken: null);
 

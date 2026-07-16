@@ -1,3 +1,4 @@
+using System.Net;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -15,6 +16,8 @@ public class AuthController(
     ApplicationDbContext db,
     ITokenService tokenService,
     IMfaChallengeStore mfaChallengeStore,
+    IEmailSender emailSender,
+    ILogger<AuthController> logger,
     IConfiguration configuration) : ControllerBase
 {
     private static AuthErrorResponse InvalidCredentials =>
@@ -82,6 +85,60 @@ public class AuthController(
 
         string challenge = mfaChallengeStore.CreateChallenge(user.Id);
         return Ok(new LoginResponse { MfaRequired = true, MfaToken = challenge });
+    }
+
+    [HttpPost(ApiRoutes.AuthForgotPassword)]
+    public async Task<IActionResult> ForgotPassword(ForgotPasswordRequest request)
+    {
+        ApplicationUser? user = await userManager.FindByEmailAsync(request.Email);
+        if (user is not null)
+        {
+            string token = await userManager.GeneratePasswordResetTokenAsync(user);
+            string encodedToken = WebUtility.HtmlEncode(token);
+            try
+            {
+                await emailSender.SendAsync(
+                    user.Email!,
+                    "Reset your ProdHelper password",
+                    $"<p>Use this code in ProdHelper's Reset password screen to choose a new password. It expires in 30 minutes.</p><p><strong>{encodedToken}</strong></p>",
+                    $"Use this code in ProdHelper's Reset password screen to choose a new password. It expires in 30 minutes.\n\n{token}");
+            }
+            catch (Exception ex)
+            {
+                // Not configured yet / send failed — log so the flow stays
+                // testable and the token can be relayed manually meanwhile.
+                logger.LogWarning(ex, "Failed to email password reset token to {UserId}; token: {Token}", user.Id, token);
+            }
+        }
+
+        // Always 200, regardless of whether the email matched an account —
+        // don't leak whether a given address is registered.
+        return Ok();
+    }
+
+    [HttpPost(ApiRoutes.AuthResetPassword)]
+    public async Task<IActionResult> ResetPassword(ResetPasswordRequest request)
+    {
+        ApplicationUser? user = await userManager.FindByEmailAsync(request.Email);
+        if (user is null)
+        {
+            return BadRequest(new AuthErrorResponse { Code = "ResetFailed", Message = "Invalid or expired reset code." });
+        }
+
+        IdentityResult result = await userManager.ResetPasswordAsync(user, request.Token, request.NewPassword);
+        if (!result.Succeeded)
+        {
+            return BadRequest(new AuthErrorResponse
+            {
+                Code = "ResetFailed",
+                Message = string.Join(" ", result.Errors.Select(e => e.Description)),
+            });
+        }
+
+        // Same reasoning as DisableAuthenticator: a password reset is
+        // significant enough to sign out every other active session.
+        await RevokeAllActiveTokensAsync(user.Id);
+        return Ok();
     }
 
     [HttpPost(ApiRoutes.AuthVerifyMfa)]

@@ -160,4 +160,40 @@
   <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
     <value>Ruani këto kode rikuperimi në një vend të sigurt. Secili mund të përdoret një herë për t'u identifikuar nëse humbisni qasjen te aplikacioni juaj i vërtetimit.</value>
   </data>
+  <data name="AuthForgotPasswordLinkText" xml:space="preserve">
+    <value>Keni harruar fjalëkalimin?</value>
+  </data>
+  <data name="AuthForgotPasswordTitle" xml:space="preserve">
+    <value>Rivendos fjalëkalimin</value>
+  </data>
+  <data name="AuthForgotPasswordDescription" xml:space="preserve">
+    <value>Vendosni adresën tuaj email dhe do t&apos;ju dërgojmë një kod për të rivendosur fjalëkalimin.</value>
+  </data>
+  <data name="AuthForgotPasswordButtonText" xml:space="preserve">
+    <value>Dërgo kodin e rivendosjes</value>
+  </data>
+  <data name="AuthForgotPasswordSuccessMessage" xml:space="preserve">
+    <value>Nëse ky email është regjistruar, është dërguar një kod rivendosjeje. Kontrolloni kutinë tuaj postare.</value>
+  </data>
+  <data name="AuthResetPasswordTitle" xml:space="preserve">
+    <value>Zgjidhni një fjalëkalim të ri</value>
+  </data>
+  <data name="AuthResetPasswordDescription" xml:space="preserve">
+    <value>Vendosni kodin nga email-i së bashku me fjalëkalimin tuaj të ri.</value>
+  </data>
+  <data name="AuthResetCodeLabel" xml:space="preserve">
+    <value>Kodi i rivendosjes</value>
+  </data>
+  <data name="AuthNewPasswordLabel" xml:space="preserve">
+    <value>Fjalëkalimi i ri</value>
+  </data>
+  <data name="AuthConfirmNewPasswordLabel" xml:space="preserve">
+    <value>Konfirmo fjalëkalimin e ri</value>
+  </data>
+  <data name="AuthResetPasswordButtonText" xml:space="preserve">
+    <value>Rivendos fjalëkalimin</value>
+  </data>
+  <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
+    <value>Fjalëkalimi juaj u rivendos. Tani mund të hyni.</value>
+  </data>
 </root>

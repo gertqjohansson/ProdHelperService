@@ -54,6 +54,18 @@ internal static class Strings
     public static string AuthMfaEnableButtonText => Get("AuthMfaEnableButtonText");
     public static string AuthMfaDisableButtonText => Get("AuthMfaDisableButtonText");
     public static string AuthMfaRecoveryCodesDescription => Get("AuthMfaRecoveryCodesDescription");
+    public static string AuthForgotPasswordLinkText => Get("AuthForgotPasswordLinkText");
+    public static string AuthForgotPasswordTitle => Get("AuthForgotPasswordTitle");
+    public static string AuthForgotPasswordDescription => Get("AuthForgotPasswordDescription");
+    public static string AuthForgotPasswordButtonText => Get("AuthForgotPasswordButtonText");
+    public static string AuthForgotPasswordSuccessMessage => Get("AuthForgotPasswordSuccessMessage");
+    public static string AuthResetPasswordTitle => Get("AuthResetPasswordTitle");
+    public static string AuthResetPasswordDescription => Get("AuthResetPasswordDescription");
+    public static string AuthResetCodeLabel => Get("AuthResetCodeLabel");
+    public static string AuthNewPasswordLabel => Get("AuthNewPasswordLabel");
+    public static string AuthConfirmNewPasswordLabel => Get("AuthConfirmNewPasswordLabel");
+    public static string AuthResetPasswordButtonText => Get("AuthResetPasswordButtonText");
+    public static string AuthResetPasswordSuccessMessage => Get("AuthResetPasswordSuccessMessage");
 
     private static string Get(string name) =>
         ResourceManager.GetString(name, CultureInfo.CurrentUICulture) ?? name;

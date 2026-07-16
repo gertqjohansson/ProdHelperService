@@ -160,4 +160,40 @@
   <data name="AuthMfaRecoveryCodesDescription" xml:space="preserve">
     <value>Saglabājiet šos atkopšanas kodus drošā vietā. Katru var izmantot vienu reizi, lai pieteiktos, ja zaudējat piekļuvi autentifikācijas lietotnei.</value>
   </data>
+  <data name="AuthForgotPasswordLinkText" xml:space="preserve">
+    <value>Aizmirsāt paroli?</value>
+  </data>
+  <data name="AuthForgotPasswordTitle" xml:space="preserve">
+    <value>Atiestatiet paroli</value>
+  </data>
+  <data name="AuthForgotPasswordDescription" xml:space="preserve">
+    <value>Ievadiet savu e-pasta adresi, un mēs nosūtīsim jums kodu paroles atiestatīšanai.</value>
+  </data>
+  <data name="AuthForgotPasswordButtonText" xml:space="preserve">
+    <value>Sūtīt atiestatīšanas kodu</value>
+  </data>
+  <data name="AuthForgotPasswordSuccessMessage" xml:space="preserve">
+    <value>Ja šī e-pasta adrese ir reģistrēta, ir nosūtīts atiestatīšanas kods. Pārbaudiet savu iesūtni.</value>
+  </data>
+  <data name="AuthResetPasswordTitle" xml:space="preserve">
+    <value>Izvēlieties jaunu paroli</value>
+  </data>
+  <data name="AuthResetPasswordDescription" xml:space="preserve">
+    <value>Ievadiet e-pastā saņemto kodu kopā ar jauno paroli.</value>
+  </data>
+  <data name="AuthResetCodeLabel" xml:space="preserve">
+    <value>Atiestatīšanas kods</value>
+  </data>
+  <data name="AuthNewPasswordLabel" xml:space="preserve">
+    <value>Jaunā parole</value>
+  </data>
+  <data name="AuthConfirmNewPasswordLabel" xml:space="preserve">
+    <value>Apstipriniet jauno paroli</value>
+  </data>
+  <data name="AuthResetPasswordButtonText" xml:space="preserve">
+    <value>Atiestatīt paroli</value>
+  </data>
+  <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
+    <value>Jūsu parole ir atiestatīta. Tagad varat pieteikties.</value>
+  </data>
 </root>

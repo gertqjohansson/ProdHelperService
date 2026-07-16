@@ -24,6 +24,13 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
+// Shorter than Identity's 1-day default, consistent with this app's other
+// short-lived tokens (5-min MFA challenge, 15-min access token).
+builder.Services.Configure<DataProtectionTokenProviderOptions>(options =>
+    options.TokenLifespan = TimeSpan.FromMinutes(30));
+
+builder.Services.AddSingleton<IEmailSender, AzureCommunicationEmailSender>();
+
 builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("Jwt"));
 builder.Services.AddMemoryCache();
 builder.Services.AddProdHelperAuth(builder.Configuration);
