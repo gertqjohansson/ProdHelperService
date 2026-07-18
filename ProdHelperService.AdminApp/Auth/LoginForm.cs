@@ -98,7 +98,6 @@ public class LoginForm : Form
             Top = 275 + layoutShift,
             Width = 150,
             TextAlign = ContentAlignment.MiddleLeft,
-            Visible = false,
         };
         var registerLink = new LinkLabel
         {
@@ -106,7 +105,6 @@ public class LoginForm : Form
             Left = contentLeft + 150,
             Top = 275 + layoutShift,
             Width = contentWidth - 150,
-            Visible = false,
         };
         registerLink.LinkClicked += OnRegisterLinkClicked;
 
@@ -119,26 +117,6 @@ public class LoginForm : Form
             TextAlign = ContentAlignment.MiddleCenter,
         };
         forgotPasswordLink.LinkClicked += OnForgotPasswordLinkClicked;
-
-        // Self-registration is only offered for first-run bootstrap (no users
-        // in the database yet) - stays hidden until that's confirmed, and
-        // fails safe (stays hidden) if the check can't be completed at all.
-        Load += async (_, _) =>
-        {
-            try
-            {
-                HasUsersResponse hasUsers = await _authApiClient.HasUsersAsync();
-                if (!hasUsers.HasUsers)
-                {
-                    switchLabel.Visible = true;
-                    registerLink.Visible = true;
-                }
-            }
-            catch
-            {
-                // API unreachable or errored - leave Register hidden.
-            }
-        };
 
         _card.Controls.Add(title);
         _card.Controls.Add(emailLabel);

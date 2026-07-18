@@ -94,6 +94,9 @@
   <data name="AuthConfirmPasswordLabel" xml:space="preserve">
     <value>Vahvista salasana</value>
   </data>
+  <data name="AuthAdminPasswordLabel" xml:space="preserve">
+    <value>Järjestelmänvalvojan tilin salasana</value>
+  </data>
   <data name="AuthDisplayNameLabel" xml:space="preserve">
     <value>Näyttönimi (valinnainen)</value>
   </data>

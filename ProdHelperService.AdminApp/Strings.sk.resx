@@ -94,6 +94,9 @@
   <data name="AuthConfirmPasswordLabel" xml:space="preserve">
     <value>Potvrďte heslo</value>
   </data>
+  <data name="AuthAdminPasswordLabel" xml:space="preserve">
+    <value>Heslo administrátorského účtu</value>
+  </data>
   <data name="AuthDisplayNameLabel" xml:space="preserve">
     <value>Zobrazované meno (voliteľné)</value>
   </data>

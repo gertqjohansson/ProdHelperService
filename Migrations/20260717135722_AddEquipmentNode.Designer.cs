@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProdHelperService.Auth;
 
@@ -11,9 +12,11 @@ using ProdHelperService.Auth;
 namespace ProdHelperService.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260717135722_AddEquipmentNode")]
+    partial class AddEquipmentNode
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -223,7 +226,7 @@ namespace ProdHelperService.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("ProdHelperService.Auth.Equipment", b =>
+            modelBuilder.Entity("ProdHelperService.Auth.EquipmentNode", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -231,72 +234,18 @@ namespace ProdHelperService.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ColorCode")
+                    b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("EquipmentCategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ExternalCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("IsOee")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsPlannable")
-                        .HasColumnType("bit");
-
-                    b.Property<int?>("ParentId")
+                    b.Property<int>("ParentId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Equipment", null, t =>
-                        {
-                            t.ExcludeFromMigrations();
-                        });
-                });
+                    b.HasIndex("ParentId");
 
-            modelBuilder.Entity("ProdHelperService.Auth.EquipmentTranslation", b =>
-                {
-                    b.Property<int>("EquipmentId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("LanguageIsoCode")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Value")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("EquipmentId", "LanguageIsoCode");
-
-                    b.ToTable("EquipmentTranslation", null, t =>
-                        {
-                            t.ExcludeFromMigrations();
-                        });
-                });
-
-            modelBuilder.Entity("ProdHelperService.Auth.Language", b =>
-                {
-                    b.Property<string>("IsoCode")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<bool?>("IsFallback")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("IsoCode");
-
-                    b.ToTable("Language", null, t =>
-                        {
-                            t.ExcludeFromMigrations();
-                        });
+                    b.ToTable("EquipmentNodes");
                 });
 
             modelBuilder.Entity("ProdHelperService.Auth.RefreshToken", b =>

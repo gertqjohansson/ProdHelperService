@@ -94,6 +94,9 @@
   <data name="AuthConfirmPasswordLabel" xml:space="preserve">
     <value>Jelszó megerősítése</value>
   </data>
+  <data name="AuthAdminPasswordLabel" xml:space="preserve">
+    <value>Rendszergazdai fiók jelszava</value>
+  </data>
   <data name="AuthDisplayNameLabel" xml:space="preserve">
     <value>Megjelenített név (nem kötelező)</value>
   </data>

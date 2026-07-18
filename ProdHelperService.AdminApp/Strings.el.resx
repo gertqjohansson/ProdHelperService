@@ -94,6 +94,9 @@
   <data name="AuthConfirmPasswordLabel" xml:space="preserve">
     <value>Επιβεβαίωση κωδικού πρόσβασης</value>
   </data>
+  <data name="AuthAdminPasswordLabel" xml:space="preserve">
+    <value>Κωδικός πρόσβασης λογαριασμού διαχειριστή</value>
+  </data>
   <data name="AuthDisplayNameLabel" xml:space="preserve">
     <value>Όνομα εμφάνισης (προαιρετικό)</value>
   </data>

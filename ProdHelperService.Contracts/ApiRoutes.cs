@@ -19,4 +19,14 @@ public static class ApiRoutes
     public const string AuthMfaAuthenticatorSetup = "Auth/Mfa/Authenticator/Setup";
     public const string AuthMfaAuthenticatorEnable = "Auth/Mfa/Authenticator/Enable";
     public const string AuthMfaAuthenticatorDisable = "Auth/Mfa/Authenticator/Disable";
+
+    public const string EquipmentList = "Equipment/List";
+    public const string EquipmentCreate = "Equipment/Create";
+    public const string EquipmentUpdate = "Equipment/Update";
+    public const string EquipmentDelete = "Equipment/Delete";
+
+    public const string EquipmentCategoryList = "EquipmentCategory/List";
+    public const string EquipmentCategoryCreate = "EquipmentCategory/Create";
+    public const string EquipmentCategoryUpdate = "EquipmentCategory/Update";
+    public const string EquipmentCategoryDelete = "EquipmentCategory/Delete";
 }

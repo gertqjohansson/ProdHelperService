@@ -94,6 +94,9 @@
   <data name="AuthConfirmPasswordLabel" xml:space="preserve">
     <value>Confirmer le mot de passe</value>
   </data>
+  <data name="AuthAdminPasswordLabel" xml:space="preserve">
+    <value>Mot de passe du compte administrateur</value>
+  </data>
   <data name="AuthDisplayNameLabel" xml:space="preserve">
     <value>Nom affiché (facultatif)</value>
   </data>

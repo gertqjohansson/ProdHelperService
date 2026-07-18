@@ -94,6 +94,9 @@
   <data name="AuthConfirmPasswordLabel" xml:space="preserve">
     <value>Potvrdi lozinku</value>
   </data>
+  <data name="AuthAdminPasswordLabel" xml:space="preserve">
+    <value>Lozinka administratorskog naloga</value>
+  </data>
   <data name="AuthDisplayNameLabel" xml:space="preserve">
     <value>Prikazano ime (opciono)</value>
   </data>

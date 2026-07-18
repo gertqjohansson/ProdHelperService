@@ -13,6 +13,7 @@ namespace ProdHelperService.Auth;
 public class AuthController(
     UserManager<ApplicationUser> userManager,
     SignInManager<ApplicationUser> signInManager,
+    RoleManager<IdentityRole> roleManager,
     ApplicationDbContext db,
     ITokenService tokenService,
     IMfaChallengeStore mfaChallengeStore,
@@ -20,12 +21,27 @@ public class AuthController(
     ILogger<AuthController> logger,
     IConfiguration configuration) : ControllerBase
 {
+    private const string AdminRoleName = "Administrator";
+
     private static AuthErrorResponse InvalidCredentials =>
         new() { Code = "InvalidCredentials", Message = "Invalid email or password." };
 
     [HttpPost(ApiRoutes.AuthRegister)]
     public async Task<IActionResult> Register(RegisterRequest request)
     {
+        string? adminPassword = await db.Database
+            .SqlQueryRaw<string>("SELECT [Value] FROM [Settings] WHERE [Key] = {0}", "NewAdminAccount")
+            .FirstOrDefaultAsync();
+
+        if (adminPassword is null || adminPassword != request.AdminPassword)
+        {
+            return Unauthorized(new AuthErrorResponse
+            {
+                Code = "InvalidAdminPassword",
+                Message = "Incorrect administrator account password.",
+            });
+        }
+
         var user = new ApplicationUser
         {
             UserName = request.Email,
@@ -42,6 +58,12 @@ public class AuthController(
                 Message = string.Join(" ", result.Errors.Select(e => e.Description)),
             });
         }
+
+        if (!await roleManager.RoleExistsAsync(AdminRoleName))
+        {
+            await roleManager.CreateAsync(new IdentityRole(AdminRoleName));
+        }
+        await userManager.AddToRoleAsync(user, AdminRoleName);
 
         return Ok(new RegisterResponse { UserId = user.Id, Email = user.Email! });
     }

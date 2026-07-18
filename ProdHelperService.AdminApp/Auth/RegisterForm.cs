@@ -15,6 +15,7 @@ public class RegisterForm : Form
     private readonly TextBox _displayNameBox;
     private readonly TextBox _passwordBox;
     private readonly TextBox _confirmPasswordBox;
+    private readonly TextBox _adminPasswordBox;
     private readonly Label _statusLabel;
     private readonly Button _registerButton;
 
@@ -25,7 +26,6 @@ public class RegisterForm : Form
         _authApiClient = authApiClient;
 
         Text = Strings.AuthRegisterTitle;
-        ClientSize = new Size(360, 420);
         FormBorderStyle = FormBorderStyle.FixedDialog;
         MaximizeBox = false;
         MinimizeBox = false;
@@ -33,27 +33,46 @@ public class RegisterForm : Form
         BackColor = Color.White;
         Padding = new Padding(24);
 
-        var title = new Label { Text = Strings.AuthRegisterTitle, Left = 24, Top = 20, Width = 312, Font = new Font(Font.FontFamily, 16, FontStyle.Regular) };
+        var title = new Label
+        {
+            Text = Strings.AuthRegisterTitle,
+            Left = 24,
+            Top = 20,
+            Width = 312,
+            Font = new Font(Font.FontFamily, 16, FontStyle.Regular),
+            AutoSize = false,
+        };
+        // The heading was clipping at its natural single-line height, so give it
+        // an explicit box 10% taller than the text actually needs, and push
+        // every control below it down by that same growth so nothing overlaps.
+        int naturalTitleHeight = TextRenderer.MeasureText(title.Text, title.Font).Height;
+        title.Height = (int)Math.Ceiling(naturalTitleHeight * 1.1);
+        int layoutShift = title.Height - naturalTitleHeight;
 
-        var emailLabel = new Label { Text = Strings.AuthEmailLabel, Left = 24, Top = 65, Width = 312 };
-        _emailBox = new TextBox { Left = 24, Top = 85, Width = 312 };
+        ClientSize = new Size(360, 473 + layoutShift);
 
-        var displayNameLabel = new Label { Text = Strings.AuthDisplayNameLabel, Left = 24, Top = 118, Width = 312 };
-        _displayNameBox = new TextBox { Left = 24, Top = 138, Width = 312 };
+        var emailLabel = new Label { Text = Strings.AuthEmailLabel, Left = 24, Top = 65 + layoutShift, Width = 312 };
+        _emailBox = new TextBox { Left = 24, Top = 85 + layoutShift, Width = 312 };
 
-        var passwordLabel = new Label { Text = Strings.AuthPasswordLabel, Left = 24, Top = 171, Width = 312 };
-        _passwordBox = new TextBox { Left = 24, Top = 191, Width = 312, UseSystemPasswordChar = true };
+        var displayNameLabel = new Label { Text = Strings.AuthDisplayNameLabel, Left = 24, Top = 118 + layoutShift, Width = 312 };
+        _displayNameBox = new TextBox { Left = 24, Top = 138 + layoutShift, Width = 312 };
 
-        var confirmLabel = new Label { Text = Strings.AuthConfirmPasswordLabel, Left = 24, Top = 224, Width = 312 };
-        _confirmPasswordBox = new TextBox { Left = 24, Top = 244, Width = 312, UseSystemPasswordChar = true };
+        var passwordLabel = new Label { Text = Strings.AuthPasswordLabel, Left = 24, Top = 171 + layoutShift, Width = 312 };
+        _passwordBox = new TextBox { Left = 24, Top = 191 + layoutShift, Width = 312, UseSystemPasswordChar = true };
 
-        _statusLabel = new Label { Left = 24, Top = 280, Width = 312, Height = 40, ForeColor = ErrorColor };
+        var confirmLabel = new Label { Text = Strings.AuthConfirmPasswordLabel, Left = 24, Top = 224 + layoutShift, Width = 312 };
+        _confirmPasswordBox = new TextBox { Left = 24, Top = 244 + layoutShift, Width = 312, UseSystemPasswordChar = true };
+
+        var adminPasswordLabel = new Label { Text = Strings.AuthAdminPasswordLabel, Left = 24, Top = 277 + layoutShift, Width = 312 };
+        _adminPasswordBox = new TextBox { Left = 24, Top = 297 + layoutShift, Width = 312, UseSystemPasswordChar = true };
+
+        _statusLabel = new Label { Left = 24, Top = 333 + layoutShift, Width = 312, Height = 40, ForeColor = ErrorColor };
 
         _registerButton = new Button
         {
             Text = Strings.AuthRegisterButtonText,
             Left = 24,
-            Top = 325,
+            Top = 378 + layoutShift,
             Width = 312,
             Height = 34,
             BackColor = TealPrimary,
@@ -72,6 +91,8 @@ public class RegisterForm : Form
         Controls.Add(_passwordBox);
         Controls.Add(confirmLabel);
         Controls.Add(_confirmPasswordBox);
+        Controls.Add(adminPasswordLabel);
+        Controls.Add(_adminPasswordBox);
         Controls.Add(_statusLabel);
         Controls.Add(_registerButton);
         AcceptButton = _registerButton;
@@ -100,6 +121,7 @@ public class RegisterForm : Form
                 Email = _emailBox.Text,
                 Password = _passwordBox.Text,
                 DisplayName = string.IsNullOrWhiteSpace(_displayNameBox.Text) ? null : _displayNameBox.Text,
+                AdminPassword = _adminPasswordBox.Text,
             });
 
             RegisteredEmail = _emailBox.Text;

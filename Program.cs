@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddEnvironmentVariables(prefix: "RELAY_");
 
 builder.Services.AddProdHelperControllers();
+builder.Services.AddHttpClient();
 builder.Services.AddHostedService<RelayListenerHostedService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

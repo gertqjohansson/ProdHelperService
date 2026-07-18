@@ -153,6 +153,9 @@
   <data name="AuthConfirmPasswordLabel" xml:space="preserve">
     <value>Confirm password</value>
   </data>
+  <data name="AuthAdminPasswordLabel" xml:space="preserve">
+    <value>Admin account password</value>
+  </data>
   <data name="AuthDisplayNameLabel" xml:space="preserve">
     <value>Display name (optional)</value>
   </data>

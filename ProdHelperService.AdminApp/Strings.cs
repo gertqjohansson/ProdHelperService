@@ -32,6 +32,7 @@ internal static class Strings
     public static string AuthEmailLabel => Get("AuthEmailLabel");
     public static string AuthPasswordLabel => Get("AuthPasswordLabel");
     public static string AuthConfirmPasswordLabel => Get("AuthConfirmPasswordLabel");
+    public static string AuthAdminPasswordLabel => Get("AuthAdminPasswordLabel");
     public static string AuthDisplayNameLabel => Get("AuthDisplayNameLabel");
     public static string AuthLoginButtonText => Get("AuthLoginButtonText");
     public static string AuthRegisterButtonText => Get("AuthRegisterButtonText");

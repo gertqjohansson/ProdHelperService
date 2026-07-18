@@ -94,6 +94,9 @@
   <data name="AuthConfirmPasswordLabel" xml:space="preserve">
     <value>Bekreft passord</value>
   </data>
+  <data name="AuthAdminPasswordLabel" xml:space="preserve">
+    <value>Administratorkontopassord</value>
+  </data>
   <data name="AuthDisplayNameLabel" xml:space="preserve">
     <value>Visningsnavn (valgfritt)</value>
   </data>

@@ -94,6 +94,9 @@
   <data name="AuthConfirmPasswordLabel" xml:space="preserve">
     <value>Apstipriniet paroli</value>
   </data>
+  <data name="AuthAdminPasswordLabel" xml:space="preserve">
+    <value>Administratora konta parole</value>
+  </data>
   <data name="AuthDisplayNameLabel" xml:space="preserve">
     <value>Attēlotais vārds (neobligāts)</value>
   </data>

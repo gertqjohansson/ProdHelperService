@@ -94,6 +94,9 @@
   <data name="AuthConfirmPasswordLabel" xml:space="preserve">
     <value>Kinnita parool</value>
   </data>
+  <data name="AuthAdminPasswordLabel" xml:space="preserve">
+    <value>Administraatorikonto parool</value>
+  </data>
   <data name="AuthDisplayNameLabel" xml:space="preserve">
     <value>Kuvatav nimi (valikuline)</value>
   </data>

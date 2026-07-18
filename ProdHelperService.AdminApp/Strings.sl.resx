@@ -94,6 +94,9 @@
   <data name="AuthConfirmPasswordLabel" xml:space="preserve">
     <value>Potrdi geslo</value>
   </data>
+  <data name="AuthAdminPasswordLabel" xml:space="preserve">
+    <value>Geslo skrbniškega računa</value>
+  </data>
   <data name="AuthDisplayNameLabel" xml:space="preserve">
     <value>Prikazano ime (neobvezno)</value>
   </data>

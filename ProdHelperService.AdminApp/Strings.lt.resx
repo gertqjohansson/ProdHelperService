@@ -94,6 +94,9 @@
   <data name="AuthConfirmPasswordLabel" xml:space="preserve">
     <value>Patvirtinkite slaptažodį</value>
   </data>
+  <data name="AuthAdminPasswordLabel" xml:space="preserve">
+    <value>Administratoriaus paskyros slaptažodis</value>
+  </data>
   <data name="AuthDisplayNameLabel" xml:space="preserve">
     <value>Rodomas vardas (neprivaloma)</value>
   </data>
