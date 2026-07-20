@@ -9,10 +9,22 @@
     <RootNamespace>ProdHelperService.AdminApp</RootNamespace>
     <AssemblyName>ProdHelperService.AdminApp</AssemblyName>
     <NeutralLanguage>en</NeutralLanguage>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ProdHelperService.Contracts\ProdHelperService.Contracts.csproj" />
+    <ProjectReference Include="..\ProdHelperService.ServiceInstaller\ProdHelperService.ServiceInstaller.csproj" />
+  </ItemGroup>
+
+  <!-- Deliberate exception to this project's otherwise zero-PackageReference policy (see the
+       Flags/Images comment below) - ServiceConfigForm's "Try Connection" button needs to open a
+       raw SQL connection using arbitrary user-entered connection string text, independent of
+       ProdHelperService's own API (which may be unreachable - the whole premise of that form).
+       Version pinned to match what Microsoft.EntityFrameworkCore.SqlServer 8.0.11 already
+       resolves transitively in the main ProdHelperService project. -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.6" />
   </ItemGroup>
 
   <!-- Small flag PNGs for the language submenu, pre-rasterized from the same flag-icons

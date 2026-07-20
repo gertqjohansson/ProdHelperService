@@ -81,11 +81,7 @@
   </data>
   <data name="GuestLabel" xml:space="preserve">
     <value>Vieras</value>
-  </data>
-  <data name="ItemSelectedFormat" xml:space="preserve">
-    <value>{0} valittu</value>
-  </data>
-  <data name="AuthEmailLabel" xml:space="preserve">
+  </data>  <data name="AuthEmailLabel" xml:space="preserve">
     <value>Sähköposti</value>
   </data>
   <data name="AuthPasswordLabel" xml:space="preserve">
@@ -198,5 +194,237 @@
   </data>
   <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
     <value>Salasanasi on nollattu. Voit nyt kirjautua sisään.</value>
+  </data>  <data name="ApiDocumentationMenuText" xml:space="preserve">
+    <value>API-dokumentaatio</value>
+  </data>
+  <data name="ServiceUrlDialogTitle" xml:space="preserve">
+    <value>Palvelun URL-osoite</value>
+  </data>
+  <data name="ServiceUrlDialogDescription" xml:space="preserve">
+    <value>Vaihda portti, jota ProdHelperService kuuntelee. Palvelu käynnistyy automaattisesti uudelleen.</value>
+  </data>
+  <data name="ServiceUrlPortLabel" xml:space="preserve">
+    <value>Portti</value>
+  </data>
+  <data name="ServiceUrlSaveButtonText" xml:space="preserve">
+    <value>Tallenna</value>
+  </data>
+  <data name="ServiceUrlCancelButtonText" xml:space="preserve">
+    <value>Peruuta</value>
+  </data>
+  <data name="ServiceUrlInvalidPortMessage" xml:space="preserve">
+    <value>Anna kelvollinen portin numero (1-65535).</value>
+  </data>
+  <data name="ServiceUrlSamePortMessage" xml:space="preserve">
+    <value>Tämä on jo nykyinen portti.</value>
+  </data>
+  <data name="ServiceUrlRestartingMessage" xml:space="preserve">
+    <value>Käynnistetään palvelua uudelleen portissa {0}...</value>
+  </data>
+  <data name="ServiceUrlVerifyingMessage" xml:space="preserve">
+    <value>Vahvistetaan uutta osoitetta...</value>
+  </data>
+  <data name="ServiceUrlSettingsPersistFailedMessage" xml:space="preserve">
+    <value>Portti vaihdettiin ja palvelu käynnistettiin uudelleen, mutta asetustiedostoa ei voitu päivittää tulevia uudelleenkäynnistyksiä varten.</value>
+  </data>
+  <data name="ApiDocumentationOpenErrorMessage" xml:space="preserve">
+    <value>Oletusselainta ei voitu avata: {0}</value>
+  </data>  <data name="ServiceDialogTitle" xml:space="preserve">
+    <value>Windows-palvelu</value>
+  </data>
+  <data name="ServiceDialogDescription" xml:space="preserve">
+    <value>Rekisteröi ProdHelperService Windows-palveluksi, jotta se käynnistyy automaattisesti ja jatkaa toimintaansa taustalla.</value>
+  </data>
+  <data name="ServiceStatusNotRegistered" xml:space="preserve">
+    <value>Ei rekisteröity</value>
+  </data>
+  <data name="ServiceStatusRunning" xml:space="preserve">
+    <value>Rekisteröity - käynnissä</value>
+  </data>
+  <data name="ServiceStatusStopped" xml:space="preserve">
+    <value>Rekisteröity - pysäytetty</value>
+  </data>
+  <data name="ServiceStatusPending" xml:space="preserve">
+    <value>Tilaa vaihdetaan...</value>
+  </data>
+  <data name="ServiceRegisterButtonText" xml:space="preserve">
+    <value>Rekisteröi</value>
+  </data>
+  <data name="ServiceUnregisterButtonText" xml:space="preserve">
+    <value>Poista rekisteröinti</value>
+  </data>
+  <data name="ServiceStartButtonText" xml:space="preserve">
+    <value>Käynnistä</value>
+  </data>
+  <data name="ServiceStopButtonText" xml:space="preserve">
+    <value>Pysäytä</value>
+  </data>
+  <data name="ServiceCloseButtonText" xml:space="preserve">
+    <value>Sulje</value>
+  </data>
+  <data name="ServiceRegisteringMessage" xml:space="preserve">
+    <value>Rekisteröidään palvelua...</value>
+  </data>
+  <data name="ServiceUnregisteringMessage" xml:space="preserve">
+    <value>Poistetaan palvelun rekisteröintiä...</value>
+  </data>
+  <data name="ServiceStartingMessage" xml:space="preserve">
+    <value>Käynnistetään palvelua...</value>
+  </data>
+  <data name="ServiceStoppingMessage" xml:space="preserve">
+    <value>Pysäytetään palvelua...</value>
+  </data>
+  <data name="ServiceUnregisterConfirmTitle" xml:space="preserve">
+    <value>Poista palvelun rekisteröinti</value>
+  </data>
+  <data name="ServiceUnregisterConfirmMessage" xml:space="preserve">
+    <value>Poistetaanko ProdHelperServicen rekisteröinti Windowsista? Se ei enää käynnisty automaattisesti.</value>
+  </data>
+  <data name="ServiceNotRegisteredStartupMessage" xml:space="preserve">
+    <value>ProdHelperService ei ole rekisteröity Windows-palveluksi tällä tietokoneella. Rekisteröidäänkö se nyt?</value>
+  </data>
+  <data name="ServiceConfigMenuText" xml:space="preserve">
+    <value>Palvelun asetukset</value>
+  </data>
+  <data name="ServiceConfigDialogTitle" xml:space="preserve">
+    <value>Palvelun asetukset</value>
+  </data>
+  <data name="ServiceConfigDialogDescription" xml:space="preserve">
+    <value>ProdHelperServiceen ei saatu yhteyttä. Käynnistä palvelu, muokkaa sen asetuksia alla tarvittaessa ja vahvista sitten yhteys Testaa palvelu -painikkeella. Muutokset tulevat voimaan, kun palvelu käynnistetään seuraavan kerran.</value>
+  </data>
+  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
+    <value>Testaa palvelu</value>
+  </data>
+  <data name="ServiceConfigCheckingMessage" xml:space="preserve">
+    <value>Tarkistetaan...</value>
+  </data>
+  <data name="ServiceConfigReachableMessage" xml:space="preserve">
+    <value>Palveluun saadaan yhteys.</value>
+  </data>
+  <data name="ServiceConfigUnreachableMessage" xml:space="preserve">
+    <value>Palveluun ei saada yhteyttä.</value>
+  </data>
+  <data name="ServiceConfigRelaySectionHeader" xml:space="preserve">
+    <value>Relay</value>
+  </data>
+  <data name="ServiceConfigLocalApiSectionHeader" xml:space="preserve">
+    <value>Paikallinen API</value>
+  </data>
+  <data name="ServiceConfigDatabaseSectionHeader" xml:space="preserve">
+    <value>Tietokantayhteys</value>
+  </data>
+  <data name="ServiceConfigJwtSectionHeader" xml:space="preserve">
+    <value>JWT</value>
+  </data>
+  <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
+    <value>Sähköposti</value>
+  </data>
+  <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
+    <value>Namespace</value>
+  </data>
+  <data name="ServiceConfigConnectionNameLabel" xml:space="preserve">
+    <value>Yhteyden nimi</value>
+  </data>
+  <data name="ServiceConfigKeyNameLabel" xml:space="preserve">
+    <value>Avaimen nimi</value>
+  </data>
+  <data name="ServiceConfigKeyLabel" xml:space="preserve">
+    <value>Avain</value>
+  </data>
+  <data name="ServiceConfigPortLabel" xml:space="preserve">
+    <value>Portti</value>
+  </data>
+  <data name="ServiceConfigDatabaseConnectionStringLabel" xml:space="preserve">
+    <value>Yhteysmerkkijono</value>
+  </data>
+  <data name="ServiceConfigJwtKeyLabel" xml:space="preserve">
+    <value>Avain</value>
+  </data>
+  <data name="ServiceConfigAccessTokenMinutesLabel" xml:space="preserve">
+    <value>Käyttöoikeustunnus (minuuttia)</value>
+  </data>
+  <data name="ServiceConfigRefreshTokenDaysLabel" xml:space="preserve">
+    <value>Päivitystunnus (päivää)</value>
+  </data>
+  <data name="ServiceConfigEmailConnectionStringLabel" xml:space="preserve">
+    <value>Yhteysmerkkijono</value>
+  </data>
+  <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
+    <value>Lähettäjän osoite</value>
+  </data>
+  <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
+    <value>Testaa yhteys</value>
+  </data>
+  <data name="ServiceConfigTestingConnectionMessage" xml:space="preserve">
+    <value>Testataan yhteyttä...</value>
+  </data>
+  <data name="ServiceConfigConnectionSuccessMessage" xml:space="preserve">
+    <value>Yhteys onnistui.</value>
+  </data>
+  <data name="ServiceConfigConnectionFailedMessage" xml:space="preserve">
+    <value>Yhteys epäonnistui: {0}</value>
+  </data>
+  <data name="ServiceConfigInvalidPortMessage" xml:space="preserve">
+    <value>Anna porttinumero väliltä 1–65535.</value>
+  </data>
+  <data name="ServiceConfigInvalidAccessTokenMinutesMessage" xml:space="preserve">
+    <value>Anna positiivinen minuuttimäärä.</value>
+  </data>
+  <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
+    <value>Anna positiivinen päivämäärä.</value>
+  </data>
+  <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
+    <value>JWT-avaimen vaihtaminen mitätöi kaikki nykyiset istunnot, kun palvelu käynnistetään seuraavan kerran. Jatketaanko?</value>
+  </data>
+  <data name="ServiceConfigSaveButtonText" xml:space="preserve">
+    <value>Tallenna</value>
+  </data>
+  <data name="ServiceConfigCancelButtonText" xml:space="preserve">
+    <value>Peruuta</value>
+  </data>
+  <data name="ServiceConfigSavingMessage" xml:space="preserve">
+    <value>Tallennetaan...</value>
+  </data>
+  <data name="ServiceConfigSaveFailedMessage" xml:space="preserve">
+    <value>Tiedoston appsettings.json tallentaminen epäonnistui.</value>
+  </data>
+  <data name="ServiceConfigLoadFailedMessage" xml:space="preserve">
+    <value>Tiedostoa appsettings.json ei voitu lukea.</value>
+  </data>
+  <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
+    <value>Generoi</value>
+  </data>
+  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
+    <value>Palvelu toimii.</value>
+  </data>
+  <data name="FoldersMenuText" xml:space="preserve">
+    <value>Kansiot</value>
+  </data>
+  <data name="UploadFolderDialogTitle" xml:space="preserve">
+    <value>Latauskansio</value>
+  </data>
+  <data name="UploadFolderDialogDescription" xml:space="preserve">
+    <value>Valitse kansio, johon ladatut asiakirjat tallennetaan.</value>
+  </data>
+  <data name="UploadFolderPathLabel" xml:space="preserve">
+    <value>Kansion polku</value>
+  </data>
+  <data name="UploadFolderBrowseButtonText" xml:space="preserve">
+    <value>Selaa...</value>
+  </data>
+  <data name="UploadFolderSaveButtonText" xml:space="preserve">
+    <value>Tallenna</value>
+  </data>
+  <data name="UploadFolderCancelButtonText" xml:space="preserve">
+    <value>Peruuta</value>
+  </data>
+  <data name="UploadFolderInvalidPathMessage" xml:space="preserve">
+    <value>Anna tai valitse kansion polku.</value>
+  </data>
+  <data name="UploadFolderSavingMessage" xml:space="preserve">
+    <value>Tallennetaan...</value>
+  </data>
+  <data name="UploadFolderSaveFailedMessage" xml:space="preserve">
+    <value>Tiedoston appsettings.json tallentaminen epäonnistui.</value>
   </data>
 </root>

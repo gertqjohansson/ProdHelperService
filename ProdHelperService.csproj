@@ -7,14 +7,20 @@
     <RootNamespace>ProdHelperService</RootNamespace>
     <AssemblyName>ProdHelperService</AssemblyName>
     <AssemblyTitle>ProdHelperService</AssemblyTitle>
+    <!-- Sibling project folders (and Setup/, the Inno Setup installer sources/output) are nested
+         under this one. Without this, this project's default item globs would sweep their .cs
+         files, and - more subtly - every other file under them (nested bin/obj outputs, the
+         installer script itself) into this project's own Compile/Content/None items, bloating
+         anything built from this project (e.g. dotnet publish output) with unrelated junk. -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);ProdHelperService.Controllers\**;ProdHelperService.AdminApp\**;ProdHelperService.Contracts\**;ProdHelperService.ServiceInstaller\**;Setup\**</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Azure.Communication.Email" Version="1.1.0" />
     <PackageReference Include="Microsoft.Azure.Relay" Version="3.0.4" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
@@ -25,19 +31,13 @@
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
     <PackageReference Include="QRCoder" Version="1.6.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="ProdHelperService.Controllers\ProdHelperService.Controllers.csproj" />
     <ProjectReference Include="ProdHelperService.Contracts\ProdHelperService.Contracts.csproj" />
-  </ItemGroup>
-
-  <!-- Sibling project folders are nested under this one; without this, this
-       project's default file glob would also try to compile their .cs files. -->
-  <ItemGroup>
-    <Compile Remove="ProdHelperService.Controllers\**\*.cs" />
-    <Compile Remove="ProdHelperService.AdminApp\**\*.cs" />
-    <Compile Remove="ProdHelperService.Contracts\**\*.cs" />
+    <ProjectReference Include="ProdHelperService.ServiceInstaller\ProdHelperService.ServiceInstaller.csproj" />
   </ItemGroup>
 
   <ItemGroup>

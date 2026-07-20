@@ -1,8 +1,10 @@
+using System.Diagnostics;
 using System.Globalization;
 using System.Net.Http.Json;
 using System.Text.Json;
 using ProdHelperService.Contracts;
 using ProdHelperService.Contracts.Auth;
+using ProdHelperService.ServiceManagement;
 
 namespace ProdHelperService.AdminApp;
 
@@ -24,6 +26,8 @@ public class MainForm : Form
     private readonly HttpClient _httpClient;
     private readonly AppSettings _settings;
     private readonly AuthApiClient _authApiClient;
+    private readonly ServiceApiClient _serviceApiClient;
+    private readonly IWindowsServiceInstaller _windowsServiceInstaller;
     private readonly AuthSession _session;
     private readonly CultureInfo _dateCulture;
 
@@ -36,11 +40,13 @@ public class MainForm : Form
     private readonly Label _footerClock;
     private readonly System.Windows.Forms.Timer _footerTimer;
 
-    public MainForm(HttpClient httpClient, AppSettings settings, AuthApiClient authApiClient, AuthSession session)
+    public MainForm(HttpClient httpClient, AppSettings settings, AuthApiClient authApiClient, ServiceApiClient serviceApiClient, IWindowsServiceInstaller windowsServiceInstaller, AuthSession session)
     {
         _httpClient = httpClient;
         _settings = settings;
         _authApiClient = authApiClient;
+        _serviceApiClient = serviceApiClient;
+        _windowsServiceInstaller = windowsServiceInstaller;
         _session = session;
         _dateCulture = CultureInfo.GetCultureInfo(
             SupportedLanguages.All.FirstOrDefault(l => l.Code == _settings.Culture).DateCulture ?? "en-GB");
@@ -104,10 +110,18 @@ public class MainForm : Form
         };
 
         var menuItem = new ToolStripMenuItem(Strings.MenuLabel, BuildHamburgerIcon()) { ForeColor = Color.White };
-        var serviceItem = new ToolStripMenuItem("Service") { ForeColor = Color.White };
-        serviceItem.Click += (_, _) => MessageBox.Show(
-            Strings.ItemSelectedFormat("Service"), "Service", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        menuItem.DropDownItems.Add(serviceItem);
+
+        var serviceConfigItem = new ToolStripMenuItem(Strings.ServiceConfigMenuText) { ForeColor = Color.White };
+        serviceConfigItem.Click += (_, _) => OpenServiceConfig();
+        menuItem.DropDownItems.Add(serviceConfigItem);
+
+        var apiDocsItem = new ToolStripMenuItem(Strings.ApiDocumentationMenuText) { ForeColor = Color.White };
+        apiDocsItem.Click += (_, _) => OpenApiDocumentation();
+        menuItem.DropDownItems.Add(apiDocsItem);
+
+        var foldersItem = new ToolStripMenuItem(Strings.FoldersMenuText) { ForeColor = Color.White };
+        foldersItem.Click += (_, _) => OpenUploadFolder();
+        menuItem.DropDownItems.Add(foldersItem);
 
         menuStrip.Items.Add(menuItem);
         menuStrip.Items.Add(_userMenuItem);
@@ -153,6 +167,35 @@ public class MainForm : Form
             var logoutItem = new ToolStripMenuItem(Strings.AuthLogoutButtonText) { ForeColor = Color.White };
             logoutItem.Click += async (_, _) => await LogoutAsync();
             _userMenuItem.DropDownItems.Add(logoutItem);
+        }
+    }
+
+    private void OpenServiceConfig()
+    {
+        using var form = new ServiceConfigForm(_serviceApiClient, _windowsServiceInstaller, _settings);
+        form.ShowDialog(this);
+    }
+
+    private void OpenUploadFolder()
+    {
+        using var form = new UploadFolderForm(_windowsServiceInstaller);
+        form.ShowDialog(this);
+    }
+
+    private void OpenApiDocumentation()
+    {
+        string baseAddress = _httpClient.BaseAddress!.ToString().TrimEnd('/');
+        try
+        {
+            Process.Start(new ProcessStartInfo($"{baseAddress}/swagger") { UseShellExecute = true });
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(
+                Strings.ApiDocumentationOpenErrorMessage(ex.Message),
+                Strings.ApiDocumentationMenuText,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
         }
     }
 

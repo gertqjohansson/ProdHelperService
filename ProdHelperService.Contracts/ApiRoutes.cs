@@ -24,9 +24,35 @@ public static class ApiRoutes
     public const string EquipmentCreate = "Equipment/Create";
     public const string EquipmentUpdate = "Equipment/Update";
     public const string EquipmentDelete = "Equipment/Delete";
+    public const string EquipmentSaveComment = "Equipment/SaveComment";
+
+    public const string EquipmentUploadList = "EquipmentUpload/List";
+    public const string EquipmentUploadUpload = "EquipmentUpload/Upload";
+    public const string EquipmentUploadDownload = "EquipmentUpload/Download";
+    public const string EquipmentUploadDelete = "EquipmentUpload/Delete";
+
+    public const string EquipmentLinkList = "EquipmentLink/List";
+    public const string EquipmentLinkCreate = "EquipmentLink/Create";
+    public const string EquipmentLinkDelete = "EquipmentLink/Delete";
+
+    public const string EquipmentLogList = "EquipmentLog/List";
+    public const string EquipmentLogCreate = "EquipmentLog/Create";
+    public const string EquipmentLogUpdate = "EquipmentLog/Update";
+    public const string EquipmentLogDelete = "EquipmentLog/Delete";
 
     public const string EquipmentCategoryList = "EquipmentCategory/List";
     public const string EquipmentCategoryCreate = "EquipmentCategory/Create";
     public const string EquipmentCategoryUpdate = "EquipmentCategory/Update";
     public const string EquipmentCategoryDelete = "EquipmentCategory/Delete";
+
+    public const string TranslationTranslate = "Translation/Translate";
+
+    public const string ServiceGetInfo = "Service/GetInfo";
+    public const string ServiceUpdatePort = "Service/UpdatePort";
+    public const string ServiceGetRegistrationStatus = "Service/GetRegistrationStatus";
+    public const string ServiceRegister = "Service/Register";
+    public const string ServiceUnregister = "Service/Unregister";
+    public const string ServiceStart = "Service/Start";
+    public const string ServiceStop = "Service/Stop";
+    public const string ServiceIamAlive = "Service/IamAlive";
 }

@@ -141,9 +141,6 @@
   <data name="GuestLabel" xml:space="preserve">
     <value>Guest</value>
   </data>
-  <data name="ItemSelectedFormat" xml:space="preserve">
-    <value>{0} selected</value>
-  </data>
   <data name="AuthEmailLabel" xml:space="preserve">
     <value>Email</value>
   </data>
@@ -257,5 +254,237 @@
   </data>
   <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
     <value>Your password has been reset. You can now log in.</value>
+  </data>  <data name="ApiDocumentationMenuText" xml:space="preserve">
+    <value>API documentation</value>
+  </data>
+  <data name="ServiceUrlDialogTitle" xml:space="preserve">
+    <value>Service URL</value>
+  </data>
+  <data name="ServiceUrlDialogDescription" xml:space="preserve">
+    <value>Change the port ProdHelperService listens on. The service will restart automatically.</value>
+  </data>
+  <data name="ServiceUrlPortLabel" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="ServiceUrlSaveButtonText" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ServiceUrlCancelButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ServiceUrlInvalidPortMessage" xml:space="preserve">
+    <value>Enter a valid port number (1-65535).</value>
+  </data>
+  <data name="ServiceUrlSamePortMessage" xml:space="preserve">
+    <value>That is already the current port.</value>
+  </data>
+  <data name="ServiceUrlRestartingMessage" xml:space="preserve">
+    <value>Restarting the service on port {0}...</value>
+  </data>
+  <data name="ServiceUrlVerifyingMessage" xml:space="preserve">
+    <value>Verifying the new address...</value>
+  </data>
+  <data name="ServiceUrlSettingsPersistFailedMessage" xml:space="preserve">
+    <value>Port changed and service restarted, but the settings file could not be updated for future restarts.</value>
+  </data>
+  <data name="ApiDocumentationOpenErrorMessage" xml:space="preserve">
+    <value>Could not open the default web browser: {0}</value>
+  </data>  <data name="ServiceDialogTitle" xml:space="preserve">
+    <value>Windows Service</value>
+  </data>
+  <data name="ServiceDialogDescription" xml:space="preserve">
+    <value>Register ProdHelperService as a Windows Service so it starts automatically and keeps running in the background.</value>
+  </data>
+  <data name="ServiceStatusNotRegistered" xml:space="preserve">
+    <value>Not registered</value>
+  </data>
+  <data name="ServiceStatusRunning" xml:space="preserve">
+    <value>Registered - running</value>
+  </data>
+  <data name="ServiceStatusStopped" xml:space="preserve">
+    <value>Registered - stopped</value>
+  </data>
+  <data name="ServiceStatusPending" xml:space="preserve">
+    <value>Changing status...</value>
+  </data>
+  <data name="ServiceRegisterButtonText" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="ServiceUnregisterButtonText" xml:space="preserve">
+    <value>Unregister</value>
+  </data>
+  <data name="ServiceStartButtonText" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ServiceStopButtonText" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="ServiceCloseButtonText" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ServiceRegisteringMessage" xml:space="preserve">
+    <value>Registering the service...</value>
+  </data>
+  <data name="ServiceUnregisteringMessage" xml:space="preserve">
+    <value>Unregistering the service...</value>
+  </data>
+  <data name="ServiceStartingMessage" xml:space="preserve">
+    <value>Starting the service...</value>
+  </data>
+  <data name="ServiceStoppingMessage" xml:space="preserve">
+    <value>Stopping the service...</value>
+  </data>
+  <data name="ServiceUnregisterConfirmTitle" xml:space="preserve">
+    <value>Unregister service</value>
+  </data>
+  <data name="ServiceUnregisterConfirmMessage" xml:space="preserve">
+    <value>Unregister ProdHelperService from Windows? It will no longer start automatically.</value>
+  </data>
+  <data name="ServiceNotRegisteredStartupMessage" xml:space="preserve">
+    <value>ProdHelperService is not registered as a Windows Service on this computer. Register it now?</value>
+  </data>
+  <data name="ServiceConfigMenuText" xml:space="preserve">
+    <value>Service Configuration</value>
+  </data>
+  <data name="ServiceConfigDialogTitle" xml:space="preserve">
+    <value>Service Configuration</value>
+  </data>
+  <data name="ServiceConfigDialogDescription" xml:space="preserve">
+    <value>ProdHelperService could not be reached. Start the service, edit its configuration below if needed, then use Try Service to confirm it is responding. Changes take effect the next time the service starts.</value>
+  </data>
+  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
+    <value>Try Service</value>
+  </data>
+  <data name="ServiceConfigCheckingMessage" xml:space="preserve">
+    <value>Checking...</value>
+  </data>
+  <data name="ServiceConfigReachableMessage" xml:space="preserve">
+    <value>Service is reachable.</value>
+  </data>
+  <data name="ServiceConfigUnreachableMessage" xml:space="preserve">
+    <value>Service is not reachable.</value>
+  </data>
+  <data name="ServiceConfigRelaySectionHeader" xml:space="preserve">
+    <value>Relay</value>
+  </data>
+  <data name="ServiceConfigLocalApiSectionHeader" xml:space="preserve">
+    <value>Local API</value>
+  </data>
+  <data name="ServiceConfigDatabaseSectionHeader" xml:space="preserve">
+    <value>Database Connection</value>
+  </data>
+  <data name="ServiceConfigJwtSectionHeader" xml:space="preserve">
+    <value>JWT</value>
+  </data>
+  <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
+    <value>Namespace</value>
+  </data>
+  <data name="ServiceConfigConnectionNameLabel" xml:space="preserve">
+    <value>Connection Name</value>
+  </data>
+  <data name="ServiceConfigKeyNameLabel" xml:space="preserve">
+    <value>Key Name</value>
+  </data>
+  <data name="ServiceConfigKeyLabel" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="ServiceConfigPortLabel" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="ServiceConfigDatabaseConnectionStringLabel" xml:space="preserve">
+    <value>Connection String</value>
+  </data>
+  <data name="ServiceConfigJwtKeyLabel" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="ServiceConfigAccessTokenMinutesLabel" xml:space="preserve">
+    <value>Access Token Minutes</value>
+  </data>
+  <data name="ServiceConfigRefreshTokenDaysLabel" xml:space="preserve">
+    <value>Refresh Token Days</value>
+  </data>
+  <data name="ServiceConfigEmailConnectionStringLabel" xml:space="preserve">
+    <value>Connection String</value>
+  </data>
+  <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
+    <value>Sender Address</value>
+  </data>
+  <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
+    <value>Try Connection</value>
+  </data>
+  <data name="ServiceConfigTestingConnectionMessage" xml:space="preserve">
+    <value>Testing connection...</value>
+  </data>
+  <data name="ServiceConfigConnectionSuccessMessage" xml:space="preserve">
+    <value>Connection succeeded.</value>
+  </data>
+  <data name="ServiceConfigConnectionFailedMessage" xml:space="preserve">
+    <value>Connection failed: {0}</value>
+  </data>
+  <data name="ServiceConfigInvalidPortMessage" xml:space="preserve">
+    <value>Enter a port number between 1 and 65535.</value>
+  </data>
+  <data name="ServiceConfigInvalidAccessTokenMinutesMessage" xml:space="preserve">
+    <value>Enter a positive number of minutes.</value>
+  </data>
+  <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
+    <value>Enter a positive number of days.</value>
+  </data>
+  <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
+    <value>Changing the JWT key will invalidate all existing sessions the next time the service starts. Continue?</value>
+  </data>
+  <data name="ServiceConfigSaveButtonText" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ServiceConfigCancelButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ServiceConfigSavingMessage" xml:space="preserve">
+    <value>Saving...</value>
+  </data>
+  <data name="ServiceConfigSaveFailedMessage" xml:space="preserve">
+    <value>Failed to save appsettings.json.</value>
+  </data>
+  <data name="ServiceConfigLoadFailedMessage" xml:space="preserve">
+    <value>Could not read appsettings.json.</value>
+  </data>
+  <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
+    <value>Service works.</value>
+  </data>
+  <data name="FoldersMenuText" xml:space="preserve">
+    <value>Folders</value>
+  </data>
+  <data name="UploadFolderDialogTitle" xml:space="preserve">
+    <value>Upload Folder</value>
+  </data>
+  <data name="UploadFolderDialogDescription" xml:space="preserve">
+    <value>Choose the folder where uploaded documents will be stored.</value>
+  </data>
+  <data name="UploadFolderPathLabel" xml:space="preserve">
+    <value>Folder path</value>
+  </data>
+  <data name="UploadFolderBrowseButtonText" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="UploadFolderSaveButtonText" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="UploadFolderCancelButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="UploadFolderInvalidPathMessage" xml:space="preserve">
+    <value>Enter or choose a folder path.</value>
+  </data>
+  <data name="UploadFolderSavingMessage" xml:space="preserve">
+    <value>Saving...</value>
+  </data>
+  <data name="UploadFolderSaveFailedMessage" xml:space="preserve">
+    <value>Failed to save appsettings.json.</value>
   </data>
 </root>

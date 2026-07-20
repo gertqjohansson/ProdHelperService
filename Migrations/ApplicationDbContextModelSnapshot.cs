@@ -234,6 +234,18 @@ namespace ProdHelperService.Migrations
                     b.Property<string>("ColorCode")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CommentLanguage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DateOfPurchase")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("DepreciationPeriod")
+                        .HasColumnType("int");
+
                     b.Property<int?>("EquipmentCategoryId")
                         .HasColumnType("int");
 
@@ -249,8 +261,26 @@ namespace ProdHelperService.Migrations
                     b.Property<bool>("IsPlannable")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Notification")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("NotificationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("NotificationLanguage")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
+
+                    b.Property<double?>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<bool?>("UseEconomy")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("UseNotification")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -258,6 +288,107 @@ namespace ProdHelperService.Migrations
                         {
                             t.ExcludeFromMigrations();
                         });
+                });
+
+            modelBuilder.Entity("ProdHelperService.Auth.EquipmentCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ColorCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EquipmentCategory", null, t =>
+                        {
+                            t.ExcludeFromMigrations();
+                        });
+                });
+
+            modelBuilder.Entity("ProdHelperService.Auth.EquipmentCategoryTranslation", b =>
+                {
+                    b.Property<int>("EquipmentCategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LanguageIsoCode")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EquipmentCategoryId", "LanguageIsoCode");
+
+                    b.ToTable("EquipmentCategoryTranslation", null, t =>
+                        {
+                            t.ExcludeFromMigrations();
+                        });
+                });
+
+            modelBuilder.Entity("ProdHelperService.Auth.EquipmentLink", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("EquipmentId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDocument")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Nickname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EquipmentId");
+
+                    b.ToTable("EquipmentLinks");
+                });
+
+            modelBuilder.Entity("ProdHelperService.Auth.EquipmentLog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateTimeUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EquipmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LogText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nickname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EquipmentId");
+
+                    b.ToTable("EquipmentLogs");
                 });
 
             modelBuilder.Entity("ProdHelperService.Auth.EquipmentTranslation", b =>
@@ -278,6 +409,43 @@ namespace ProdHelperService.Migrations
                         {
                             t.ExcludeFromMigrations();
                         });
+                });
+
+            modelBuilder.Entity("ProdHelperService.Auth.EquipmentUpload", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ContentType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EquipmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<long>("FileSizeBytes")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Nickname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UploadedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EquipmentId", "FileName")
+                        .IsUnique();
+
+                    b.ToTable("EquipmentUploads");
                 });
 
             modelBuilder.Entity("ProdHelperService.Auth.Language", b =>

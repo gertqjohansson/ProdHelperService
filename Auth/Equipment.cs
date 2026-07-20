@@ -19,4 +19,7 @@ public class Equipment
     public bool? UseNotification { get; set; }
     public DateTime? NotificationDate { get; set; }
     public string? Notification { get; set; }
+    public string? NotificationLanguage { get; set; }
+    public string? Comment { get; set; }
+    public string? CommentLanguage { get; set; }
 }

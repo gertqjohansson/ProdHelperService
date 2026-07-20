@@ -26,7 +26,7 @@ public class RelayListener
     // controllers (typed DTOs, [Authorize]) rather than the flat-string-array
     // IControllerDispatcher used by Oee/Planner. Add a new area here (not a new
     // branch in HandleRequest) when a future admin page needs a real controller.
-    private static readonly string[] LocalApiProxyPrefixes = ["Auth", "Equipment", "EquipmentCategory"];
+    private static readonly string[] LocalApiProxyPrefixes = ["Auth", "Equipment", "EquipmentCategory", "Translation", "EquipmentUpload", "EquipmentLink", "EquipmentLog"];
 
     public RelayListener(string relayNamespace, string connectionName, string keyName, string key, IControllerDispatcher dispatcher, HttpClient httpClient, string localApiBaseUrl)
     {

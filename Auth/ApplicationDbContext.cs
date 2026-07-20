@@ -13,6 +13,11 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<EquipmentCategory> EquipmentCategories => Set<EquipmentCategory>();
     public DbSet<EquipmentCategoryTranslation> EquipmentCategoryTranslations => Set<EquipmentCategoryTranslation>();
     public DbSet<Language> Languages => Set<Language>();
+    public DbSet<EquipmentUpload> EquipmentUploads => Set<EquipmentUpload>();
+    public DbSet<EquipmentLink> EquipmentLinks => Set<EquipmentLink>();
+    public DbSet<EquipmentLog> EquipmentLogs => Set<EquipmentLog>();
+    public DbSet<ErrorLog> ErrorLogs => Set<ErrorLog>();
+    public DbSet<ActionLog> ActionLogs => Set<ActionLog>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -53,6 +58,47 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         {
             entity.ToTable("EquipmentCategoryTranslation", t => t.ExcludeFromMigrations());
             entity.HasKey(t => new { t.EquipmentCategoryId, t.LanguageIsoCode });
+        });
+
+        // EquipmentUploads is the first table this app fully owns for the Equipment domain - no
+        // ExcludeFromMigrations. No navigation/FK to Equipment (that table is excluded from
+        // migrations above; a migrated FK against an unmigrated table is untested in this
+        // codebase), so "equipment must exist" is enforced in EquipmentUploadController instead.
+        builder.Entity<EquipmentUpload>(entity =>
+        {
+            entity.HasIndex(x => new { x.EquipmentId, x.FileName }).IsUnique();
+        });
+
+        // EquipmentLinks is fully EF-owned too (no ExcludeFromMigrations). No uniqueness
+        // constraint - unlike uploads there's no "overwrite" concept, so multiple links can share
+        // the same path. No navigation/FK to Equipment, same reasoning as EquipmentUpload above.
+        builder.Entity<EquipmentLink>(entity =>
+        {
+            entity.HasIndex(x => x.EquipmentId);
+        });
+
+        // EquipmentLogs is fully EF-owned too. Same reasoning as EquipmentLink for the lack of a
+        // navigation/FK to Equipment and the non-unique EquipmentId index.
+        builder.Entity<EquipmentLog>(entity =>
+        {
+            entity.HasIndex(x => x.EquipmentId);
+        });
+
+        // ErrorLog is another pre-existing table, same ExcludeFromMigrations treatment as
+        // Equipment/Language/etc. above.
+        builder.Entity<ErrorLog>(entity =>
+        {
+            entity.ToTable("ErrorLog", t => t.ExcludeFromMigrations());
+            entity.Property(e => e.Section).HasMaxLength(200);
+        });
+
+        // ActionLog is another pre-existing table, same ExcludeFromMigrations treatment.
+        builder.Entity<ActionLog>(entity =>
+        {
+            entity.ToTable("ActionLog", t => t.ExcludeFromMigrations());
+            entity.Property(e => e.ActionType).HasMaxLength(20);
+            entity.Property(e => e.MadeByUser).HasMaxLength(100);
+            entity.Property(e => e.Section).HasMaxLength(100);
         });
     }
 }

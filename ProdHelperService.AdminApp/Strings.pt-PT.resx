@@ -81,11 +81,7 @@
   </data>
   <data name="GuestLabel" xml:space="preserve">
     <value>Convidado</value>
-  </data>
-  <data name="ItemSelectedFormat" xml:space="preserve">
-    <value>{0} selecionado</value>
-  </data>
-  <data name="AuthEmailLabel" xml:space="preserve">
+  </data>  <data name="AuthEmailLabel" xml:space="preserve">
     <value>E-mail</value>
   </data>
   <data name="AuthPasswordLabel" xml:space="preserve">
@@ -198,5 +194,237 @@
   </data>
   <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
     <value>A sua palavra-passe foi reposta. Já pode iniciar sessão.</value>
+  </data>  <data name="ApiDocumentationMenuText" xml:space="preserve">
+    <value>Documentação da API</value>
+  </data>
+  <data name="ServiceUrlDialogTitle" xml:space="preserve">
+    <value>URL do serviço</value>
+  </data>
+  <data name="ServiceUrlDialogDescription" xml:space="preserve">
+    <value>Altere a porta na qual o ProdHelperService está a escutar. O serviço será reiniciado automaticamente.</value>
+  </data>
+  <data name="ServiceUrlPortLabel" xml:space="preserve">
+    <value>Porta</value>
+  </data>
+  <data name="ServiceUrlSaveButtonText" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="ServiceUrlCancelButtonText" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="ServiceUrlInvalidPortMessage" xml:space="preserve">
+    <value>Introduza um número de porta válido (1-65535).</value>
+  </data>
+  <data name="ServiceUrlSamePortMessage" xml:space="preserve">
+    <value>Essa já é a porta atual.</value>
+  </data>
+  <data name="ServiceUrlRestartingMessage" xml:space="preserve">
+    <value>A reiniciar o serviço na porta {0}...</value>
+  </data>
+  <data name="ServiceUrlVerifyingMessage" xml:space="preserve">
+    <value>A verificar o novo endereço...</value>
+  </data>
+  <data name="ServiceUrlSettingsPersistFailedMessage" xml:space="preserve">
+    <value>A porta foi alterada e o serviço reiniciado, mas não foi possível atualizar o ficheiro de definições para futuros reinícios.</value>
+  </data>
+  <data name="ApiDocumentationOpenErrorMessage" xml:space="preserve">
+    <value>Não foi possível abrir o navegador de Internet predefinido: {0}</value>
+  </data>  <data name="ServiceDialogTitle" xml:space="preserve">
+    <value>Serviço do Windows</value>
+  </data>
+  <data name="ServiceDialogDescription" xml:space="preserve">
+    <value>Registe o ProdHelperService como um serviço do Windows para que seja iniciado automaticamente e continue a ser executado em segundo plano.</value>
+  </data>
+  <data name="ServiceStatusNotRegistered" xml:space="preserve">
+    <value>Não registado</value>
+  </data>
+  <data name="ServiceStatusRunning" xml:space="preserve">
+    <value>Registado - em execução</value>
+  </data>
+  <data name="ServiceStatusStopped" xml:space="preserve">
+    <value>Registado - parado</value>
+  </data>
+  <data name="ServiceStatusPending" xml:space="preserve">
+    <value>A alterar o estado...</value>
+  </data>
+  <data name="ServiceRegisterButtonText" xml:space="preserve">
+    <value>Registar</value>
+  </data>
+  <data name="ServiceUnregisterButtonText" xml:space="preserve">
+    <value>Anular registo</value>
+  </data>
+  <data name="ServiceStartButtonText" xml:space="preserve">
+    <value>Iniciar</value>
+  </data>
+  <data name="ServiceStopButtonText" xml:space="preserve">
+    <value>Parar</value>
+  </data>
+  <data name="ServiceCloseButtonText" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="ServiceRegisteringMessage" xml:space="preserve">
+    <value>A registar o serviço...</value>
+  </data>
+  <data name="ServiceUnregisteringMessage" xml:space="preserve">
+    <value>A anular o registo do serviço...</value>
+  </data>
+  <data name="ServiceStartingMessage" xml:space="preserve">
+    <value>A iniciar o serviço...</value>
+  </data>
+  <data name="ServiceStoppingMessage" xml:space="preserve">
+    <value>A parar o serviço...</value>
+  </data>
+  <data name="ServiceUnregisterConfirmTitle" xml:space="preserve">
+    <value>Anular registo do serviço</value>
+  </data>
+  <data name="ServiceUnregisterConfirmMessage" xml:space="preserve">
+    <value>Anular o registo do ProdHelperService no Windows? Deixará de iniciar automaticamente.</value>
+  </data>
+  <data name="ServiceNotRegisteredStartupMessage" xml:space="preserve">
+    <value>O ProdHelperService não está registado como um serviço do Windows neste computador. Registar agora?</value>
+  </data>
+  <data name="ServiceConfigMenuText" xml:space="preserve">
+    <value>Configuração do serviço</value>
+  </data>
+  <data name="ServiceConfigDialogTitle" xml:space="preserve">
+    <value>Configuração do serviço</value>
+  </data>
+  <data name="ServiceConfigDialogDescription" xml:space="preserve">
+    <value>Não foi possível contactar o ProdHelperService. Inicie o serviço, edite a respetiva configuração abaixo se necessário e utilize depois Testar serviço para confirmar que está a responder. As alterações têm efeito da próxima vez que o serviço for iniciado.</value>
+  </data>
+  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
+    <value>Testar serviço</value>
+  </data>
+  <data name="ServiceConfigCheckingMessage" xml:space="preserve">
+    <value>A verificar...</value>
+  </data>
+  <data name="ServiceConfigReachableMessage" xml:space="preserve">
+    <value>O serviço está acessível.</value>
+  </data>
+  <data name="ServiceConfigUnreachableMessage" xml:space="preserve">
+    <value>O serviço não está acessível.</value>
+  </data>
+  <data name="ServiceConfigRelaySectionHeader" xml:space="preserve">
+    <value>Relay</value>
+  </data>
+  <data name="ServiceConfigLocalApiSectionHeader" xml:space="preserve">
+    <value>API local</value>
+  </data>
+  <data name="ServiceConfigDatabaseSectionHeader" xml:space="preserve">
+    <value>Ligação à base de dados</value>
+  </data>
+  <data name="ServiceConfigJwtSectionHeader" xml:space="preserve">
+    <value>JWT</value>
+  </data>
+  <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
+    <value>Namespace</value>
+  </data>
+  <data name="ServiceConfigConnectionNameLabel" xml:space="preserve">
+    <value>Nome da ligação</value>
+  </data>
+  <data name="ServiceConfigKeyNameLabel" xml:space="preserve">
+    <value>Nome da chave</value>
+  </data>
+  <data name="ServiceConfigKeyLabel" xml:space="preserve">
+    <value>Chave</value>
+  </data>
+  <data name="ServiceConfigPortLabel" xml:space="preserve">
+    <value>Porta</value>
+  </data>
+  <data name="ServiceConfigDatabaseConnectionStringLabel" xml:space="preserve">
+    <value>Cadeia de ligação</value>
+  </data>
+  <data name="ServiceConfigJwtKeyLabel" xml:space="preserve">
+    <value>Chave</value>
+  </data>
+  <data name="ServiceConfigAccessTokenMinutesLabel" xml:space="preserve">
+    <value>Token de acesso (minutos)</value>
+  </data>
+  <data name="ServiceConfigRefreshTokenDaysLabel" xml:space="preserve">
+    <value>Token de atualização (dias)</value>
+  </data>
+  <data name="ServiceConfigEmailConnectionStringLabel" xml:space="preserve">
+    <value>Cadeia de ligação</value>
+  </data>
+  <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
+    <value>Endereço do remetente</value>
+  </data>
+  <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
+    <value>Testar ligação</value>
+  </data>
+  <data name="ServiceConfigTestingConnectionMessage" xml:space="preserve">
+    <value>A testar ligação...</value>
+  </data>
+  <data name="ServiceConfigConnectionSuccessMessage" xml:space="preserve">
+    <value>Ligação bem-sucedida.</value>
+  </data>
+  <data name="ServiceConfigConnectionFailedMessage" xml:space="preserve">
+    <value>Falha na ligação: {0}</value>
+  </data>
+  <data name="ServiceConfigInvalidPortMessage" xml:space="preserve">
+    <value>Introduza um número de porta entre 1 e 65535.</value>
+  </data>
+  <data name="ServiceConfigInvalidAccessTokenMinutesMessage" xml:space="preserve">
+    <value>Introduza um número positivo de minutos.</value>
+  </data>
+  <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
+    <value>Introduza um número positivo de dias.</value>
+  </data>
+  <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
+    <value>Alterar a chave JWT invalidará todas as sessões existentes da próxima vez que o serviço for iniciado. Continuar?</value>
+  </data>
+  <data name="ServiceConfigSaveButtonText" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="ServiceConfigCancelButtonText" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="ServiceConfigSavingMessage" xml:space="preserve">
+    <value>A guardar...</value>
+  </data>
+  <data name="ServiceConfigSaveFailedMessage" xml:space="preserve">
+    <value>Falha ao guardar o appsettings.json.</value>
+  </data>
+  <data name="ServiceConfigLoadFailedMessage" xml:space="preserve">
+    <value>Não foi possível ler o appsettings.json.</value>
+  </data>
+  <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
+    <value>Gerar</value>
+  </data>
+  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
+    <value>O serviço está a funcionar.</value>
+  </data>
+  <data name="FoldersMenuText" xml:space="preserve">
+    <value>Pastas</value>
+  </data>
+  <data name="UploadFolderDialogTitle" xml:space="preserve">
+    <value>Pasta de carregamento</value>
+  </data>
+  <data name="UploadFolderDialogDescription" xml:space="preserve">
+    <value>Escolha a pasta onde os documentos carregados serão armazenados.</value>
+  </data>
+  <data name="UploadFolderPathLabel" xml:space="preserve">
+    <value>Caminho da pasta</value>
+  </data>
+  <data name="UploadFolderBrowseButtonText" xml:space="preserve">
+    <value>Procurar...</value>
+  </data>
+  <data name="UploadFolderSaveButtonText" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="UploadFolderCancelButtonText" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="UploadFolderInvalidPathMessage" xml:space="preserve">
+    <value>Introduza ou escolha um caminho de pasta.</value>
+  </data>
+  <data name="UploadFolderSavingMessage" xml:space="preserve">
+    <value>A guardar...</value>
+  </data>
+  <data name="UploadFolderSaveFailedMessage" xml:space="preserve">
+    <value>Falha ao guardar o appsettings.json.</value>
   </data>
 </root>

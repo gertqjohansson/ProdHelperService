@@ -81,11 +81,7 @@
   </data>
   <data name="GuestLabel" xml:space="preserve">
     <value>Gæst</value>
-  </data>
-  <data name="ItemSelectedFormat" xml:space="preserve">
-    <value>{0} valgt</value>
-  </data>
-  <data name="AuthEmailLabel" xml:space="preserve">
+  </data>  <data name="AuthEmailLabel" xml:space="preserve">
     <value>E-mail</value>
   </data>
   <data name="AuthPasswordLabel" xml:space="preserve">
@@ -198,5 +194,237 @@
   </data>
   <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
     <value>Din adgangskode er blevet nulstillet. Du kan nu logge ind.</value>
+  </data>  <data name="ApiDocumentationMenuText" xml:space="preserve">
+    <value>API-dokumentation</value>
+  </data>
+  <data name="ServiceUrlDialogTitle" xml:space="preserve">
+    <value>Tjeneste-URL</value>
+  </data>
+  <data name="ServiceUrlDialogDescription" xml:space="preserve">
+    <value>Skift den port, ProdHelperService lytter på. Tjenesten genstarter automatisk.</value>
+  </data>
+  <data name="ServiceUrlPortLabel" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="ServiceUrlSaveButtonText" xml:space="preserve">
+    <value>Gem</value>
+  </data>
+  <data name="ServiceUrlCancelButtonText" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="ServiceUrlInvalidPortMessage" xml:space="preserve">
+    <value>Indtast et gyldigt portnummer (1-65535).</value>
+  </data>
+  <data name="ServiceUrlSamePortMessage" xml:space="preserve">
+    <value>Det er allerede den aktuelle port.</value>
+  </data>
+  <data name="ServiceUrlRestartingMessage" xml:space="preserve">
+    <value>Genstarter tjenesten på port {0}...</value>
+  </data>
+  <data name="ServiceUrlVerifyingMessage" xml:space="preserve">
+    <value>Bekræfter den nye adresse...</value>
+  </data>
+  <data name="ServiceUrlSettingsPersistFailedMessage" xml:space="preserve">
+    <value>Porten blev ændret, og tjenesten genstartet, men indstillingsfilen kunne ikke opdateres til fremtidige genstarter.</value>
+  </data>
+  <data name="ApiDocumentationOpenErrorMessage" xml:space="preserve">
+    <value>Kunne ikke åbne standardwebbrowseren: {0}</value>
+  </data>  <data name="ServiceDialogTitle" xml:space="preserve">
+    <value>Windows-tjeneste</value>
+  </data>
+  <data name="ServiceDialogDescription" xml:space="preserve">
+    <value>Registrer ProdHelperService som en Windows-tjeneste, så den starter automatisk og fortsætter med at køre i baggrunden.</value>
+  </data>
+  <data name="ServiceStatusNotRegistered" xml:space="preserve">
+    <value>Ikke registreret</value>
+  </data>
+  <data name="ServiceStatusRunning" xml:space="preserve">
+    <value>Registreret - kører</value>
+  </data>
+  <data name="ServiceStatusStopped" xml:space="preserve">
+    <value>Registreret - stoppet</value>
+  </data>
+  <data name="ServiceStatusPending" xml:space="preserve">
+    <value>Skifter status...</value>
+  </data>
+  <data name="ServiceRegisterButtonText" xml:space="preserve">
+    <value>Registrer</value>
+  </data>
+  <data name="ServiceUnregisterButtonText" xml:space="preserve">
+    <value>Afregistrer</value>
+  </data>
+  <data name="ServiceStartButtonText" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ServiceStopButtonText" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="ServiceCloseButtonText" xml:space="preserve">
+    <value>Luk</value>
+  </data>
+  <data name="ServiceRegisteringMessage" xml:space="preserve">
+    <value>Registrerer tjenesten...</value>
+  </data>
+  <data name="ServiceUnregisteringMessage" xml:space="preserve">
+    <value>Afregistrerer tjenesten...</value>
+  </data>
+  <data name="ServiceStartingMessage" xml:space="preserve">
+    <value>Starter tjenesten...</value>
+  </data>
+  <data name="ServiceStoppingMessage" xml:space="preserve">
+    <value>Stopper tjenesten...</value>
+  </data>
+  <data name="ServiceUnregisterConfirmTitle" xml:space="preserve">
+    <value>Afregistrer tjeneste</value>
+  </data>
+  <data name="ServiceUnregisterConfirmMessage" xml:space="preserve">
+    <value>Afregistrer ProdHelperService fra Windows? Den starter ikke længere automatisk.</value>
+  </data>
+  <data name="ServiceNotRegisteredStartupMessage" xml:space="preserve">
+    <value>ProdHelperService er ikke registreret som en Windows-tjeneste på denne computer. Vil du registrere den nu?</value>
+  </data>
+  <data name="ServiceConfigMenuText" xml:space="preserve">
+    <value>Tjenestekonfiguration</value>
+  </data>
+  <data name="ServiceConfigDialogTitle" xml:space="preserve">
+    <value>Tjenestekonfiguration</value>
+  </data>
+  <data name="ServiceConfigDialogDescription" xml:space="preserve">
+    <value>ProdHelperService kunne ikke nås. Start tjenesten, rediger dens konfiguration nedenfor hvis nødvendigt, og brug derefter Test tjeneste for at bekræfte, at den svarer. Ændringer træder i kraft, næste gang tjenesten starter.</value>
+  </data>
+  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
+    <value>Test tjeneste</value>
+  </data>
+  <data name="ServiceConfigCheckingMessage" xml:space="preserve">
+    <value>Kontrollerer...</value>
+  </data>
+  <data name="ServiceConfigReachableMessage" xml:space="preserve">
+    <value>Tjenesten kan nås.</value>
+  </data>
+  <data name="ServiceConfigUnreachableMessage" xml:space="preserve">
+    <value>Tjenesten kan ikke nås.</value>
+  </data>
+  <data name="ServiceConfigRelaySectionHeader" xml:space="preserve">
+    <value>Relay</value>
+  </data>
+  <data name="ServiceConfigLocalApiSectionHeader" xml:space="preserve">
+    <value>Lokal API</value>
+  </data>
+  <data name="ServiceConfigDatabaseSectionHeader" xml:space="preserve">
+    <value>Databaseforbindelse</value>
+  </data>
+  <data name="ServiceConfigJwtSectionHeader" xml:space="preserve">
+    <value>JWT</value>
+  </data>
+  <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
+    <value>Namespace</value>
+  </data>
+  <data name="ServiceConfigConnectionNameLabel" xml:space="preserve">
+    <value>Forbindelsesnavn</value>
+  </data>
+  <data name="ServiceConfigKeyNameLabel" xml:space="preserve">
+    <value>Nøglenavn</value>
+  </data>
+  <data name="ServiceConfigKeyLabel" xml:space="preserve">
+    <value>Nøgle</value>
+  </data>
+  <data name="ServiceConfigPortLabel" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="ServiceConfigDatabaseConnectionStringLabel" xml:space="preserve">
+    <value>Forbindelsesstreng</value>
+  </data>
+  <data name="ServiceConfigJwtKeyLabel" xml:space="preserve">
+    <value>Nøgle</value>
+  </data>
+  <data name="ServiceConfigAccessTokenMinutesLabel" xml:space="preserve">
+    <value>Adgangstoken (minutter)</value>
+  </data>
+  <data name="ServiceConfigRefreshTokenDaysLabel" xml:space="preserve">
+    <value>Genopfriskningstoken (dage)</value>
+  </data>
+  <data name="ServiceConfigEmailConnectionStringLabel" xml:space="preserve">
+    <value>Forbindelsesstreng</value>
+  </data>
+  <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
+    <value>Afsenderadresse</value>
+  </data>
+  <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
+    <value>Test forbindelse</value>
+  </data>
+  <data name="ServiceConfigTestingConnectionMessage" xml:space="preserve">
+    <value>Tester forbindelse...</value>
+  </data>
+  <data name="ServiceConfigConnectionSuccessMessage" xml:space="preserve">
+    <value>Forbindelsen lykkedes.</value>
+  </data>
+  <data name="ServiceConfigConnectionFailedMessage" xml:space="preserve">
+    <value>Forbindelsen mislykkedes: {0}</value>
+  </data>
+  <data name="ServiceConfigInvalidPortMessage" xml:space="preserve">
+    <value>Angiv et portnummer mellem 1 og 65535.</value>
+  </data>
+  <data name="ServiceConfigInvalidAccessTokenMinutesMessage" xml:space="preserve">
+    <value>Angiv et positivt antal minutter.</value>
+  </data>
+  <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
+    <value>Angiv et positivt antal dage.</value>
+  </data>
+  <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
+    <value>Ændring af JWT-nøglen ugyldiggør alle eksisterende sessioner, næste gang tjenesten starter. Fortsæt?</value>
+  </data>
+  <data name="ServiceConfigSaveButtonText" xml:space="preserve">
+    <value>Gem</value>
+  </data>
+  <data name="ServiceConfigCancelButtonText" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="ServiceConfigSavingMessage" xml:space="preserve">
+    <value>Gemmer...</value>
+  </data>
+  <data name="ServiceConfigSaveFailedMessage" xml:space="preserve">
+    <value>Kunne ikke gemme appsettings.json.</value>
+  </data>
+  <data name="ServiceConfigLoadFailedMessage" xml:space="preserve">
+    <value>Kunne ikke læse appsettings.json.</value>
+  </data>
+  <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
+    <value>Generer</value>
+  </data>
+  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
+    <value>Tjenesten fungerer.</value>
+  </data>
+  <data name="FoldersMenuText" xml:space="preserve">
+    <value>Mapper</value>
+  </data>
+  <data name="UploadFolderDialogTitle" xml:space="preserve">
+    <value>Uploadmappe</value>
+  </data>
+  <data name="UploadFolderDialogDescription" xml:space="preserve">
+    <value>Vælg den mappe, hvor uploadede dokumenter skal gemmes.</value>
+  </data>
+  <data name="UploadFolderPathLabel" xml:space="preserve">
+    <value>Mappesti</value>
+  </data>
+  <data name="UploadFolderBrowseButtonText" xml:space="preserve">
+    <value>Gennemse...</value>
+  </data>
+  <data name="UploadFolderSaveButtonText" xml:space="preserve">
+    <value>Gem</value>
+  </data>
+  <data name="UploadFolderCancelButtonText" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="UploadFolderInvalidPathMessage" xml:space="preserve">
+    <value>Angiv eller vælg en mappesti.</value>
+  </data>
+  <data name="UploadFolderSavingMessage" xml:space="preserve">
+    <value>Gemmer...</value>
+  </data>
+  <data name="UploadFolderSaveFailedMessage" xml:space="preserve">
+    <value>Kunne ikke gemme appsettings.json.</value>
   </data>
 </root>

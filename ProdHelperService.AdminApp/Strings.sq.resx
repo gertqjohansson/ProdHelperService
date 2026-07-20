@@ -81,11 +81,7 @@
   </data>
   <data name="GuestLabel" xml:space="preserve">
     <value>Mysafir</value>
-  </data>
-  <data name="ItemSelectedFormat" xml:space="preserve">
-    <value>{0} u zgjodh</value>
-  </data>
-  <data name="AuthEmailLabel" xml:space="preserve">
+  </data>  <data name="AuthEmailLabel" xml:space="preserve">
     <value>Email</value>
   </data>
   <data name="AuthPasswordLabel" xml:space="preserve">
@@ -198,5 +194,237 @@
   </data>
   <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
     <value>Fjalëkalimi juaj u rivendos. Tani mund të hyni.</value>
+  </data>  <data name="ApiDocumentationMenuText" xml:space="preserve">
+    <value>Dokumentacioni i API-t</value>
+  </data>
+  <data name="ServiceUrlDialogTitle" xml:space="preserve">
+    <value>URL-ja e shërbimit</value>
+  </data>
+  <data name="ServiceUrlDialogDescription" xml:space="preserve">
+    <value>Ndryshoni portën në të cilën dëgjon ProdHelperService. Shërbimi do të riniset automatikisht.</value>
+  </data>
+  <data name="ServiceUrlPortLabel" xml:space="preserve">
+    <value>Porta</value>
+  </data>
+  <data name="ServiceUrlSaveButtonText" xml:space="preserve">
+    <value>Ruaj</value>
+  </data>
+  <data name="ServiceUrlCancelButtonText" xml:space="preserve">
+    <value>Anulo</value>
+  </data>
+  <data name="ServiceUrlInvalidPortMessage" xml:space="preserve">
+    <value>Vendosni një numër porte të vlefshëm (1-65535).</value>
+  </data>
+  <data name="ServiceUrlSamePortMessage" xml:space="preserve">
+    <value>Kjo është tashmë porta aktuale.</value>
+  </data>
+  <data name="ServiceUrlRestartingMessage" xml:space="preserve">
+    <value>Duke rinisur shërbimin në portën {0}...</value>
+  </data>
+  <data name="ServiceUrlVerifyingMessage" xml:space="preserve">
+    <value>Duke verifikuar adresën e re...</value>
+  </data>
+  <data name="ServiceUrlSettingsPersistFailedMessage" xml:space="preserve">
+    <value>Porta u ndryshua dhe shërbimi u rinis, por skedari i cilësimeve nuk mund të përditësohej për rinisjet e ardhshme.</value>
+  </data>
+  <data name="ApiDocumentationOpenErrorMessage" xml:space="preserve">
+    <value>Shfletuesi i parazgjedhur i uebit nuk mund të hapej: {0}</value>
+  </data>  <data name="ServiceDialogTitle" xml:space="preserve">
+    <value>Shërbim Windows</value>
+  </data>
+  <data name="ServiceDialogDescription" xml:space="preserve">
+    <value>Regjistroni ProdHelperService si shërbim Windows në mënyrë që të nisë automatikisht dhe të vazhdojë të funksionojë në sfond.</value>
+  </data>
+  <data name="ServiceStatusNotRegistered" xml:space="preserve">
+    <value>I paregjistruar</value>
+  </data>
+  <data name="ServiceStatusRunning" xml:space="preserve">
+    <value>I regjistruar - në ekzekutim</value>
+  </data>
+  <data name="ServiceStatusStopped" xml:space="preserve">
+    <value>I regjistruar - i ndalur</value>
+  </data>
+  <data name="ServiceStatusPending" xml:space="preserve">
+    <value>Duke ndryshuar statusin...</value>
+  </data>
+  <data name="ServiceRegisterButtonText" xml:space="preserve">
+    <value>Regjistro</value>
+  </data>
+  <data name="ServiceUnregisterButtonText" xml:space="preserve">
+    <value>Çregjistro</value>
+  </data>
+  <data name="ServiceStartButtonText" xml:space="preserve">
+    <value>Nis</value>
+  </data>
+  <data name="ServiceStopButtonText" xml:space="preserve">
+    <value>Ndalo</value>
+  </data>
+  <data name="ServiceCloseButtonText" xml:space="preserve">
+    <value>Mbyll</value>
+  </data>
+  <data name="ServiceRegisteringMessage" xml:space="preserve">
+    <value>Duke regjistruar shërbimin...</value>
+  </data>
+  <data name="ServiceUnregisteringMessage" xml:space="preserve">
+    <value>Duke çregjistruar shërbimin...</value>
+  </data>
+  <data name="ServiceStartingMessage" xml:space="preserve">
+    <value>Duke nisur shërbimin...</value>
+  </data>
+  <data name="ServiceStoppingMessage" xml:space="preserve">
+    <value>Duke ndaluar shërbimin...</value>
+  </data>
+  <data name="ServiceUnregisterConfirmTitle" xml:space="preserve">
+    <value>Çregjistro shërbimin</value>
+  </data>
+  <data name="ServiceUnregisterConfirmMessage" xml:space="preserve">
+    <value>Të çregjistrohet ProdHelperService nga Windows? Ai nuk do të nisë më automatikisht.</value>
+  </data>
+  <data name="ServiceNotRegisteredStartupMessage" xml:space="preserve">
+    <value>ProdHelperService nuk është regjistruar si shërbim Windows në këtë kompjuter. Ta regjistroj tani?</value>
+  </data>
+  <data name="ServiceConfigMenuText" xml:space="preserve">
+    <value>Konfigurimi i shërbimit</value>
+  </data>
+  <data name="ServiceConfigDialogTitle" xml:space="preserve">
+    <value>Konfigurimi i shërbimit</value>
+  </data>
+  <data name="ServiceConfigDialogDescription" xml:space="preserve">
+    <value>ProdHelperService nuk mund të kontaktohej. Nisni shërbimin, redaktoni konfigurimin e tij më poshtë nëse është e nevojshme, dhe më pas përdorni Provo shërbimin për të konfirmuar që përgjigjet. Ndryshimet hyjnë në fuqi herën tjetër që shërbimi niset.</value>
+  </data>
+  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
+    <value>Provo shërbimin</value>
+  </data>
+  <data name="ServiceConfigCheckingMessage" xml:space="preserve">
+    <value>Duke kontrolluar...</value>
+  </data>
+  <data name="ServiceConfigReachableMessage" xml:space="preserve">
+    <value>Shërbimi është i arritshëm.</value>
+  </data>
+  <data name="ServiceConfigUnreachableMessage" xml:space="preserve">
+    <value>Shërbimi nuk është i arritshëm.</value>
+  </data>
+  <data name="ServiceConfigRelaySectionHeader" xml:space="preserve">
+    <value>Relay</value>
+  </data>
+  <data name="ServiceConfigLocalApiSectionHeader" xml:space="preserve">
+    <value>API lokal</value>
+  </data>
+  <data name="ServiceConfigDatabaseSectionHeader" xml:space="preserve">
+    <value>Lidhja me bazën e të dhënave</value>
+  </data>
+  <data name="ServiceConfigJwtSectionHeader" xml:space="preserve">
+    <value>JWT</value>
+  </data>
+  <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
+    <value>Namespace</value>
+  </data>
+  <data name="ServiceConfigConnectionNameLabel" xml:space="preserve">
+    <value>Emri i lidhjes</value>
+  </data>
+  <data name="ServiceConfigKeyNameLabel" xml:space="preserve">
+    <value>Emri i çelësit</value>
+  </data>
+  <data name="ServiceConfigKeyLabel" xml:space="preserve">
+    <value>Çelësi</value>
+  </data>
+  <data name="ServiceConfigPortLabel" xml:space="preserve">
+    <value>Porta</value>
+  </data>
+  <data name="ServiceConfigDatabaseConnectionStringLabel" xml:space="preserve">
+    <value>Vargu i lidhjes</value>
+  </data>
+  <data name="ServiceConfigJwtKeyLabel" xml:space="preserve">
+    <value>Çelësi</value>
+  </data>
+  <data name="ServiceConfigAccessTokenMinutesLabel" xml:space="preserve">
+    <value>Token qasjeje (minuta)</value>
+  </data>
+  <data name="ServiceConfigRefreshTokenDaysLabel" xml:space="preserve">
+    <value>Token rifreskimi (ditë)</value>
+  </data>
+  <data name="ServiceConfigEmailConnectionStringLabel" xml:space="preserve">
+    <value>Vargu i lidhjes</value>
+  </data>
+  <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
+    <value>Adresa e dërguesit</value>
+  </data>
+  <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
+    <value>Provo lidhjen</value>
+  </data>
+  <data name="ServiceConfigTestingConnectionMessage" xml:space="preserve">
+    <value>Duke provuar lidhjen...</value>
+  </data>
+  <data name="ServiceConfigConnectionSuccessMessage" xml:space="preserve">
+    <value>Lidhja u krye me sukses.</value>
+  </data>
+  <data name="ServiceConfigConnectionFailedMessage" xml:space="preserve">
+    <value>Lidhja dështoi: {0}</value>
+  </data>
+  <data name="ServiceConfigInvalidPortMessage" xml:space="preserve">
+    <value>Vendosni një numër porte midis 1 dhe 65535.</value>
+  </data>
+  <data name="ServiceConfigInvalidAccessTokenMinutesMessage" xml:space="preserve">
+    <value>Vendosni një numër pozitiv minutash.</value>
+  </data>
+  <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
+    <value>Vendosni një numër pozitiv ditësh.</value>
+  </data>
+  <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
+    <value>Ndryshimi i çelësit JWT do të pavlefshmërojë të gjitha sesionet ekzistuese herën tjetër që shërbimi niset. Të vazhdohet?</value>
+  </data>
+  <data name="ServiceConfigSaveButtonText" xml:space="preserve">
+    <value>Ruaj</value>
+  </data>
+  <data name="ServiceConfigCancelButtonText" xml:space="preserve">
+    <value>Anulo</value>
+  </data>
+  <data name="ServiceConfigSavingMessage" xml:space="preserve">
+    <value>Duke ruajtur...</value>
+  </data>
+  <data name="ServiceConfigSaveFailedMessage" xml:space="preserve">
+    <value>Ruajtja e appsettings.json dështoi.</value>
+  </data>
+  <data name="ServiceConfigLoadFailedMessage" xml:space="preserve">
+    <value>appsettings.json nuk mund të lexohej.</value>
+  </data>
+  <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
+    <value>Gjenero</value>
+  </data>
+  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
+    <value>Shërbimi funksionon.</value>
+  </data>
+  <data name="FoldersMenuText" xml:space="preserve">
+    <value>Dosjet</value>
+  </data>
+  <data name="UploadFolderDialogTitle" xml:space="preserve">
+    <value>Dosja e ngarkimit</value>
+  </data>
+  <data name="UploadFolderDialogDescription" xml:space="preserve">
+    <value>Zgjidhni dosjen ku do të ruhen dokumentet e ngarkuara.</value>
+  </data>
+  <data name="UploadFolderPathLabel" xml:space="preserve">
+    <value>Shtegu i dosjes</value>
+  </data>
+  <data name="UploadFolderBrowseButtonText" xml:space="preserve">
+    <value>Shfleto...</value>
+  </data>
+  <data name="UploadFolderSaveButtonText" xml:space="preserve">
+    <value>Ruaj</value>
+  </data>
+  <data name="UploadFolderCancelButtonText" xml:space="preserve">
+    <value>Anulo</value>
+  </data>
+  <data name="UploadFolderInvalidPathMessage" xml:space="preserve">
+    <value>Vendosni ose zgjidhni një shteg dosjeje.</value>
+  </data>
+  <data name="UploadFolderSavingMessage" xml:space="preserve">
+    <value>Duke ruajtur...</value>
+  </data>
+  <data name="UploadFolderSaveFailedMessage" xml:space="preserve">
+    <value>Ruajtja e appsettings.json dështoi.</value>
   </data>
 </root>

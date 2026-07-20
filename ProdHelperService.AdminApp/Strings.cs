@@ -26,9 +26,6 @@ internal static class Strings
     public static string CallErrorHeading(string relativeUrl) =>
         string.Format(CultureInfo.CurrentUICulture, Get("CallErrorHeading"), relativeUrl);
 
-    public static string ItemSelectedFormat(string item) =>
-        string.Format(CultureInfo.CurrentUICulture, Get("ItemSelectedFormat"), item);
-
     public static string AuthEmailLabel => Get("AuthEmailLabel");
     public static string AuthPasswordLabel => Get("AuthPasswordLabel");
     public static string AuthConfirmPasswordLabel => Get("AuthConfirmPasswordLabel");
@@ -67,6 +64,94 @@ internal static class Strings
     public static string AuthConfirmNewPasswordLabel => Get("AuthConfirmNewPasswordLabel");
     public static string AuthResetPasswordButtonText => Get("AuthResetPasswordButtonText");
     public static string AuthResetPasswordSuccessMessage => Get("AuthResetPasswordSuccessMessage");
+
+    public static string ApiDocumentationMenuText => Get("ApiDocumentationMenuText");
+    public static string ServiceUrlDialogTitle => Get("ServiceUrlDialogTitle");
+    public static string ServiceUrlDialogDescription => Get("ServiceUrlDialogDescription");
+    public static string ServiceUrlPortLabel => Get("ServiceUrlPortLabel");
+    public static string ServiceUrlSaveButtonText => Get("ServiceUrlSaveButtonText");
+    public static string ServiceUrlCancelButtonText => Get("ServiceUrlCancelButtonText");
+    public static string ServiceUrlInvalidPortMessage => Get("ServiceUrlInvalidPortMessage");
+    public static string ServiceUrlSamePortMessage => Get("ServiceUrlSamePortMessage");
+    public static string ServiceUrlVerifyingMessage => Get("ServiceUrlVerifyingMessage");
+    public static string ServiceUrlSettingsPersistFailedMessage => Get("ServiceUrlSettingsPersistFailedMessage");
+
+    public static string ServiceUrlRestartingMessage(int port) =>
+        string.Format(CultureInfo.CurrentUICulture, Get("ServiceUrlRestartingMessage"), port);
+
+    public static string ApiDocumentationOpenErrorMessage(string errorMessage) =>
+        string.Format(CultureInfo.CurrentUICulture, Get("ApiDocumentationOpenErrorMessage"), errorMessage);
+
+    public static string ServiceDialogTitle => Get("ServiceDialogTitle");
+    public static string ServiceDialogDescription => Get("ServiceDialogDescription");
+    public static string ServiceStatusNotRegistered => Get("ServiceStatusNotRegistered");
+    public static string ServiceStatusRunning => Get("ServiceStatusRunning");
+    public static string ServiceStatusStopped => Get("ServiceStatusStopped");
+    public static string ServiceStatusPending => Get("ServiceStatusPending");
+    public static string ServiceRegisterButtonText => Get("ServiceRegisterButtonText");
+    public static string ServiceUnregisterButtonText => Get("ServiceUnregisterButtonText");
+    public static string ServiceStartButtonText => Get("ServiceStartButtonText");
+    public static string ServiceStopButtonText => Get("ServiceStopButtonText");
+    public static string ServiceCloseButtonText => Get("ServiceCloseButtonText");
+    public static string ServiceRegisteringMessage => Get("ServiceRegisteringMessage");
+    public static string ServiceUnregisteringMessage => Get("ServiceUnregisteringMessage");
+    public static string ServiceStartingMessage => Get("ServiceStartingMessage");
+    public static string ServiceStoppingMessage => Get("ServiceStoppingMessage");
+    public static string ServiceUnregisterConfirmTitle => Get("ServiceUnregisterConfirmTitle");
+    public static string ServiceUnregisterConfirmMessage => Get("ServiceUnregisterConfirmMessage");
+    public static string ServiceNotRegisteredStartupMessage => Get("ServiceNotRegisteredStartupMessage");
+
+    public static string ServiceConfigMenuText => Get("ServiceConfigMenuText");
+    public static string ServiceConfigDialogTitle => Get("ServiceConfigDialogTitle");
+    public static string ServiceConfigDialogDescription => Get("ServiceConfigDialogDescription");
+    public static string ServiceConfigTryServiceButtonText => Get("ServiceConfigTryServiceButtonText");
+    public static string ServiceConfigCheckingMessage => Get("ServiceConfigCheckingMessage");
+    public static string ServiceConfigReachableMessage => Get("ServiceConfigReachableMessage");
+    public static string ServiceConfigUnreachableMessage => Get("ServiceConfigUnreachableMessage");
+    public static string ServiceConfigRelaySectionHeader => Get("ServiceConfigRelaySectionHeader");
+    public static string ServiceConfigLocalApiSectionHeader => Get("ServiceConfigLocalApiSectionHeader");
+    public static string ServiceConfigDatabaseSectionHeader => Get("ServiceConfigDatabaseSectionHeader");
+    public static string ServiceConfigJwtSectionHeader => Get("ServiceConfigJwtSectionHeader");
+    public static string ServiceConfigEmailSectionHeader => Get("ServiceConfigEmailSectionHeader");
+    public static string ServiceConfigNamespaceLabel => Get("ServiceConfigNamespaceLabel");
+    public static string ServiceConfigConnectionNameLabel => Get("ServiceConfigConnectionNameLabel");
+    public static string ServiceConfigKeyNameLabel => Get("ServiceConfigKeyNameLabel");
+    public static string ServiceConfigKeyLabel => Get("ServiceConfigKeyLabel");
+    public static string ServiceConfigPortLabel => Get("ServiceConfigPortLabel");
+    public static string ServiceConfigDatabaseConnectionStringLabel => Get("ServiceConfigDatabaseConnectionStringLabel");
+    public static string ServiceConfigJwtKeyLabel => Get("ServiceConfigJwtKeyLabel");
+    public static string ServiceConfigAccessTokenMinutesLabel => Get("ServiceConfigAccessTokenMinutesLabel");
+    public static string ServiceConfigRefreshTokenDaysLabel => Get("ServiceConfigRefreshTokenDaysLabel");
+    public static string ServiceConfigEmailConnectionStringLabel => Get("ServiceConfigEmailConnectionStringLabel");
+    public static string ServiceConfigSenderAddressLabel => Get("ServiceConfigSenderAddressLabel");
+    public static string ServiceConfigTryConnectionButtonText => Get("ServiceConfigTryConnectionButtonText");
+    public static string ServiceConfigTestingConnectionMessage => Get("ServiceConfigTestingConnectionMessage");
+    public static string ServiceConfigConnectionSuccessMessage => Get("ServiceConfigConnectionSuccessMessage");
+    public static string ServiceConfigInvalidPortMessage => Get("ServiceConfigInvalidPortMessage");
+    public static string ServiceConfigInvalidAccessTokenMinutesMessage => Get("ServiceConfigInvalidAccessTokenMinutesMessage");
+    public static string ServiceConfigInvalidRefreshTokenDaysMessage => Get("ServiceConfigInvalidRefreshTokenDaysMessage");
+    public static string ServiceConfigJwtKeyChangeWarningMessage => Get("ServiceConfigJwtKeyChangeWarningMessage");
+    public static string ServiceConfigSaveButtonText => Get("ServiceConfigSaveButtonText");
+    public static string ServiceConfigCancelButtonText => Get("ServiceConfigCancelButtonText");
+    public static string ServiceConfigSavingMessage => Get("ServiceConfigSavingMessage");
+    public static string ServiceConfigSaveFailedMessage => Get("ServiceConfigSaveFailedMessage");
+    public static string ServiceConfigLoadFailedMessage => Get("ServiceConfigLoadFailedMessage");
+    public static string ServiceConfigGenerateJwtKeyButtonText => Get("ServiceConfigGenerateJwtKeyButtonText");
+    public static string ServiceConfigServiceWorksMessage => Get("ServiceConfigServiceWorksMessage");
+
+    public static string FoldersMenuText => Get("FoldersMenuText");
+    public static string UploadFolderDialogTitle => Get("UploadFolderDialogTitle");
+    public static string UploadFolderDialogDescription => Get("UploadFolderDialogDescription");
+    public static string UploadFolderPathLabel => Get("UploadFolderPathLabel");
+    public static string UploadFolderBrowseButtonText => Get("UploadFolderBrowseButtonText");
+    public static string UploadFolderSaveButtonText => Get("UploadFolderSaveButtonText");
+    public static string UploadFolderCancelButtonText => Get("UploadFolderCancelButtonText");
+    public static string UploadFolderInvalidPathMessage => Get("UploadFolderInvalidPathMessage");
+    public static string UploadFolderSavingMessage => Get("UploadFolderSavingMessage");
+    public static string UploadFolderSaveFailedMessage => Get("UploadFolderSaveFailedMessage");
+
+    public static string ServiceConfigConnectionFailedMessage(string errorMessage) =>
+        string.Format(CultureInfo.CurrentUICulture, Get("ServiceConfigConnectionFailedMessage"), errorMessage);
 
     private static string Get(string name) =>
         ResourceManager.GetString(name, CultureInfo.CurrentUICulture) ?? name;

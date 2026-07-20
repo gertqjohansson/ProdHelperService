@@ -17,4 +17,6 @@ public class CreateEquipmentRequest
     public bool? UseNotification { get; set; }
     public DateTime? NotificationDate { get; set; }
     public string? Notification { get; set; }
+    public DateTime ActionTimeUtc { get; set; }
+    public string MadeByUser { get; set; } = string.Empty;
 }

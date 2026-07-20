@@ -81,11 +81,7 @@
   </data>
   <data name="GuestLabel" xml:space="preserve">
     <value>Επισκέπτης</value>
-  </data>
-  <data name="ItemSelectedFormat" xml:space="preserve">
-    <value>Επιλέχθηκε {0}</value>
-  </data>
-  <data name="AuthEmailLabel" xml:space="preserve">
+  </data>  <data name="AuthEmailLabel" xml:space="preserve">
     <value>Email</value>
   </data>
   <data name="AuthPasswordLabel" xml:space="preserve">
@@ -198,5 +194,237 @@
   </data>
   <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
     <value>Ο κωδικός πρόσβασής σας έχει επαναφερθεί. Μπορείτε τώρα να συνδεθείτε.</value>
+  </data>  <data name="ApiDocumentationMenuText" xml:space="preserve">
+    <value>Τεκμηρίωση API</value>
+  </data>
+  <data name="ServiceUrlDialogTitle" xml:space="preserve">
+    <value>Διεύθυνση URL υπηρεσίας</value>
+  </data>
+  <data name="ServiceUrlDialogDescription" xml:space="preserve">
+    <value>Αλλάξτε τη θύρα στην οποία ακούει το ProdHelperService. Η υπηρεσία θα επανεκκινηθεί αυτόματα.</value>
+  </data>
+  <data name="ServiceUrlPortLabel" xml:space="preserve">
+    <value>Θύρα</value>
+  </data>
+  <data name="ServiceUrlSaveButtonText" xml:space="preserve">
+    <value>Αποθήκευση</value>
+  </data>
+  <data name="ServiceUrlCancelButtonText" xml:space="preserve">
+    <value>Άκυρο</value>
+  </data>
+  <data name="ServiceUrlInvalidPortMessage" xml:space="preserve">
+    <value>Εισαγάγετε έναν έγκυρο αριθμό θύρας (1-65535).</value>
+  </data>
+  <data name="ServiceUrlSamePortMessage" xml:space="preserve">
+    <value>Αυτή είναι ήδη η τρέχουσα θύρα.</value>
+  </data>
+  <data name="ServiceUrlRestartingMessage" xml:space="preserve">
+    <value>Επανεκκίνηση της υπηρεσίας στη θύρα {0}...</value>
+  </data>
+  <data name="ServiceUrlVerifyingMessage" xml:space="preserve">
+    <value>Επαλήθευση της νέας διεύθυνσης...</value>
+  </data>
+  <data name="ServiceUrlSettingsPersistFailedMessage" xml:space="preserve">
+    <value>Η θύρα άλλαξε και η υπηρεσία επανεκκινήθηκε, αλλά το αρχείο ρυθμίσεων δεν ήταν δυνατό να ενημερωθεί για μελλοντικές επανεκκινήσεις.</value>
+  </data>
+  <data name="ApiDocumentationOpenErrorMessage" xml:space="preserve">
+    <value>Δεν ήταν δυνατό το άνοιγμα του προεπιλεγμένου προγράμματος περιήγησης: {0}</value>
+  </data>  <data name="ServiceDialogTitle" xml:space="preserve">
+    <value>Υπηρεσία Windows</value>
+  </data>
+  <data name="ServiceDialogDescription" xml:space="preserve">
+    <value>Καταχωρίστε το ProdHelperService ως υπηρεσία Windows ώστε να ξεκινά αυτόματα και να συνεχίζει να εκτελείται στο παρασκήνιο.</value>
+  </data>
+  <data name="ServiceStatusNotRegistered" xml:space="preserve">
+    <value>Δεν έχει καταχωριστεί</value>
+  </data>
+  <data name="ServiceStatusRunning" xml:space="preserve">
+    <value>Καταχωρισμένη - εκτελείται</value>
+  </data>
+  <data name="ServiceStatusStopped" xml:space="preserve">
+    <value>Καταχωρισμένη - διακόπηκε</value>
+  </data>
+  <data name="ServiceStatusPending" xml:space="preserve">
+    <value>Αλλαγή κατάστασης...</value>
+  </data>
+  <data name="ServiceRegisterButtonText" xml:space="preserve">
+    <value>Καταχώριση</value>
+  </data>
+  <data name="ServiceUnregisterButtonText" xml:space="preserve">
+    <value>Κατάργηση καταχώρισης</value>
+  </data>
+  <data name="ServiceStartButtonText" xml:space="preserve">
+    <value>Έναρξη</value>
+  </data>
+  <data name="ServiceStopButtonText" xml:space="preserve">
+    <value>Διακοπή</value>
+  </data>
+  <data name="ServiceCloseButtonText" xml:space="preserve">
+    <value>Κλείσιμο</value>
+  </data>
+  <data name="ServiceRegisteringMessage" xml:space="preserve">
+    <value>Γίνεται καταχώριση της υπηρεσίας...</value>
+  </data>
+  <data name="ServiceUnregisteringMessage" xml:space="preserve">
+    <value>Γίνεται κατάργηση καταχώρισης της υπηρεσίας...</value>
+  </data>
+  <data name="ServiceStartingMessage" xml:space="preserve">
+    <value>Η υπηρεσία ξεκινά...</value>
+  </data>
+  <data name="ServiceStoppingMessage" xml:space="preserve">
+    <value>Η υπηρεσία διακόπτεται...</value>
+  </data>
+  <data name="ServiceUnregisterConfirmTitle" xml:space="preserve">
+    <value>Κατάργηση καταχώρισης υπηρεσίας</value>
+  </data>
+  <data name="ServiceUnregisterConfirmMessage" xml:space="preserve">
+    <value>Κατάργηση καταχώρισης του ProdHelperService από τα Windows; Δεν θα ξεκινά πλέον αυτόματα.</value>
+  </data>
+  <data name="ServiceNotRegisteredStartupMessage" xml:space="preserve">
+    <value>Το ProdHelperService δεν είναι καταχωρισμένο ως υπηρεσία Windows σε αυτόν τον υπολογιστή. Να καταχωριστεί τώρα;</value>
+  </data>
+  <data name="ServiceConfigMenuText" xml:space="preserve">
+    <value>Διαμόρφωση υπηρεσίας</value>
+  </data>
+  <data name="ServiceConfigDialogTitle" xml:space="preserve">
+    <value>Διαμόρφωση υπηρεσίας</value>
+  </data>
+  <data name="ServiceConfigDialogDescription" xml:space="preserve">
+    <value>Δεν ήταν δυνατή η επικοινωνία με το ProdHelperService. Εκκινήστε την υπηρεσία, επεξεργαστείτε τη διαμόρφωσή της παρακάτω εάν χρειάζεται και κατόπιν χρησιμοποιήστε το Δοκιμή υπηρεσίας για να επιβεβαιώσετε ότι αποκρίνεται. Οι αλλαγές θα ισχύσουν την επόμενη φορά που θα εκκινηθεί η υπηρεσία.</value>
+  </data>
+  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
+    <value>Δοκιμή υπηρεσίας</value>
+  </data>
+  <data name="ServiceConfigCheckingMessage" xml:space="preserve">
+    <value>Έλεγχος...</value>
+  </data>
+  <data name="ServiceConfigReachableMessage" xml:space="preserve">
+    <value>Η υπηρεσία είναι προσβάσιμη.</value>
+  </data>
+  <data name="ServiceConfigUnreachableMessage" xml:space="preserve">
+    <value>Η υπηρεσία δεν είναι προσβάσιμη.</value>
+  </data>
+  <data name="ServiceConfigRelaySectionHeader" xml:space="preserve">
+    <value>Relay</value>
+  </data>
+  <data name="ServiceConfigLocalApiSectionHeader" xml:space="preserve">
+    <value>Τοπικό API</value>
+  </data>
+  <data name="ServiceConfigDatabaseSectionHeader" xml:space="preserve">
+    <value>Σύνδεση βάσης δεδομένων</value>
+  </data>
+  <data name="ServiceConfigJwtSectionHeader" xml:space="preserve">
+    <value>JWT</value>
+  </data>
+  <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
+    <value>Namespace</value>
+  </data>
+  <data name="ServiceConfigConnectionNameLabel" xml:space="preserve">
+    <value>Όνομα σύνδεσης</value>
+  </data>
+  <data name="ServiceConfigKeyNameLabel" xml:space="preserve">
+    <value>Όνομα κλειδιού</value>
+  </data>
+  <data name="ServiceConfigKeyLabel" xml:space="preserve">
+    <value>Κλειδί</value>
+  </data>
+  <data name="ServiceConfigPortLabel" xml:space="preserve">
+    <value>Θύρα</value>
+  </data>
+  <data name="ServiceConfigDatabaseConnectionStringLabel" xml:space="preserve">
+    <value>Συμβολοσειρά σύνδεσης</value>
+  </data>
+  <data name="ServiceConfigJwtKeyLabel" xml:space="preserve">
+    <value>Κλειδί</value>
+  </data>
+  <data name="ServiceConfigAccessTokenMinutesLabel" xml:space="preserve">
+    <value>Διάρκεια token πρόσβασης (λεπτά)</value>
+  </data>
+  <data name="ServiceConfigRefreshTokenDaysLabel" xml:space="preserve">
+    <value>Διάρκεια token ανανέωσης (ημέρες)</value>
+  </data>
+  <data name="ServiceConfigEmailConnectionStringLabel" xml:space="preserve">
+    <value>Συμβολοσειρά σύνδεσης</value>
+  </data>
+  <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
+    <value>Διεύθυνση αποστολέα</value>
+  </data>
+  <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
+    <value>Δοκιμή σύνδεσης</value>
+  </data>
+  <data name="ServiceConfigTestingConnectionMessage" xml:space="preserve">
+    <value>Δοκιμή σύνδεσης...</value>
+  </data>
+  <data name="ServiceConfigConnectionSuccessMessage" xml:space="preserve">
+    <value>Η σύνδεση ήταν επιτυχής.</value>
+  </data>
+  <data name="ServiceConfigConnectionFailedMessage" xml:space="preserve">
+    <value>Η σύνδεση απέτυχε: {0}</value>
+  </data>
+  <data name="ServiceConfigInvalidPortMessage" xml:space="preserve">
+    <value>Εισαγάγετε έναν αριθμό θύρας μεταξύ 1 και 65535.</value>
+  </data>
+  <data name="ServiceConfigInvalidAccessTokenMinutesMessage" xml:space="preserve">
+    <value>Εισαγάγετε έναν θετικό αριθμό λεπτών.</value>
+  </data>
+  <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
+    <value>Εισαγάγετε έναν θετικό αριθμό ημερών.</value>
+  </data>
+  <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
+    <value>Η αλλαγή του κλειδιού JWT θα ακυρώσει όλες τις υπάρχουσες συνεδρίες την επόμενη φορά που θα εκκινηθεί η υπηρεσία. Συνέχεια;</value>
+  </data>
+  <data name="ServiceConfigSaveButtonText" xml:space="preserve">
+    <value>Αποθήκευση</value>
+  </data>
+  <data name="ServiceConfigCancelButtonText" xml:space="preserve">
+    <value>Άκυρο</value>
+  </data>
+  <data name="ServiceConfigSavingMessage" xml:space="preserve">
+    <value>Αποθήκευση...</value>
+  </data>
+  <data name="ServiceConfigSaveFailedMessage" xml:space="preserve">
+    <value>Η αποθήκευση του appsettings.json απέτυχε.</value>
+  </data>
+  <data name="ServiceConfigLoadFailedMessage" xml:space="preserve">
+    <value>Δεν ήταν δυνατή η ανάγνωση του appsettings.json.</value>
+  </data>
+  <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
+    <value>Δημιουργία</value>
+  </data>
+  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
+    <value>Η υπηρεσία λειτουργεί.</value>
+  </data>
+  <data name="FoldersMenuText" xml:space="preserve">
+    <value>Φάκελοι</value>
+  </data>
+  <data name="UploadFolderDialogTitle" xml:space="preserve">
+    <value>Φάκελος μεταφόρτωσης</value>
+  </data>
+  <data name="UploadFolderDialogDescription" xml:space="preserve">
+    <value>Επιλέξτε τον φάκελο όπου θα αποθηκεύονται τα μεταφορτωμένα έγγραφα.</value>
+  </data>
+  <data name="UploadFolderPathLabel" xml:space="preserve">
+    <value>Διαδρομή φακέλου</value>
+  </data>
+  <data name="UploadFolderBrowseButtonText" xml:space="preserve">
+    <value>Αναζήτηση...</value>
+  </data>
+  <data name="UploadFolderSaveButtonText" xml:space="preserve">
+    <value>Αποθήκευση</value>
+  </data>
+  <data name="UploadFolderCancelButtonText" xml:space="preserve">
+    <value>Άκυρο</value>
+  </data>
+  <data name="UploadFolderInvalidPathMessage" xml:space="preserve">
+    <value>Εισαγάγετε ή επιλέξτε μια διαδρομή φακέλου.</value>
+  </data>
+  <data name="UploadFolderSavingMessage" xml:space="preserve">
+    <value>Αποθήκευση...</value>
+  </data>
+  <data name="UploadFolderSaveFailedMessage" xml:space="preserve">
+    <value>Η αποθήκευση του appsettings.json απέτυχε.</value>
   </data>
 </root>

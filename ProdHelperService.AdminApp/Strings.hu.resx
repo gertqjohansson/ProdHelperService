@@ -81,11 +81,7 @@
   </data>
   <data name="GuestLabel" xml:space="preserve">
     <value>Vendég</value>
-  </data>
-  <data name="ItemSelectedFormat" xml:space="preserve">
-    <value>{0} kiválasztva</value>
-  </data>
-  <data name="AuthEmailLabel" xml:space="preserve">
+  </data>  <data name="AuthEmailLabel" xml:space="preserve">
     <value>E-mail</value>
   </data>
   <data name="AuthPasswordLabel" xml:space="preserve">
@@ -198,5 +194,237 @@
   </data>
   <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
     <value>A jelszava vissza lett állítva. Most már bejelentkezhet.</value>
+  </data>  <data name="ApiDocumentationMenuText" xml:space="preserve">
+    <value>API dokumentáció</value>
+  </data>
+  <data name="ServiceUrlDialogTitle" xml:space="preserve">
+    <value>Szolgáltatás URL</value>
+  </data>
+  <data name="ServiceUrlDialogDescription" xml:space="preserve">
+    <value>Módosítsa azt a portot, amelyen a ProdHelperService figyel. A szolgáltatás automatikusan újraindul.</value>
+  </data>
+  <data name="ServiceUrlPortLabel" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="ServiceUrlSaveButtonText" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="ServiceUrlCancelButtonText" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="ServiceUrlInvalidPortMessage" xml:space="preserve">
+    <value>Adjon meg egy érvényes portszámot (1-65535).</value>
+  </data>
+  <data name="ServiceUrlSamePortMessage" xml:space="preserve">
+    <value>Ez már a jelenlegi port.</value>
+  </data>
+  <data name="ServiceUrlRestartingMessage" xml:space="preserve">
+    <value>A szolgáltatás újraindítása a(z) {0} porton...</value>
+  </data>
+  <data name="ServiceUrlVerifyingMessage" xml:space="preserve">
+    <value>Az új cím ellenőrzése...</value>
+  </data>
+  <data name="ServiceUrlSettingsPersistFailedMessage" xml:space="preserve">
+    <value>A port megváltozott és a szolgáltatás újraindult, de a beállításfájlt nem sikerült frissíteni a jövőbeli újraindításokhoz.</value>
+  </data>
+  <data name="ApiDocumentationOpenErrorMessage" xml:space="preserve">
+    <value>Nem sikerült megnyitni az alapértelmezett webböngészőt: {0}</value>
+  </data>  <data name="ServiceDialogTitle" xml:space="preserve">
+    <value>Windows-szolgáltatás</value>
+  </data>
+  <data name="ServiceDialogDescription" xml:space="preserve">
+    <value>Regisztrálja a ProdHelperService-t Windows-szolgáltatásként, hogy automatikusan elinduljon és a háttérben fusson tovább.</value>
+  </data>
+  <data name="ServiceStatusNotRegistered" xml:space="preserve">
+    <value>Nincs regisztrálva</value>
+  </data>
+  <data name="ServiceStatusRunning" xml:space="preserve">
+    <value>Regisztrálva - fut</value>
+  </data>
+  <data name="ServiceStatusStopped" xml:space="preserve">
+    <value>Regisztrálva - leállítva</value>
+  </data>
+  <data name="ServiceStatusPending" xml:space="preserve">
+    <value>Állapot módosítása...</value>
+  </data>
+  <data name="ServiceRegisterButtonText" xml:space="preserve">
+    <value>Regisztrálás</value>
+  </data>
+  <data name="ServiceUnregisterButtonText" xml:space="preserve">
+    <value>Regisztráció törlése</value>
+  </data>
+  <data name="ServiceStartButtonText" xml:space="preserve">
+    <value>Indítás</value>
+  </data>
+  <data name="ServiceStopButtonText" xml:space="preserve">
+    <value>Leállítás</value>
+  </data>
+  <data name="ServiceCloseButtonText" xml:space="preserve">
+    <value>Bezárás</value>
+  </data>
+  <data name="ServiceRegisteringMessage" xml:space="preserve">
+    <value>A szolgáltatás regisztrálása folyamatban...</value>
+  </data>
+  <data name="ServiceUnregisteringMessage" xml:space="preserve">
+    <value>A szolgáltatás regisztrációjának törlése folyamatban...</value>
+  </data>
+  <data name="ServiceStartingMessage" xml:space="preserve">
+    <value>A szolgáltatás indítása folyamatban...</value>
+  </data>
+  <data name="ServiceStoppingMessage" xml:space="preserve">
+    <value>A szolgáltatás leállítása folyamatban...</value>
+  </data>
+  <data name="ServiceUnregisterConfirmTitle" xml:space="preserve">
+    <value>Szolgáltatás regisztrációjának törlése</value>
+  </data>
+  <data name="ServiceUnregisterConfirmMessage" xml:space="preserve">
+    <value>Törli a ProdHelperService regisztrációját a Windowsból? A szolgáltatás többé nem indul el automatikusan.</value>
+  </data>
+  <data name="ServiceNotRegisteredStartupMessage" xml:space="preserve">
+    <value>A ProdHelperService nincs regisztrálva Windows-szolgáltatásként ezen a számítógépen. Regisztrálja most?</value>
+  </data>
+  <data name="ServiceConfigMenuText" xml:space="preserve">
+    <value>Szolgáltatás konfigurációja</value>
+  </data>
+  <data name="ServiceConfigDialogTitle" xml:space="preserve">
+    <value>Szolgáltatás konfigurációja</value>
+  </data>
+  <data name="ServiceConfigDialogDescription" xml:space="preserve">
+    <value>A ProdHelperService nem érhető el. Indítsa el a szolgáltatást, szükség esetén szerkessze lent a konfigurációját, majd a Szolgáltatás tesztelése gombbal ellenőrizze, hogy válaszol-e. A módosítások a szolgáltatás következő indításakor lépnek életbe.</value>
+  </data>
+  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
+    <value>Szolgáltatás tesztelése</value>
+  </data>
+  <data name="ServiceConfigCheckingMessage" xml:space="preserve">
+    <value>Ellenőrzés...</value>
+  </data>
+  <data name="ServiceConfigReachableMessage" xml:space="preserve">
+    <value>A szolgáltatás elérhető.</value>
+  </data>
+  <data name="ServiceConfigUnreachableMessage" xml:space="preserve">
+    <value>A szolgáltatás nem érhető el.</value>
+  </data>
+  <data name="ServiceConfigRelaySectionHeader" xml:space="preserve">
+    <value>Relay</value>
+  </data>
+  <data name="ServiceConfigLocalApiSectionHeader" xml:space="preserve">
+    <value>Helyi API</value>
+  </data>
+  <data name="ServiceConfigDatabaseSectionHeader" xml:space="preserve">
+    <value>Adatbázis-kapcsolat</value>
+  </data>
+  <data name="ServiceConfigJwtSectionHeader" xml:space="preserve">
+    <value>JWT</value>
+  </data>
+  <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
+    <value>Namespace</value>
+  </data>
+  <data name="ServiceConfigConnectionNameLabel" xml:space="preserve">
+    <value>Kapcsolat neve</value>
+  </data>
+  <data name="ServiceConfigKeyNameLabel" xml:space="preserve">
+    <value>Kulcs neve</value>
+  </data>
+  <data name="ServiceConfigKeyLabel" xml:space="preserve">
+    <value>Kulcs</value>
+  </data>
+  <data name="ServiceConfigPortLabel" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="ServiceConfigDatabaseConnectionStringLabel" xml:space="preserve">
+    <value>Kapcsolati karakterlánc</value>
+  </data>
+  <data name="ServiceConfigJwtKeyLabel" xml:space="preserve">
+    <value>Kulcs</value>
+  </data>
+  <data name="ServiceConfigAccessTokenMinutesLabel" xml:space="preserve">
+    <value>Hozzáférési token (perc)</value>
+  </data>
+  <data name="ServiceConfigRefreshTokenDaysLabel" xml:space="preserve">
+    <value>Frissítési token (nap)</value>
+  </data>
+  <data name="ServiceConfigEmailConnectionStringLabel" xml:space="preserve">
+    <value>Kapcsolati karakterlánc</value>
+  </data>
+  <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
+    <value>Feladó címe</value>
+  </data>
+  <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
+    <value>Kapcsolat tesztelése</value>
+  </data>
+  <data name="ServiceConfigTestingConnectionMessage" xml:space="preserve">
+    <value>Kapcsolat tesztelése...</value>
+  </data>
+  <data name="ServiceConfigConnectionSuccessMessage" xml:space="preserve">
+    <value>A kapcsolat sikeres volt.</value>
+  </data>
+  <data name="ServiceConfigConnectionFailedMessage" xml:space="preserve">
+    <value>A kapcsolat sikertelen: {0}</value>
+  </data>
+  <data name="ServiceConfigInvalidPortMessage" xml:space="preserve">
+    <value>Adjon meg egy port számot 1 és 65535 között.</value>
+  </data>
+  <data name="ServiceConfigInvalidAccessTokenMinutesMessage" xml:space="preserve">
+    <value>Adjon meg egy pozitív percértéket.</value>
+  </data>
+  <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
+    <value>Adjon meg egy pozitív napértéket.</value>
+  </data>
+  <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
+    <value>A JWT-kulcs módosítása a szolgáltatás következő indításakor érvényteleníti az összes meglévő munkamenetet. Folytatja?</value>
+  </data>
+  <data name="ServiceConfigSaveButtonText" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="ServiceConfigCancelButtonText" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="ServiceConfigSavingMessage" xml:space="preserve">
+    <value>Mentés...</value>
+  </data>
+  <data name="ServiceConfigSaveFailedMessage" xml:space="preserve">
+    <value>Az appsettings.json mentése sikertelen.</value>
+  </data>
+  <data name="ServiceConfigLoadFailedMessage" xml:space="preserve">
+    <value>Az appsettings.json fájlt nem sikerült beolvasni.</value>
+  </data>
+  <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
+    <value>Generálás</value>
+  </data>
+  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
+    <value>A szolgáltatás működik.</value>
+  </data>
+  <data name="FoldersMenuText" xml:space="preserve">
+    <value>Mappák</value>
+  </data>
+  <data name="UploadFolderDialogTitle" xml:space="preserve">
+    <value>Feltöltési mappa</value>
+  </data>
+  <data name="UploadFolderDialogDescription" xml:space="preserve">
+    <value>Válassza ki a mappát, ahová a feltöltött dokumentumok kerülnek.</value>
+  </data>
+  <data name="UploadFolderPathLabel" xml:space="preserve">
+    <value>Mappa elérési útja</value>
+  </data>
+  <data name="UploadFolderBrowseButtonText" xml:space="preserve">
+    <value>Tallózás...</value>
+  </data>
+  <data name="UploadFolderSaveButtonText" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="UploadFolderCancelButtonText" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="UploadFolderInvalidPathMessage" xml:space="preserve">
+    <value>Adjon meg vagy válasszon egy mappa elérési utat.</value>
+  </data>
+  <data name="UploadFolderSavingMessage" xml:space="preserve">
+    <value>Mentés...</value>
+  </data>
+  <data name="UploadFolderSaveFailedMessage" xml:space="preserve">
+    <value>Az appsettings.json mentése sikertelen.</value>
   </data>
 </root>

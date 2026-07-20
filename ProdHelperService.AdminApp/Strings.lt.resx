@@ -81,11 +81,7 @@
   </data>
   <data name="GuestLabel" xml:space="preserve">
     <value>Svečias</value>
-  </data>
-  <data name="ItemSelectedFormat" xml:space="preserve">
-    <value>Pasirinkta {0}</value>
-  </data>
-  <data name="AuthEmailLabel" xml:space="preserve">
+  </data>  <data name="AuthEmailLabel" xml:space="preserve">
     <value>El. paštas</value>
   </data>
   <data name="AuthPasswordLabel" xml:space="preserve">
@@ -198,5 +194,237 @@
   </data>
   <data name="AuthResetPasswordSuccessMessage" xml:space="preserve">
     <value>Jūsų slaptažodis nustatytas iš naujo. Dabar galite prisijungti.</value>
+  </data>  <data name="ApiDocumentationMenuText" xml:space="preserve">
+    <value>API dokumentacija</value>
+  </data>
+  <data name="ServiceUrlDialogTitle" xml:space="preserve">
+    <value>Paslaugos URL</value>
+  </data>
+  <data name="ServiceUrlDialogDescription" xml:space="preserve">
+    <value>Pakeiskite prievadą, kurio klausosi ProdHelperService. Paslauga bus paleista iš naujo automatiškai.</value>
+  </data>
+  <data name="ServiceUrlPortLabel" xml:space="preserve">
+    <value>Prievadas</value>
+  </data>
+  <data name="ServiceUrlSaveButtonText" xml:space="preserve">
+    <value>Išsaugoti</value>
+  </data>
+  <data name="ServiceUrlCancelButtonText" xml:space="preserve">
+    <value>Atšaukti</value>
+  </data>
+  <data name="ServiceUrlInvalidPortMessage" xml:space="preserve">
+    <value>Įveskite galiojantį prievado numerį (1-65535).</value>
+  </data>
+  <data name="ServiceUrlSamePortMessage" xml:space="preserve">
+    <value>Tai jau yra dabartinis prievadas.</value>
+  </data>
+  <data name="ServiceUrlRestartingMessage" xml:space="preserve">
+    <value>Paslauga paleidžiama iš naujo prievade {0}...</value>
+  </data>
+  <data name="ServiceUrlVerifyingMessage" xml:space="preserve">
+    <value>Tikrinamas naujas adresas...</value>
+  </data>
+  <data name="ServiceUrlSettingsPersistFailedMessage" xml:space="preserve">
+    <value>Prievadas pakeistas ir paslauga paleista iš naujo, tačiau nepavyko atnaujinti nustatymų failo būsimiems paleidimams iš naujo.</value>
+  </data>
+  <data name="ApiDocumentationOpenErrorMessage" xml:space="preserve">
+    <value>Nepavyko atidaryti numatytosios interneto naršyklės: {0}</value>
+  </data>  <data name="ServiceDialogTitle" xml:space="preserve">
+    <value>Windows paslauga</value>
+  </data>
+  <data name="ServiceDialogDescription" xml:space="preserve">
+    <value>Užregistruokite ProdHelperService kaip Windows paslaugą, kad ji būtų paleidžiama automatiškai ir toliau veiktų fone.</value>
+  </data>
+  <data name="ServiceStatusNotRegistered" xml:space="preserve">
+    <value>Neregistruota</value>
+  </data>
+  <data name="ServiceStatusRunning" xml:space="preserve">
+    <value>Registruota - veikia</value>
+  </data>
+  <data name="ServiceStatusStopped" xml:space="preserve">
+    <value>Registruota - sustabdyta</value>
+  </data>
+  <data name="ServiceStatusPending" xml:space="preserve">
+    <value>Keičiama būsena...</value>
+  </data>
+  <data name="ServiceRegisterButtonText" xml:space="preserve">
+    <value>Registruoti</value>
+  </data>
+  <data name="ServiceUnregisterButtonText" xml:space="preserve">
+    <value>Panaikinti registraciją</value>
+  </data>
+  <data name="ServiceStartButtonText" xml:space="preserve">
+    <value>Paleisti</value>
+  </data>
+  <data name="ServiceStopButtonText" xml:space="preserve">
+    <value>Sustabdyti</value>
+  </data>
+  <data name="ServiceCloseButtonText" xml:space="preserve">
+    <value>Uždaryti</value>
+  </data>
+  <data name="ServiceRegisteringMessage" xml:space="preserve">
+    <value>Registruojama paslauga...</value>
+  </data>
+  <data name="ServiceUnregisteringMessage" xml:space="preserve">
+    <value>Naikinama paslaugos registracija...</value>
+  </data>
+  <data name="ServiceStartingMessage" xml:space="preserve">
+    <value>Paleidžiama paslauga...</value>
+  </data>
+  <data name="ServiceStoppingMessage" xml:space="preserve">
+    <value>Stabdoma paslauga...</value>
+  </data>
+  <data name="ServiceUnregisterConfirmTitle" xml:space="preserve">
+    <value>Panaikinti paslaugos registraciją</value>
+  </data>
+  <data name="ServiceUnregisterConfirmMessage" xml:space="preserve">
+    <value>Panaikinti ProdHelperService registraciją sistemoje Windows? Ji nebebus paleidžiama automatiškai.</value>
+  </data>
+  <data name="ServiceNotRegisteredStartupMessage" xml:space="preserve">
+    <value>ProdHelperService nėra užregistruota kaip Windows paslauga šiame kompiuteryje. Užregistruoti dabar?</value>
+  </data>
+  <data name="ServiceConfigMenuText" xml:space="preserve">
+    <value>Paslaugos konfigūracija</value>
+  </data>
+  <data name="ServiceConfigDialogTitle" xml:space="preserve">
+    <value>Paslaugos konfigūracija</value>
+  </data>
+  <data name="ServiceConfigDialogDescription" xml:space="preserve">
+    <value>Nepavyko pasiekti ProdHelperService. Paleiskite paslaugą, jei reikia, redaguokite jos konfigūraciją žemiau, tada naudokite Bandyti paslaugą, kad patvirtintumėte, jog ji atsako. Pakeitimai įsigalios kitą kartą paleidus paslaugą.</value>
+  </data>
+  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
+    <value>Bandyti paslaugą</value>
+  </data>
+  <data name="ServiceConfigCheckingMessage" xml:space="preserve">
+    <value>Tikrinama...</value>
+  </data>
+  <data name="ServiceConfigReachableMessage" xml:space="preserve">
+    <value>Paslauga pasiekiama.</value>
+  </data>
+  <data name="ServiceConfigUnreachableMessage" xml:space="preserve">
+    <value>Paslauga nepasiekiama.</value>
+  </data>
+  <data name="ServiceConfigRelaySectionHeader" xml:space="preserve">
+    <value>Relay</value>
+  </data>
+  <data name="ServiceConfigLocalApiSectionHeader" xml:space="preserve">
+    <value>Vietinis API</value>
+  </data>
+  <data name="ServiceConfigDatabaseSectionHeader" xml:space="preserve">
+    <value>Duomenų bazės ryšys</value>
+  </data>
+  <data name="ServiceConfigJwtSectionHeader" xml:space="preserve">
+    <value>JWT</value>
+  </data>
+  <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
+    <value>El. paštas</value>
+  </data>
+  <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
+    <value>Namespace</value>
+  </data>
+  <data name="ServiceConfigConnectionNameLabel" xml:space="preserve">
+    <value>Ryšio pavadinimas</value>
+  </data>
+  <data name="ServiceConfigKeyNameLabel" xml:space="preserve">
+    <value>Rakto pavadinimas</value>
+  </data>
+  <data name="ServiceConfigKeyLabel" xml:space="preserve">
+    <value>Raktas</value>
+  </data>
+  <data name="ServiceConfigPortLabel" xml:space="preserve">
+    <value>Prievadas</value>
+  </data>
+  <data name="ServiceConfigDatabaseConnectionStringLabel" xml:space="preserve">
+    <value>Ryšio eilutė</value>
+  </data>
+  <data name="ServiceConfigJwtKeyLabel" xml:space="preserve">
+    <value>Raktas</value>
+  </data>
+  <data name="ServiceConfigAccessTokenMinutesLabel" xml:space="preserve">
+    <value>Prieigos žetonas (minutėmis)</value>
+  </data>
+  <data name="ServiceConfigRefreshTokenDaysLabel" xml:space="preserve">
+    <value>Atnaujinimo žetonas (dienomis)</value>
+  </data>
+  <data name="ServiceConfigEmailConnectionStringLabel" xml:space="preserve">
+    <value>Ryšio eilutė</value>
+  </data>
+  <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
+    <value>Siuntėjo adresas</value>
+  </data>
+  <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
+    <value>Bandyti ryšį</value>
+  </data>
+  <data name="ServiceConfigTestingConnectionMessage" xml:space="preserve">
+    <value>Tikrinamas ryšys...</value>
+  </data>
+  <data name="ServiceConfigConnectionSuccessMessage" xml:space="preserve">
+    <value>Ryšys sėkmingas.</value>
+  </data>
+  <data name="ServiceConfigConnectionFailedMessage" xml:space="preserve">
+    <value>Ryšys nepavyko: {0}</value>
+  </data>
+  <data name="ServiceConfigInvalidPortMessage" xml:space="preserve">
+    <value>Įveskite prievado numerį nuo 1 iki 65535.</value>
+  </data>
+  <data name="ServiceConfigInvalidAccessTokenMinutesMessage" xml:space="preserve">
+    <value>Įveskite teigiamą minučių skaičių.</value>
+  </data>
+  <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
+    <value>Įveskite teigiamą dienų skaičių.</value>
+  </data>
+  <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
+    <value>Pakeitus JWT raktą, kitą kartą paleidus paslaugą, visi esami seansai taps negaliojantys. Tęsti?</value>
+  </data>
+  <data name="ServiceConfigSaveButtonText" xml:space="preserve">
+    <value>Išsaugoti</value>
+  </data>
+  <data name="ServiceConfigCancelButtonText" xml:space="preserve">
+    <value>Atšaukti</value>
+  </data>
+  <data name="ServiceConfigSavingMessage" xml:space="preserve">
+    <value>Įrašoma...</value>
+  </data>
+  <data name="ServiceConfigSaveFailedMessage" xml:space="preserve">
+    <value>Nepavyko įrašyti appsettings.json.</value>
+  </data>
+  <data name="ServiceConfigLoadFailedMessage" xml:space="preserve">
+    <value>Nepavyko perskaityti appsettings.json.</value>
+  </data>
+  <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
+    <value>Generuoti</value>
+  </data>
+  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
+    <value>Paslauga veikia.</value>
+  </data>
+  <data name="FoldersMenuText" xml:space="preserve">
+    <value>Aplankai</value>
+  </data>
+  <data name="UploadFolderDialogTitle" xml:space="preserve">
+    <value>Įkėlimo aplankas</value>
+  </data>
+  <data name="UploadFolderDialogDescription" xml:space="preserve">
+    <value>Pasirinkite aplanką, kuriame bus saugomi įkelti dokumentai.</value>
+  </data>
+  <data name="UploadFolderPathLabel" xml:space="preserve">
+    <value>Aplanko kelias</value>
+  </data>
+  <data name="UploadFolderBrowseButtonText" xml:space="preserve">
+    <value>Naršyti...</value>
+  </data>
+  <data name="UploadFolderSaveButtonText" xml:space="preserve">
+    <value>Išsaugoti</value>
+  </data>
+  <data name="UploadFolderCancelButtonText" xml:space="preserve">
+    <value>Atšaukti</value>
+  </data>
+  <data name="UploadFolderInvalidPathMessage" xml:space="preserve">
+    <value>Įveskite arba pasirinkite aplanko kelią.</value>
+  </data>
+  <data name="UploadFolderSavingMessage" xml:space="preserve">
+    <value>Įrašoma...</value>
+  </data>
+  <data name="UploadFolderSaveFailedMessage" xml:space="preserve">
+    <value>Nepavyko įrašyti appsettings.json.</value>
   </data>
 </root>

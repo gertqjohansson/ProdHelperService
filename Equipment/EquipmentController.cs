@@ -1,6 +1,8 @@
+using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ProdHelperService.ActionLogging;
 using ProdHelperService.Auth;
 using ProdHelperService.Contracts;
 using ProdHelperService.Contracts.Auth;
@@ -10,8 +12,13 @@ namespace ProdHelperService;
 
 [ApiController]
 [Authorize(Roles = "Administrator")]
-public class EquipmentController(ApplicationDbContext db) : ControllerBase
+public class EquipmentController(ApplicationDbContext db, IActionLogService actionLogService) : ControllerBase
 {
+    // ColorCode is NOT NULL on the real table; the client always supplies a real hex value via its
+    // color picker (which itself defaults to this same value), so this only guards direct API
+    // callers that omit it.
+    private const string DefaultColorCode = "#cccccc";
+
     [HttpPost(ApiRoutes.EquipmentList)]
     public async Task<IActionResult> List(EquipmentListRequest request)
     {
@@ -60,6 +67,9 @@ public class EquipmentController(ApplicationDbContext db) : ControllerBase
                 UseNotification = e.UseNotification,
                 NotificationDate = e.NotificationDate,
                 Notification = e.Notification,
+                NotificationLanguage = e.NotificationLanguage,
+                Comment = e.Comment,
+                CommentLanguage = e.CommentLanguage,
             };
         }).ToList();
 
@@ -89,40 +99,57 @@ public class EquipmentController(ApplicationDbContext db) : ControllerBase
             return BadRequest(new AuthErrorResponse { Code = "CategoryNotFound", Message = "The selected category does not exist." });
         }
 
+        if (request.ActionTimeUtc == default)
+        {
+            return BadRequest(new AuthErrorResponse { Code = "DateTimeRequired", Message = "Date/time is required." });
+        }
+
+        if (string.IsNullOrWhiteSpace(request.MadeByUser))
+        {
+            return BadRequest(new AuthErrorResponse { Code = "MadeByUserRequired", Message = "The user is required." });
+        }
+
         await using var transaction = await db.Database.BeginTransactionAsync();
 
-        var entity = new Equipment
-        {
-            ParentId = request.ParentId,
-            ExternalCode = request.ExternalCode,
-            IsOee = request.IsOee,
-            IsPlannable = request.IsPlannable,
-            ColorCode = request.ColorCode,
-            EquipmentCategoryId = request.EquipmentCategoryId,
-            UseEconomy = request.UseEconomy,
-            DateOfPurchase = request.UseEconomy == true ? request.DateOfPurchase : null,
-            Price = request.UseEconomy == true ? request.Price : null,
-            DepreciationPeriod = request.UseEconomy == true ? request.DepreciationPeriod : null,
-            UseNotification = request.UseNotification,
-            NotificationDate = request.UseNotification == true ? request.NotificationDate : null,
-            Notification = request.UseNotification == true ? request.Notification : null,
-        };
-        db.Equipment.Add(entity);
-        await db.SaveChangesAsync(); // Save first so entity.Id is populated for the translations below.
-
-        // Only the user's language + the fallback language get a translation row - not every
-        // language in the system (see Client/SKILL.md's translation-table storage rule).
+        // Resolved up front (not just for the translation rows below) so NotificationLanguage can
+        // record which language the notification text was written in - same rule as Comment/
+        // CommentLanguage (see Client/SKILL.md's translation-table storage rule).
         string fallbackLanguage = await db.Languages
             .Where(l => l.IsFallback == true)
             .Select(l => l.IsoCode)
             .FirstOrDefaultAsync() ?? "en";
         string language = string.IsNullOrWhiteSpace(request.LanguageIsoCode) ? fallbackLanguage : request.LanguageIsoCode;
 
+        var entity = new Equipment
+        {
+            ParentId = request.ParentId,
+            ExternalCode = request.ExternalCode,
+            IsOee = request.IsOee ?? false,
+            IsPlannable = request.IsPlannable,
+            ColorCode = request.ColorCode ?? DefaultColorCode,
+            EquipmentCategoryId = request.EquipmentCategoryId,
+            UseEconomy = request.UseEconomy ?? false,
+            DateOfPurchase = request.UseEconomy == true ? request.DateOfPurchase : null,
+            Price = request.UseEconomy == true ? request.Price : null,
+            DepreciationPeriod = request.UseEconomy == true ? request.DepreciationPeriod : null,
+            UseNotification = request.UseNotification ?? false,
+            NotificationDate = request.UseNotification == true ? request.NotificationDate : null,
+            Notification = request.UseNotification == true ? request.Notification : null,
+            NotificationLanguage = request.UseNotification == true && !string.IsNullOrWhiteSpace(request.Notification) ? language : null,
+            IsDeleted = false,
+        };
+        db.Equipment.Add(entity);
+        await db.SaveChangesAsync(); // Save first so entity.Id is populated for the translations below.
+
+        // Only the user's language + the fallback language get a translation row - not every
+        // language in the system (see Client/SKILL.md's translation-table storage rule).
         db.EquipmentTranslations.Add(new EquipmentTranslation { EquipmentId = entity.Id, LanguageIsoCode = language, Value = request.Name });
         if (language != fallbackLanguage)
         {
             db.EquipmentTranslations.Add(new EquipmentTranslation { EquipmentId = entity.Id, LanguageIsoCode = fallbackLanguage, Value = request.Name });
         }
+
+        actionLogService.Record("New", "Equipment", request.MadeByUser, request.ActionTimeUtc, null, JsonSerializer.Serialize(entity));
         await db.SaveChangesAsync();
 
         await transaction.CommitAsync();
@@ -176,28 +203,44 @@ public class EquipmentController(ApplicationDbContext db) : ControllerBase
             return BadRequest(new AuthErrorResponse { Code = "CategoryNotFound", Message = "The selected category does not exist." });
         }
 
-        entity.ParentId = request.ParentId;
-        entity.ExternalCode = request.ExternalCode;
-        entity.IsOee = request.IsOee;
-        entity.IsPlannable = request.IsPlannable;
-        entity.ColorCode = request.ColorCode;
-        entity.EquipmentCategoryId = request.EquipmentCategoryId;
-        entity.UseEconomy = request.UseEconomy;
-        entity.DateOfPurchase = request.UseEconomy == true ? request.DateOfPurchase : null;
-        entity.Price = request.UseEconomy == true ? request.Price : null;
-        entity.DepreciationPeriod = request.UseEconomy == true ? request.DepreciationPeriod : null;
-        entity.UseNotification = request.UseNotification;
-        entity.NotificationDate = request.UseNotification == true ? request.NotificationDate : null;
-        entity.Notification = request.UseNotification == true ? request.Notification : null;
+        if (request.ActionTimeUtc == default)
+        {
+            return BadRequest(new AuthErrorResponse { Code = "DateTimeRequired", Message = "Date/time is required." });
+        }
 
-        // Editing only touches the user's own language row - every other language, including the
-        // fallback, is left as-is (see Client/SKILL.md's translation-table storage rule).
+        if (string.IsNullOrWhiteSpace(request.MadeByUser))
+        {
+            return BadRequest(new AuthErrorResponse { Code = "MadeByUserRequired", Message = "The user is required." });
+        }
+
+        string oldValuesJson = JsonSerializer.Serialize(entity);
+
+        // Resolved up front so NotificationLanguage can record which language the notification
+        // text was (re)written in - same rule as Comment/CommentLanguage (see Client/SKILL.md's
+        // translation-table storage rule).
         string fallbackLanguage = await db.Languages
             .Where(l => l.IsFallback == true)
             .Select(l => l.IsoCode)
             .FirstOrDefaultAsync() ?? "en";
         string language = string.IsNullOrWhiteSpace(request.LanguageIsoCode) ? fallbackLanguage : request.LanguageIsoCode;
 
+        entity.ParentId = request.ParentId;
+        entity.ExternalCode = request.ExternalCode;
+        entity.IsOee = request.IsOee ?? false;
+        entity.IsPlannable = request.IsPlannable;
+        entity.ColorCode = request.ColorCode ?? DefaultColorCode;
+        entity.EquipmentCategoryId = request.EquipmentCategoryId;
+        entity.UseEconomy = request.UseEconomy ?? false;
+        entity.DateOfPurchase = request.UseEconomy == true ? request.DateOfPurchase : null;
+        entity.Price = request.UseEconomy == true ? request.Price : null;
+        entity.DepreciationPeriod = request.UseEconomy == true ? request.DepreciationPeriod : null;
+        entity.UseNotification = request.UseNotification ?? false;
+        entity.NotificationDate = request.UseNotification == true ? request.NotificationDate : null;
+        entity.Notification = request.UseNotification == true ? request.Notification : null;
+        entity.NotificationLanguage = request.UseNotification == true && !string.IsNullOrWhiteSpace(request.Notification) ? language : null;
+
+        // Editing only touches the user's own language row - every other language, including the
+        // fallback, is left as-is (see Client/SKILL.md's translation-table storage rule).
         EquipmentTranslation? translation = await db.EquipmentTranslations
             .FirstOrDefaultAsync(t => t.EquipmentId == entity.Id && t.LanguageIsoCode == language);
         if (translation is null)
@@ -209,6 +252,7 @@ public class EquipmentController(ApplicationDbContext db) : ControllerBase
             translation.Value = request.Name;
         }
 
+        actionLogService.Record("Update", "Equipment", request.MadeByUser, request.ActionTimeUtc, oldValuesJson, JsonSerializer.Serialize(entity));
         await db.SaveChangesAsync();
 
         return Ok(new EquipmentDto
@@ -246,9 +290,40 @@ public class EquipmentController(ApplicationDbContext db) : ControllerBase
             return BadRequest(new AuthErrorResponse { Code = "HasChildren", Message = "Cannot delete equipment that has child nodes." });
         }
 
+        if (request.ActionTimeUtc == default)
+        {
+            return BadRequest(new AuthErrorResponse { Code = "DateTimeRequired", Message = "Date/time is required." });
+        }
+
+        if (string.IsNullOrWhiteSpace(request.MadeByUser))
+        {
+            return BadRequest(new AuthErrorResponse { Code = "MadeByUserRequired", Message = "The user is required." });
+        }
+
+        string oldValuesJson = JsonSerializer.Serialize(entity);
         entity.IsDeleted = true;
+        actionLogService.Record("Delete", "Equipment", request.MadeByUser, request.ActionTimeUtc, oldValuesJson, "{}");
         await db.SaveChangesAsync();
 
         return Ok();
+    }
+
+    // Deliberately separate from Update: Comment/CommentLanguage are edited through their own
+    // panel, not the Add/Edit modal, so they get their own lightweight save action instead of
+    // riding along with the full Name/category/translation-row update flow.
+    [HttpPost(ApiRoutes.EquipmentSaveComment)]
+    public async Task<IActionResult> SaveComment(SaveEquipmentCommentRequest request)
+    {
+        Equipment? entity = await db.Equipment.FirstOrDefaultAsync(e => e.Id == request.Id && e.IsDeleted != true);
+        if (entity is null)
+        {
+            return NotFound(new AuthErrorResponse { Code = "NotFound", Message = "Equipment not found." });
+        }
+
+        entity.Comment = request.Comment;
+        entity.CommentLanguage = string.IsNullOrWhiteSpace(request.Comment) ? null : request.LanguageIsoCode;
+        await db.SaveChangesAsync();
+
+        return Ok(new EquipmentCommentDto { Id = entity.Id, Comment = entity.Comment, CommentLanguage = entity.CommentLanguage });
     }
 }

@@ -1,16 +1,32 @@
+using System.Text.Json;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi;
 using ProdHelperService;
+using ProdHelperService.ActionLogging;
 using ProdHelperService.Auth;
 using ProdHelperService.Controllers;
+using ProdHelperService.Contracts.Auth;
+using ProdHelperService.ErrorLogging;
+using ProdHelperService.ServiceManagement;
+using ProdHelperService.Storage;
+using ProdHelperService.Translation;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddEnvironmentVariables(prefix: "RELAY_");
 
+// No-op unless actually launched by the Service Control Manager (i.e. after
+// WindowsServiceInstaller registers this process as a service) - safe to
+// call unconditionally, so `dotnet run`/console usage is unaffected.
+builder.Host.UseWindowsService();
+
 builder.Services.AddProdHelperControllers();
 builder.Services.AddHttpClient();
 builder.Services.AddHostedService<RelayListenerHostedService>();
+builder.Services.AddSingleton<IServiceLifecycleManager, ServiceLifecycleManager>();
+builder.Services.AddSingleton<IWindowsServiceInstaller, WindowsServiceInstaller>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ProdHelperDb")));
@@ -33,6 +49,28 @@ builder.Services.Configure<DataProtectionTokenProviderOptions>(options =>
 builder.Services.AddSingleton<IEmailSender, AzureCommunicationEmailSender>();
 
 builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("Jwt"));
+
+builder.Services.Configure<TranslationSettings>(builder.Configuration.GetSection("Translation"));
+builder.Services.AddHttpClient<LibreTranslateService>((sp, client) =>
+{
+    var settings = sp.GetRequiredService<IOptions<TranslationSettings>>().Value;
+    client.BaseAddress = new Uri(settings.BaseUrl);
+    client.Timeout = TimeSpan.FromSeconds(settings.TimeoutSeconds);
+});
+builder.Services.AddHttpClient<MyMemoryTranslationService>((sp, client) =>
+{
+    var settings = sp.GetRequiredService<IOptions<TranslationSettings>>().Value;
+    client.BaseAddress = new Uri(settings.MyMemoryBaseUrl);
+    client.Timeout = TimeSpan.FromSeconds(settings.TimeoutSeconds);
+});
+builder.Services.AddTransient<ITranslationService, CompositeTranslationService>();
+
+builder.Services.Configure<StorageOptions>(builder.Configuration.GetSection("Storage"));
+builder.Services.AddTransient<IFileStorageService, FileStorageService>();
+
+builder.Services.AddScoped<IErrorLogService, ErrorLogService>();
+builder.Services.AddScoped<IActionLogService, ActionLogService>();
+
 builder.Services.AddMemoryCache();
 builder.Services.AddProdHelperAuth(builder.Configuration);
 builder.Services.AddAuthorization();
@@ -79,6 +117,35 @@ int localApiPort = builder.Configuration.GetValue("LocalApi:Port", 5080);
 builder.WebHost.UseUrls($"http://localhost:{localApiPort}");
 
 var app = builder.Build();
+
+// Catches any unhandled exception from any controller, logs it to the ErrorLog table (Section is
+// the request path, which every controller in this app already names "{Controller}/{Function}" -
+// see ApiRoutes.cs), and returns the same AuthErrorResponse{Code,Message} shape every other error
+// response already uses. Deliberate BadRequest/NotFound returns from controllers are normal
+// IActionResult values, not exceptions, so this has no effect on them. Registered first so it
+// wraps every other middleware below.
+app.UseExceptionHandler(errorApp =>
+{
+    errorApp.Run(async context =>
+    {
+        var feature = context.Features.Get<IExceptionHandlerPathFeature>();
+        if (feature?.Error is { } exception)
+        {
+            string section = feature.Path.Trim('/');
+            Console.WriteLine($"[Error] {section}: {exception}");
+            var errorLogService = context.RequestServices.GetRequiredService<IErrorLogService>();
+            await errorLogService.LogAsync(section, exception, context.RequestAborted);
+        }
+
+        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+        context.Response.ContentType = "application/json";
+        await context.Response.WriteAsync(JsonSerializer.Serialize(new AuthErrorResponse
+        {
+            Code = "InternalError",
+            Message = "An unexpected error occurred.",
+        }));
+    });
+});
 
 // Kestrel here only binds to localhost for docs/testing, so Swagger is left
 // on unconditionally rather than gated behind an environment check.
