@@ -290,10 +290,10 @@
     <value>Διαμόρφωση υπηρεσίας</value>
   </data>
   <data name="ServiceConfigDialogDescription" xml:space="preserve">
-    <value>Δεν ήταν δυνατή η επικοινωνία με το ProdHelperService. Εκκινήστε την υπηρεσία, επεξεργαστείτε τη διαμόρφωσή της παρακάτω εάν χρειάζεται και κατόπιν χρησιμοποιήστε το Δοκιμή υπηρεσίας για να επιβεβαιώσετε ότι αποκρίνεται. Οι αλλαγές θα ισχύσουν την επόμενη φορά που θα εκκινηθεί η υπηρεσία.</value>
+    <value>Δεν ήταν δυνατή η επικοινωνία με το ProdHelperService. Εκκινήστε την υπηρεσία, επεξεργαστείτε τη διαμόρφωσή της παρακάτω εάν χρειάζεται και κατόπιν χρησιμοποιήστε το Λήψη έκδοσης υπηρεσίας για να επιβεβαιώσετε ότι αποκρίνεται. Οι αλλαγές θα ισχύσουν την επόμενη φορά που θα εκκινηθεί η υπηρεσία.</value>
   </data>
-  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
-    <value>Δοκιμή υπηρεσίας</value>
+  <data name="ServiceConfigGetVersionButtonText" xml:space="preserve">
+    <value>Λήψη έκδοσης υπηρεσίας</value>
   </data>
   <data name="ServiceConfigCheckingMessage" xml:space="preserve">
     <value>Έλεγχος...</value>
@@ -318,6 +318,9 @@
   </data>
   <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingSectionHeader" xml:space="preserve">
+    <value>Παρακολούθηση tokens</value>
   </data>
   <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
     <value>Namespace</value>
@@ -352,6 +355,15 @@
   <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
     <value>Διεύθυνση αποστολέα</value>
   </data>
+  <data name="ServiceConfigTokenTrackingBaseUrlLabel" xml:space="preserve">
+    <value>Βασικό URL</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingApiKeyLabel" xml:space="preserve">
+    <value>Κλειδί API</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingIntervalMinutesLabel" xml:space="preserve">
+    <value>Διάστημα (λεπτά)</value>
+  </data>
   <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
     <value>Δοκιμή σύνδεσης</value>
   </data>
@@ -372,6 +384,9 @@
   </data>
   <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
     <value>Εισαγάγετε έναν θετικό αριθμό ημερών.</value>
+  </data>
+  <data name="ServiceConfigInvalidIntervalMinutesMessage" xml:space="preserve">
+    <value>Εισαγάγετε έναν θετικό αριθμό λεπτών.</value>
   </data>
   <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
     <value>Η αλλαγή του κλειδιού JWT θα ακυρώσει όλες τις υπάρχουσες συνεδρίες την επόμενη φορά που θα εκκινηθεί η υπηρεσία. Συνέχεια;</value>
@@ -394,8 +409,8 @@
   <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
     <value>Δημιουργία</value>
   </data>
-  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
-    <value>Η υπηρεσία λειτουργεί.</value>
+  <data name="ServiceConfigVersionMessage" xml:space="preserve">
+    <value>Έκδοση υπηρεσίας: {0}</value>
   </data>
   <data name="FoldersMenuText" xml:space="preserve">
     <value>Φάκελοι</value>

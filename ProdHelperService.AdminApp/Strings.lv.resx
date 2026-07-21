@@ -290,10 +290,10 @@
     <value>Pakalpojuma konfigurācija</value>
   </data>
   <data name="ServiceConfigDialogDescription" xml:space="preserve">
-    <value>Neizdevās sasniegt ProdHelperService. Startējiet pakalpojumu, ja nepieciešams, rediģējiet tā konfigurāciju zemāk un pēc tam izmantojiet Pārbaudīt pakalpojumu, lai apstiprinātu, ka tas atbild. Izmaiņas stāsies spēkā nākamreiz startējot pakalpojumu.</value>
+    <value>Neizdevās sasniegt ProdHelperService. Startējiet pakalpojumu, ja nepieciešams, rediģējiet tā konfigurāciju zemāk un pēc tam izmantojiet Iegūt pakalpojuma versiju, lai apstiprinātu, ka tas atbild. Izmaiņas stāsies spēkā nākamreiz startējot pakalpojumu.</value>
   </data>
-  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
-    <value>Pārbaudīt pakalpojumu</value>
+  <data name="ServiceConfigGetVersionButtonText" xml:space="preserve">
+    <value>Iegūt pakalpojuma versiju</value>
   </data>
   <data name="ServiceConfigCheckingMessage" xml:space="preserve">
     <value>Pārbauda...</value>
@@ -318,6 +318,9 @@
   </data>
   <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
     <value>E-pasts</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingSectionHeader" xml:space="preserve">
+    <value>Marķieru izsekošana</value>
   </data>
   <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
     <value>Namespace</value>
@@ -352,6 +355,15 @@
   <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
     <value>Sūtītāja adrese</value>
   </data>
+  <data name="ServiceConfigTokenTrackingBaseUrlLabel" xml:space="preserve">
+    <value>Pamata URL</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingApiKeyLabel" xml:space="preserve">
+    <value>API atslēga</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingIntervalMinutesLabel" xml:space="preserve">
+    <value>Intervāls (minūtēs)</value>
+  </data>
   <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
     <value>Pārbaudīt savienojumu</value>
   </data>
@@ -372,6 +384,9 @@
   </data>
   <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
     <value>Ievadiet pozitīvu dienu skaitu.</value>
+  </data>
+  <data name="ServiceConfigInvalidIntervalMinutesMessage" xml:space="preserve">
+    <value>Ievadiet pozitīvu minūšu skaitu.</value>
   </data>
   <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
     <value>Mainot JWT atslēgu, tiks anulētas visas esošās sesijas nākamreiz startējot pakalpojumu. Turpināt?</value>
@@ -394,8 +409,8 @@
   <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
     <value>Ģenerēt</value>
   </data>
-  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
-    <value>Pakalpojums darbojas.</value>
+  <data name="ServiceConfigVersionMessage" xml:space="preserve">
+    <value>Pakalpojuma versija: {0}</value>
   </data>
   <data name="FoldersMenuText" xml:space="preserve">
     <value>Mapes</value>

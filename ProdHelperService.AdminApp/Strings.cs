@@ -104,7 +104,7 @@ internal static class Strings
     public static string ServiceConfigMenuText => Get("ServiceConfigMenuText");
     public static string ServiceConfigDialogTitle => Get("ServiceConfigDialogTitle");
     public static string ServiceConfigDialogDescription => Get("ServiceConfigDialogDescription");
-    public static string ServiceConfigTryServiceButtonText => Get("ServiceConfigTryServiceButtonText");
+    public static string ServiceConfigGetVersionButtonText => Get("ServiceConfigGetVersionButtonText");
     public static string ServiceConfigCheckingMessage => Get("ServiceConfigCheckingMessage");
     public static string ServiceConfigReachableMessage => Get("ServiceConfigReachableMessage");
     public static string ServiceConfigUnreachableMessage => Get("ServiceConfigUnreachableMessage");
@@ -113,6 +113,7 @@ internal static class Strings
     public static string ServiceConfigDatabaseSectionHeader => Get("ServiceConfigDatabaseSectionHeader");
     public static string ServiceConfigJwtSectionHeader => Get("ServiceConfigJwtSectionHeader");
     public static string ServiceConfigEmailSectionHeader => Get("ServiceConfigEmailSectionHeader");
+    public static string ServiceConfigTokenTrackingSectionHeader => Get("ServiceConfigTokenTrackingSectionHeader");
     public static string ServiceConfigNamespaceLabel => Get("ServiceConfigNamespaceLabel");
     public static string ServiceConfigConnectionNameLabel => Get("ServiceConfigConnectionNameLabel");
     public static string ServiceConfigKeyNameLabel => Get("ServiceConfigKeyNameLabel");
@@ -124,12 +125,16 @@ internal static class Strings
     public static string ServiceConfigRefreshTokenDaysLabel => Get("ServiceConfigRefreshTokenDaysLabel");
     public static string ServiceConfigEmailConnectionStringLabel => Get("ServiceConfigEmailConnectionStringLabel");
     public static string ServiceConfigSenderAddressLabel => Get("ServiceConfigSenderAddressLabel");
+    public static string ServiceConfigTokenTrackingBaseUrlLabel => Get("ServiceConfigTokenTrackingBaseUrlLabel");
+    public static string ServiceConfigTokenTrackingApiKeyLabel => Get("ServiceConfigTokenTrackingApiKeyLabel");
+    public static string ServiceConfigTokenTrackingIntervalMinutesLabel => Get("ServiceConfigTokenTrackingIntervalMinutesLabel");
     public static string ServiceConfigTryConnectionButtonText => Get("ServiceConfigTryConnectionButtonText");
     public static string ServiceConfigTestingConnectionMessage => Get("ServiceConfigTestingConnectionMessage");
     public static string ServiceConfigConnectionSuccessMessage => Get("ServiceConfigConnectionSuccessMessage");
     public static string ServiceConfigInvalidPortMessage => Get("ServiceConfigInvalidPortMessage");
     public static string ServiceConfigInvalidAccessTokenMinutesMessage => Get("ServiceConfigInvalidAccessTokenMinutesMessage");
     public static string ServiceConfigInvalidRefreshTokenDaysMessage => Get("ServiceConfigInvalidRefreshTokenDaysMessage");
+    public static string ServiceConfigInvalidIntervalMinutesMessage => Get("ServiceConfigInvalidIntervalMinutesMessage");
     public static string ServiceConfigJwtKeyChangeWarningMessage => Get("ServiceConfigJwtKeyChangeWarningMessage");
     public static string ServiceConfigSaveButtonText => Get("ServiceConfigSaveButtonText");
     public static string ServiceConfigCancelButtonText => Get("ServiceConfigCancelButtonText");
@@ -137,7 +142,8 @@ internal static class Strings
     public static string ServiceConfigSaveFailedMessage => Get("ServiceConfigSaveFailedMessage");
     public static string ServiceConfigLoadFailedMessage => Get("ServiceConfigLoadFailedMessage");
     public static string ServiceConfigGenerateJwtKeyButtonText => Get("ServiceConfigGenerateJwtKeyButtonText");
-    public static string ServiceConfigServiceWorksMessage => Get("ServiceConfigServiceWorksMessage");
+    public static string ServiceConfigVersionMessage(string version) =>
+        string.Format(CultureInfo.CurrentUICulture, Get("ServiceConfigVersionMessage"), version);
 
     public static string FoldersMenuText => Get("FoldersMenuText");
     public static string UploadFolderDialogTitle => Get("UploadFolderDialogTitle");

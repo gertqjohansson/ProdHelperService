@@ -290,10 +290,10 @@
     <value>Configuração do serviço</value>
   </data>
   <data name="ServiceConfigDialogDescription" xml:space="preserve">
-    <value>Não foi possível contactar o ProdHelperService. Inicie o serviço, edite a respetiva configuração abaixo se necessário e utilize depois Testar serviço para confirmar que está a responder. As alterações têm efeito da próxima vez que o serviço for iniciado.</value>
+    <value>Não foi possível contactar o ProdHelperService. Inicie o serviço, edite a respetiva configuração abaixo se necessário e utilize depois Obter versão do serviço para confirmar que está a responder. As alterações têm efeito da próxima vez que o serviço for iniciado.</value>
   </data>
-  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
-    <value>Testar serviço</value>
+  <data name="ServiceConfigGetVersionButtonText" xml:space="preserve">
+    <value>Obter versão do serviço</value>
   </data>
   <data name="ServiceConfigCheckingMessage" xml:space="preserve">
     <value>A verificar...</value>
@@ -318,6 +318,9 @@
   </data>
   <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingSectionHeader" xml:space="preserve">
+    <value>Monitorização de tokens</value>
   </data>
   <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
     <value>Namespace</value>
@@ -352,6 +355,15 @@
   <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
     <value>Endereço do remetente</value>
   </data>
+  <data name="ServiceConfigTokenTrackingBaseUrlLabel" xml:space="preserve">
+    <value>URL base</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingApiKeyLabel" xml:space="preserve">
+    <value>Chave de API</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingIntervalMinutesLabel" xml:space="preserve">
+    <value>Intervalo (minutos)</value>
+  </data>
   <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
     <value>Testar ligação</value>
   </data>
@@ -372,6 +384,9 @@
   </data>
   <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
     <value>Introduza um número positivo de dias.</value>
+  </data>
+  <data name="ServiceConfigInvalidIntervalMinutesMessage" xml:space="preserve">
+    <value>Introduza um número positivo de minutos.</value>
   </data>
   <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
     <value>Alterar a chave JWT invalidará todas as sessões existentes da próxima vez que o serviço for iniciado. Continuar?</value>
@@ -394,8 +409,8 @@
   <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
     <value>Gerar</value>
   </data>
-  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
-    <value>O serviço está a funcionar.</value>
+  <data name="ServiceConfigVersionMessage" xml:space="preserve">
+    <value>Versão do serviço: {0}</value>
   </data>
   <data name="FoldersMenuText" xml:space="preserve">
     <value>Pastas</value>

@@ -48,10 +48,10 @@ Start-Sleep -Seconds 2
 $status = (Get-Service -Name ProdHelperService).Status
 Write-Output "Service status: $status"
 
-Write-Output "Verifying Service/IamAlive responds..."
+Write-Output "Verifying Service/GetVersion responds..."
 try {
-    $response = Invoke-WebRequest -Uri "http://localhost:5080/Service/IamAlive" -Method POST -UseBasicParsing -TimeoutSec 10
-    Write-Output "Service/IamAlive: HTTP $($response.StatusCode) - $($response.Content)"
+    $response = Invoke-WebRequest -Uri "http://localhost:5080/Service/GetVersion" -Method POST -UseBasicParsing -TimeoutSec 10
+    Write-Output "Service/GetVersion: HTTP $($response.StatusCode) - $($response.Content)"
 } catch {
-    Write-Warning "Service/IamAlive did not respond successfully: $($_.Exception.Message)"
+    Write-Warning "Service/GetVersion did not respond successfully: $($_.Exception.Message)"
 }

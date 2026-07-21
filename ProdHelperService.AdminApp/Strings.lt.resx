@@ -290,10 +290,10 @@
     <value>Paslaugos konfigūracija</value>
   </data>
   <data name="ServiceConfigDialogDescription" xml:space="preserve">
-    <value>Nepavyko pasiekti ProdHelperService. Paleiskite paslaugą, jei reikia, redaguokite jos konfigūraciją žemiau, tada naudokite Bandyti paslaugą, kad patvirtintumėte, jog ji atsako. Pakeitimai įsigalios kitą kartą paleidus paslaugą.</value>
+    <value>Nepavyko pasiekti ProdHelperService. Paleiskite paslaugą, jei reikia, redaguokite jos konfigūraciją žemiau, tada naudokite Gauti paslaugos versiją, kad patvirtintumėte, jog ji atsako. Pakeitimai įsigalios kitą kartą paleidus paslaugą.</value>
   </data>
-  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
-    <value>Bandyti paslaugą</value>
+  <data name="ServiceConfigGetVersionButtonText" xml:space="preserve">
+    <value>Gauti paslaugos versiją</value>
   </data>
   <data name="ServiceConfigCheckingMessage" xml:space="preserve">
     <value>Tikrinama...</value>
@@ -318,6 +318,9 @@
   </data>
   <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
     <value>El. paštas</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingSectionHeader" xml:space="preserve">
+    <value>Žetonų sekimas</value>
   </data>
   <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
     <value>Namespace</value>
@@ -352,6 +355,15 @@
   <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
     <value>Siuntėjo adresas</value>
   </data>
+  <data name="ServiceConfigTokenTrackingBaseUrlLabel" xml:space="preserve">
+    <value>Pagrindinis URL</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingApiKeyLabel" xml:space="preserve">
+    <value>API raktas</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingIntervalMinutesLabel" xml:space="preserve">
+    <value>Intervalas (minutėmis)</value>
+  </data>
   <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
     <value>Bandyti ryšį</value>
   </data>
@@ -372,6 +384,9 @@
   </data>
   <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
     <value>Įveskite teigiamą dienų skaičių.</value>
+  </data>
+  <data name="ServiceConfigInvalidIntervalMinutesMessage" xml:space="preserve">
+    <value>Įveskite teigiamą minučių skaičių.</value>
   </data>
   <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
     <value>Pakeitus JWT raktą, kitą kartą paleidus paslaugą, visi esami seansai taps negaliojantys. Tęsti?</value>
@@ -394,8 +409,8 @@
   <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
     <value>Generuoti</value>
   </data>
-  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
-    <value>Paslauga veikia.</value>
+  <data name="ServiceConfigVersionMessage" xml:space="preserve">
+    <value>Paslaugos versija: {0}</value>
   </data>
   <data name="FoldersMenuText" xml:space="preserve">
     <value>Aplankai</value>

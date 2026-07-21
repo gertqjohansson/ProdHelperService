@@ -3,4 +3,5 @@
   <Project Path="ProdHelperService.Controllers\ProdHelperService.Controllers.csproj" />
   <Project Path="ProdHelperService.Contracts\ProdHelperService.Contracts.csproj" />
   <Project Path="ProdHelperService.AdminApp\ProdHelperService.AdminApp.csproj" />
+  <Project Path="ProdHelperTokensService/ProdHelperTokensService.csproj" />
 </Solution>

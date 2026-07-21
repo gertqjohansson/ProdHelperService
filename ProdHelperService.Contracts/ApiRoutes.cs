@@ -54,5 +54,5 @@ public static class ApiRoutes
     public const string ServiceUnregister = "Service/Unregister";
     public const string ServiceStart = "Service/Start";
     public const string ServiceStop = "Service/Stop";
-    public const string ServiceIamAlive = "Service/IamAlive";
+    public const string ServiceGetVersion = "Service/GetVersion";
 }

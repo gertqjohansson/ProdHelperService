@@ -290,10 +290,10 @@
     <value>Palvelun asetukset</value>
   </data>
   <data name="ServiceConfigDialogDescription" xml:space="preserve">
-    <value>ProdHelperServiceen ei saatu yhteyttä. Käynnistä palvelu, muokkaa sen asetuksia alla tarvittaessa ja vahvista sitten yhteys Testaa palvelu -painikkeella. Muutokset tulevat voimaan, kun palvelu käynnistetään seuraavan kerran.</value>
+    <value>ProdHelperServiceen ei saatu yhteyttä. Käynnistä palvelu, muokkaa sen asetuksia alla tarvittaessa ja vahvista sitten yhteys Hae palvelun versio -painikkeella. Muutokset tulevat voimaan, kun palvelu käynnistetään seuraavan kerran.</value>
   </data>
-  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
-    <value>Testaa palvelu</value>
+  <data name="ServiceConfigGetVersionButtonText" xml:space="preserve">
+    <value>Hae palvelun versio</value>
   </data>
   <data name="ServiceConfigCheckingMessage" xml:space="preserve">
     <value>Tarkistetaan...</value>
@@ -318,6 +318,9 @@
   </data>
   <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
     <value>Sähköposti</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingSectionHeader" xml:space="preserve">
+    <value>Tokenin seuranta</value>
   </data>
   <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
     <value>Namespace</value>
@@ -352,6 +355,15 @@
   <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
     <value>Lähettäjän osoite</value>
   </data>
+  <data name="ServiceConfigTokenTrackingBaseUrlLabel" xml:space="preserve">
+    <value>Perus-URL</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingApiKeyLabel" xml:space="preserve">
+    <value>API-avain</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingIntervalMinutesLabel" xml:space="preserve">
+    <value>Aikaväli (minuuttia)</value>
+  </data>
   <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
     <value>Testaa yhteys</value>
   </data>
@@ -372,6 +384,9 @@
   </data>
   <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
     <value>Anna positiivinen päivämäärä.</value>
+  </data>
+  <data name="ServiceConfigInvalidIntervalMinutesMessage" xml:space="preserve">
+    <value>Anna positiivinen minuuttimäärä.</value>
   </data>
   <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
     <value>JWT-avaimen vaihtaminen mitätöi kaikki nykyiset istunnot, kun palvelu käynnistetään seuraavan kerran. Jatketaanko?</value>
@@ -394,8 +409,8 @@
   <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
     <value>Generoi</value>
   </data>
-  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
-    <value>Palvelu toimii.</value>
+  <data name="ServiceConfigVersionMessage" xml:space="preserve">
+    <value>Palvelun versio: {0}</value>
   </data>
   <data name="FoldersMenuText" xml:space="preserve">
     <value>Kansiot</value>

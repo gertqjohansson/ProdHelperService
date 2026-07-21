@@ -10,8 +10,8 @@ namespace ProdHelperService.AdminApp;
 // Opened when ProdHelperService can't be reached (see Program.cs's EnsureServiceReachableAsync,
 // which runs before login - this form must work with no session and no guarantee the HTTP API is
 // up at all). Start/Stop control the Windows Service directly via IWindowsServiceInstaller (same
-// local, no-HTTP mechanism EnsureServiceRegisteredAsync already uses); Try Service is the only
-// thing here that goes over HTTP, to confirm the API is actually answering after a Start.
+// local, no-HTTP mechanism EnsureServiceRegisteredAsync already uses); Get Service Version is the
+// only thing here that goes over HTTP, to confirm the API is actually answering after a Start.
 public class ServiceConfigForm : Form
 {
     private static readonly Color TealPrimary = ColorTranslator.FromHtml("#27627B");
@@ -51,6 +51,9 @@ public class ServiceConfigForm : Form
     private TextBox _refreshTokenDaysBox = null!;
     private TextBox _emailConnectionStringBox = null!;
     private TextBox _senderAddressBox = null!;
+    private TextBox _tokenTrackingBaseUrlBox = null!;
+    private TextBox _tokenTrackingApiKeyBox = null!;
+    private TextBox _tokenTrackingIntervalMinutesBox = null!;
 
     private readonly Label _validationLabel;
     private readonly Button _saveButton;
@@ -111,7 +114,7 @@ public class ServiceConfigForm : Form
         _stopButton = new Button { Text = Strings.ServiceStopButtonText, Left = ContentLeft, Top = actionRowTop, Width = 150, Height = 34, Visible = false };
         _stopButton.Click += OnStopClick;
 
-        _tryServiceButton = new Button { Text = Strings.ServiceConfigTryServiceButtonText, Left = ContentLeft + 164, Top = actionRowTop, Width = 150, Height = 34, Visible = false };
+        _tryServiceButton = new Button { Text = Strings.ServiceConfigGetVersionButtonText, Left = ContentLeft + 164, Top = actionRowTop, Width = 150, Height = 34, Visible = false };
         _tryServiceButton.Click += OnTryServiceClick;
         y += 34 + 12;
 
@@ -252,6 +255,12 @@ public class ServiceConfigForm : Form
         y = AddSectionHeader(Strings.ServiceConfigEmailSectionHeader, y);
         _emailConnectionStringBox = AddField(Strings.ServiceConfigEmailConnectionStringLabel, ref y);
         _senderAddressBox = AddField(Strings.ServiceConfigSenderAddressLabel, ref y);
+
+        y += 12;
+        y = AddSectionHeader(Strings.ServiceConfigTokenTrackingSectionHeader, y);
+        _tokenTrackingBaseUrlBox = AddField(Strings.ServiceConfigTokenTrackingBaseUrlLabel, ref y);
+        _tokenTrackingApiKeyBox = AddField(Strings.ServiceConfigTokenTrackingApiKeyLabel, ref y);
+        _tokenTrackingIntervalMinutesBox = AddField(Strings.ServiceConfigTokenTrackingIntervalMinutesLabel, ref y, width: 120, numeric: true);
     }
 
     private int AddSectionHeader(string text, int top)
@@ -312,6 +321,10 @@ public class ServiceConfigForm : Form
             _emailConnectionStringBox.Text = root["Email"]?["ConnectionString"]?.GetValue<string>() ?? string.Empty;
             _senderAddressBox.Text = root["Email"]?["SenderAddress"]?.GetValue<string>() ?? string.Empty;
 
+            _tokenTrackingBaseUrlBox.Text = root["TokenTracking"]?["BaseUrl"]?.GetValue<string>() ?? string.Empty;
+            _tokenTrackingApiKeyBox.Text = root["TokenTracking"]?["ApiKey"]?.GetValue<string>() ?? string.Empty;
+            _tokenTrackingIntervalMinutesBox.Text = (root["TokenTracking"]?["IntervalMinutes"]?.GetValue<int>() ?? 10).ToString();
+
             SetFieldsEnabled(true);
         }
         catch
@@ -364,33 +377,32 @@ public class ServiceConfigForm : Form
 
     private async void OnTryServiceClick(object? sender, EventArgs e)
     {
-        bool reachable = await CheckReachabilityAsync();
-        if (reachable)
+        string? version = await CheckReachabilityAsync();
+        if (version is not null)
         {
-            MessageBox.Show(Strings.ServiceConfigServiceWorksMessage, Strings.ServiceConfigDialogTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Strings.ServiceConfigVersionMessage(version), Strings.ServiceConfigDialogTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 
     // Also drives Start/Stop/Test button visibility: unreachable -> Start only; reachable -> Stop
-    // + Test (it's presumably already running, so offer to stop it or re-verify it). Returns
-    // whether it succeeded so OnTryServiceClick can show a success popup only for an explicit user
-    // click, not for the automatic checks on Load/after Start-Stop.
-    private async Task<bool> CheckReachabilityAsync()
+    // + Test (it's presumably already running, so offer to stop it or re-verify it). Returns the
+    // reported version (null if unreachable) so OnTryServiceClick can show a version popup only
+    // for an explicit user click, not for the automatic checks on Load/after Start-Stop.
+    private async Task<string?> CheckReachabilityAsync()
     {
         _tryServiceButton.Enabled = false;
         _reachabilityLabel.ForeColor = TealPrimary;
         _reachabilityLabel.Text = Strings.ServiceConfigCheckingMessage;
-        bool reachable;
+        string? version;
         try
         {
-            await _serviceApiClient.IamAliveAsync(null);
-            reachable = true;
+            version = (await _serviceApiClient.GetVersionAsync(null)).Version;
             _reachabilityLabel.ForeColor = TealPrimary;
             _reachabilityLabel.Text = Strings.ServiceConfigReachableMessage;
         }
         catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException or AuthApiException)
         {
-            reachable = false;
+            version = null;
             _reachabilityLabel.ForeColor = ErrorColor;
             _reachabilityLabel.Text = Strings.ServiceConfigUnreachableMessage;
         }
@@ -399,10 +411,11 @@ public class ServiceConfigForm : Form
             _tryServiceButton.Enabled = true;
         }
 
+        bool reachable = version is not null;
         _startButton.Visible = !reachable;
         _stopButton.Visible = reachable;
         _tryServiceButton.Visible = reachable;
-        return reachable;
+        return version;
     }
 
     private async void OnTryConnectionClick(object? sender, EventArgs e)
@@ -448,6 +461,11 @@ public class ServiceConfigForm : Form
             _validationLabel.Text = Strings.ServiceConfigInvalidRefreshTokenDaysMessage;
             return;
         }
+        if (!int.TryParse(_tokenTrackingIntervalMinutesBox.Text, out int tokenTrackingIntervalMinutes) || tokenTrackingIntervalMinutes < 1)
+        {
+            _validationLabel.Text = Strings.ServiceConfigInvalidIntervalMinutesMessage;
+            return;
+        }
 
         if (_jwtKeyBox.Text != _originalJwtKey)
         {
@@ -463,7 +481,7 @@ public class ServiceConfigForm : Form
         _validationLabel.ForeColor = TealPrimary;
         _validationLabel.Text = Strings.ServiceConfigSavingMessage;
 
-        bool saved = await TrySaveAsync(port, accessMinutes, refreshDays);
+        bool saved = await TrySaveAsync(port, accessMinutes, refreshDays, tokenTrackingIntervalMinutes);
 
         SetBusy(false);
         if (!saved)
@@ -480,7 +498,7 @@ public class ServiceConfigForm : Form
     // Read-modify-write, same pattern as ServiceLifecycleManager.TryPersistPortAsync - only the
     // leaf keys this form edits are touched, everything else in the file (Cors, Translation,
     // Jwt:Issuer/Audience, ...) is preserved untouched.
-    private async Task<bool> TrySaveAsync(int port, int accessMinutes, int refreshDays)
+    private async Task<bool> TrySaveAsync(int port, int accessMinutes, int refreshDays, int tokenTrackingIntervalMinutes)
     {
         try
         {
@@ -511,6 +529,11 @@ public class ServiceConfigForm : Form
             root["Email"] ??= new JsonObject();
             root["Email"]!["ConnectionString"] = _emailConnectionStringBox.Text;
             root["Email"]!["SenderAddress"] = _senderAddressBox.Text;
+
+            root["TokenTracking"] ??= new JsonObject();
+            root["TokenTracking"]!["BaseUrl"] = _tokenTrackingBaseUrlBox.Text;
+            root["TokenTracking"]!["ApiKey"] = _tokenTrackingApiKeyBox.Text;
+            root["TokenTracking"]!["IntervalMinutes"] = tokenTrackingIntervalMinutes;
 
             await File.WriteAllTextAsync(path, root.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
             return true;

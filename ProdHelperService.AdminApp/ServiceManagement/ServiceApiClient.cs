@@ -20,7 +20,7 @@ public class ServiceApiClient(HttpClient httpClient)
     // Nullable token: only ever called with a real token today, from ServiceRegistrationForm
     // post-login. Kept nullable rather than tightened to match GetInfoAsync/UpdatePortAsync
     // above, since this and RegisterAsync originally supported a pre-login caller too (see
-    // IamAliveAsync below for the endpoint that now actually needs that).
+    // GetVersionAsync below for the endpoint that now actually needs that).
     public Task<ServiceRegistrationStatusResponse> GetRegistrationStatusAsync(string? accessToken) =>
         SendAsync<ServiceRegistrationStatusResponse>(ApiRoutes.ServiceGetRegistrationStatus, body: null, accessToken);
 
@@ -37,11 +37,11 @@ public class ServiceApiClient(HttpClient httpClient)
         SendAsync<ServiceActionResponse>(ApiRoutes.ServiceStop, body: null, accessToken);
 
     // Nullable token: called from Program.cs (EnsureServiceReachableAsync, before any session
-    // exists) and from ServiceConfigForm's "Try Service" button, which must work even when
+    // exists) and from ServiceConfigForm's "Get Service Version" button, which must work even when
     // nothing else about the session is established yet. The backend endpoint is
     // [AllowAnonymous] specifically to support this.
-    public Task<ServiceAliveResponse> IamAliveAsync(string? accessToken) =>
-        SendAsync<ServiceAliveResponse>(ApiRoutes.ServiceIamAlive, body: null, accessToken);
+    public Task<ServiceVersionResponse> GetVersionAsync(string? accessToken) =>
+        SendAsync<ServiceVersionResponse>(ApiRoutes.ServiceGetVersion, body: null, accessToken);
 
     private async Task<TResponse> SendAsync<TResponse>(string relativeUrl, object? body, string? accessToken)
     {

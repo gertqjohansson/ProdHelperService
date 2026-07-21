@@ -290,10 +290,10 @@
     <value>Konfigurace služby</value>
   </data>
   <data name="ServiceConfigDialogDescription" xml:space="preserve">
-    <value>Službu ProdHelperService se nepodařilo kontaktovat. Spusťte službu, v případě potřeby níže upravte její konfiguraci a poté pomocí tlačítka Vyzkoušet službu ověřte, že odpovídá. Změny se projeví při příštím spuštění služby.</value>
+    <value>Službu ProdHelperService se nepodařilo kontaktovat. Spusťte službu, v případě potřeby níže upravte její konfiguraci a poté pomocí tlačítka Zjistit verzi služby ověřte, že odpovídá. Změny se projeví při příštím spuštění služby.</value>
   </data>
-  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
-    <value>Vyzkoušet službu</value>
+  <data name="ServiceConfigGetVersionButtonText" xml:space="preserve">
+    <value>Zjistit verzi služby</value>
   </data>
   <data name="ServiceConfigCheckingMessage" xml:space="preserve">
     <value>Kontroluje se...</value>
@@ -318,6 +318,9 @@
   </data>
   <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
     <value>E-mail</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingSectionHeader" xml:space="preserve">
+    <value>Sledování tokenů</value>
   </data>
   <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
     <value>Namespace</value>
@@ -352,6 +355,15 @@
   <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
     <value>Adresa odesílatele</value>
   </data>
+  <data name="ServiceConfigTokenTrackingBaseUrlLabel" xml:space="preserve">
+    <value>Základní URL</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingApiKeyLabel" xml:space="preserve">
+    <value>Klíč API</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingIntervalMinutesLabel" xml:space="preserve">
+    <value>Interval (minuty)</value>
+  </data>
   <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
     <value>Vyzkoušet připojení</value>
   </data>
@@ -372,6 +384,9 @@
   </data>
   <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
     <value>Zadejte kladný počet dní.</value>
+  </data>
+  <data name="ServiceConfigInvalidIntervalMinutesMessage" xml:space="preserve">
+    <value>Zadejte kladný počet minut.</value>
   </data>
   <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
     <value>Změna klíče JWT zneplatní všechny existující relace při příštím spuštění služby. Pokračovat?</value>
@@ -394,8 +409,8 @@
   <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
     <value>Generovat</value>
   </data>
-  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
-    <value>Služba funguje.</value>
+  <data name="ServiceConfigVersionMessage" xml:space="preserve">
+    <value>Verze služby: {0}</value>
   </data>
   <data name="FoldersMenuText" xml:space="preserve">
     <value>Složky</value>

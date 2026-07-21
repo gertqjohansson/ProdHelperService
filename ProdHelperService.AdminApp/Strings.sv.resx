@@ -290,10 +290,10 @@
     <value>Tjänstkonfiguration</value>
   </data>
   <data name="ServiceConfigDialogDescription" xml:space="preserve">
-    <value>ProdHelperService kunde inte nås. Starta tjänsten, redigera dess konfiguration nedan om det behövs, och använd sedan Testa tjänst för att bekräfta att den svarar. Ändringar börjar gälla nästa gång tjänsten startar.</value>
+    <value>ProdHelperService kunde inte nås. Starta tjänsten, redigera dess konfiguration nedan om det behövs, och använd sedan Hämta tjänsteversion för att bekräfta att den svarar. Ändringar börjar gälla nästa gång tjänsten startar.</value>
   </data>
-  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
-    <value>Testa tjänst</value>
+  <data name="ServiceConfigGetVersionButtonText" xml:space="preserve">
+    <value>Hämta tjänsteversion</value>
   </data>
   <data name="ServiceConfigCheckingMessage" xml:space="preserve">
     <value>Kontrollerar...</value>
@@ -318,6 +318,9 @@
   </data>
   <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
     <value>E-post</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingSectionHeader" xml:space="preserve">
+    <value>Tokenspårning</value>
   </data>
   <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
     <value>Namespace</value>
@@ -352,6 +355,15 @@
   <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
     <value>Avsändaradress</value>
   </data>
+  <data name="ServiceConfigTokenTrackingBaseUrlLabel" xml:space="preserve">
+    <value>Bas-URL</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingApiKeyLabel" xml:space="preserve">
+    <value>API-nyckel</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingIntervalMinutesLabel" xml:space="preserve">
+    <value>Intervall (minuter)</value>
+  </data>
   <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
     <value>Testa anslutning</value>
   </data>
@@ -372,6 +384,9 @@
   </data>
   <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
     <value>Ange ett positivt antal dagar.</value>
+  </data>
+  <data name="ServiceConfigInvalidIntervalMinutesMessage" xml:space="preserve">
+    <value>Ange ett positivt antal minuter.</value>
   </data>
   <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
     <value>Att ändra JWT-nyckeln ogiltigförklarar alla befintliga sessioner nästa gång tjänsten startar. Fortsätta?</value>
@@ -394,8 +409,8 @@
   <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
     <value>Generera</value>
   </data>
-  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
-    <value>Tjänsten fungerar.</value>
+  <data name="ServiceConfigVersionMessage" xml:space="preserve">
+    <value>Tjänsteversion: {0}</value>
   </data>
   <data name="FoldersMenuText" xml:space="preserve">
     <value>Mappar</value>

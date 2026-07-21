@@ -290,10 +290,10 @@
     <value>Konfiguracija storitve</value>
   </data>
   <data name="ServiceConfigDialogDescription" xml:space="preserve">
-    <value>Storitve ProdHelperService ni bilo mogoče doseči. Zaženite storitev, po potrebi spodaj uredite njeno konfiguracijo, nato pa uporabite Preizkusi storitev, da potrdite, da se odziva. Spremembe začnejo veljati ob naslednjem zagonu storitve.</value>
+    <value>Storitve ProdHelperService ni bilo mogoče doseči. Zaženite storitev, po potrebi spodaj uredite njeno konfiguracijo, nato pa uporabite Pridobi različico storitve, da potrdite, da se odziva. Spremembe začnejo veljati ob naslednjem zagonu storitve.</value>
   </data>
-  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
-    <value>Preizkusi storitev</value>
+  <data name="ServiceConfigGetVersionButtonText" xml:space="preserve">
+    <value>Pridobi različico storitve</value>
   </data>
   <data name="ServiceConfigCheckingMessage" xml:space="preserve">
     <value>Preverjanje...</value>
@@ -318,6 +318,9 @@
   </data>
   <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
     <value>E-pošta</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingSectionHeader" xml:space="preserve">
+    <value>Sledenje žetonov</value>
   </data>
   <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
     <value>Namespace</value>
@@ -352,6 +355,15 @@
   <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
     <value>Naslov pošiljatelja</value>
   </data>
+  <data name="ServiceConfigTokenTrackingBaseUrlLabel" xml:space="preserve">
+    <value>Osnovni URL</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingApiKeyLabel" xml:space="preserve">
+    <value>Ključ API</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingIntervalMinutesLabel" xml:space="preserve">
+    <value>Interval (minute)</value>
+  </data>
   <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
     <value>Preizkusi povezavo</value>
   </data>
@@ -372,6 +384,9 @@
   </data>
   <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
     <value>Vnesite pozitivno število dni.</value>
+  </data>
+  <data name="ServiceConfigInvalidIntervalMinutesMessage" xml:space="preserve">
+    <value>Vnesite pozitivno število minut.</value>
   </data>
   <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
     <value>Sprememba ključa JWT bo ob naslednjem zagonu storitve razveljavila vse obstoječe seje. Nadaljevati?</value>
@@ -394,8 +409,8 @@
   <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
     <value>Generiraj</value>
   </data>
-  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
-    <value>Storitev deluje.</value>
+  <data name="ServiceConfigVersionMessage" xml:space="preserve">
+    <value>Različica storitve: {0}</value>
   </data>
   <data name="FoldersMenuText" xml:space="preserve">
     <value>Mape</value>

@@ -290,10 +290,10 @@
     <value>Konfigurimi i shërbimit</value>
   </data>
   <data name="ServiceConfigDialogDescription" xml:space="preserve">
-    <value>ProdHelperService nuk mund të kontaktohej. Nisni shërbimin, redaktoni konfigurimin e tij më poshtë nëse është e nevojshme, dhe më pas përdorni Provo shërbimin për të konfirmuar që përgjigjet. Ndryshimet hyjnë në fuqi herën tjetër që shërbimi niset.</value>
+    <value>ProdHelperService nuk mund të kontaktohej. Nisni shërbimin, redaktoni konfigurimin e tij më poshtë nëse është e nevojshme, dhe më pas përdorni Merr versionin e shërbimit për të konfirmuar që përgjigjet. Ndryshimet hyjnë në fuqi herën tjetër që shërbimi niset.</value>
   </data>
-  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
-    <value>Provo shërbimin</value>
+  <data name="ServiceConfigGetVersionButtonText" xml:space="preserve">
+    <value>Merr versionin e shërbimit</value>
   </data>
   <data name="ServiceConfigCheckingMessage" xml:space="preserve">
     <value>Duke kontrolluar...</value>
@@ -318,6 +318,9 @@
   </data>
   <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingSectionHeader" xml:space="preserve">
+    <value>Gjurmimi i tokenit</value>
   </data>
   <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
     <value>Namespace</value>
@@ -352,6 +355,15 @@
   <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
     <value>Adresa e dërguesit</value>
   </data>
+  <data name="ServiceConfigTokenTrackingBaseUrlLabel" xml:space="preserve">
+    <value>URL bazë</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingApiKeyLabel" xml:space="preserve">
+    <value>Çelësi API</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingIntervalMinutesLabel" xml:space="preserve">
+    <value>Intervali (minuta)</value>
+  </data>
   <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
     <value>Provo lidhjen</value>
   </data>
@@ -372,6 +384,9 @@
   </data>
   <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
     <value>Vendosni një numër pozitiv ditësh.</value>
+  </data>
+  <data name="ServiceConfigInvalidIntervalMinutesMessage" xml:space="preserve">
+    <value>Vendosni një numër pozitiv minutash.</value>
   </data>
   <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
     <value>Ndryshimi i çelësit JWT do të pavlefshmërojë të gjitha sesionet ekzistuese herën tjetër që shërbimi niset. Të vazhdohet?</value>
@@ -394,8 +409,8 @@
   <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
     <value>Gjenero</value>
   </data>
-  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
-    <value>Shërbimi funksionon.</value>
+  <data name="ServiceConfigVersionMessage" xml:space="preserve">
+    <value>Versioni i shërbimit: {0}</value>
   </data>
   <data name="FoldersMenuText" xml:space="preserve">
     <value>Dosjet</value>

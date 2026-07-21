@@ -151,7 +151,7 @@ internal static class Program
     {
         try
         {
-            serviceApiClient.IamAliveAsync(null).GetAwaiter().GetResult();
+            serviceApiClient.GetVersionAsync(null).GetAwaiter().GetResult();
             return true;
         }
         catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException or AuthApiException)

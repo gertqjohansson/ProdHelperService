@@ -12,7 +12,7 @@
          files, and - more subtly - every other file under them (nested bin/obj outputs, the
          installer script itself) into this project's own Compile/Content/None items, bloating
          anything built from this project (e.g. dotnet publish output) with unrelated junk. -->
-    <DefaultItemExcludes>$(DefaultItemExcludes);ProdHelperService.Controllers\**;ProdHelperService.AdminApp\**;ProdHelperService.Contracts\**;ProdHelperService.ServiceInstaller\**;Setup\**</DefaultItemExcludes>
+    <DefaultItemExcludes>$(DefaultItemExcludes);ProdHelperService.Controllers\**;ProdHelperService.AdminApp\**;ProdHelperService.Contracts\**;ProdHelperService.ServiceInstaller\**;ProdHelperTokensService\**;Setup\**</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>

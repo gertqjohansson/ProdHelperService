@@ -13,6 +13,7 @@ using ProdHelperService.ErrorLogging;
 using ProdHelperService.ServiceManagement;
 using ProdHelperService.Storage;
 using ProdHelperService.Translation;
+using ProdHelperService.UsageTracking;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddEnvironmentVariables(prefix: "RELAY_");
@@ -70,6 +71,18 @@ builder.Services.AddTransient<IFileStorageService, FileStorageService>();
 
 builder.Services.AddScoped<IErrorLogService, ErrorLogService>();
 builder.Services.AddScoped<IActionLogService, ActionLogService>();
+
+builder.Services.Configure<TokenTrackingOptions>(builder.Configuration.GetSection("TokenTracking"));
+builder.Services.AddSingleton<UsageCounter>();
+builder.Services.AddHttpClient<TokenTrackingClient>((sp, client) =>
+{
+    var settings = sp.GetRequiredService<IOptions<TokenTrackingOptions>>().Value;
+    if (!string.IsNullOrWhiteSpace(settings.BaseUrl))
+    {
+        client.BaseAddress = new Uri(settings.BaseUrl);
+    }
+});
+builder.Services.AddHostedService<TokenUsageReporterHostedService>();
 
 builder.Services.AddMemoryCache();
 builder.Services.AddProdHelperAuth(builder.Configuration);
@@ -155,6 +168,16 @@ app.UseSwaggerUI();
 app.UseCors("WebClient");
 app.UseAuthentication();
 app.UseAuthorization();
+
+// Counts every request that reaches this point (i.e. real API traffic - after Swagger and the
+// exception handler above) as one "token" of usage, drained and reported to the central
+// ProdHelperTokensService every few minutes by TokenUsageReporterHostedService.
+var usageCounter = app.Services.GetRequiredService<UsageCounter>();
+app.Use(async (context, next) =>
+{
+    usageCounter.Increment();
+    await next();
+});
 
 app.MapControllers();
 

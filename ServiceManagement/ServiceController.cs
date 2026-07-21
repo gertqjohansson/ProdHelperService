@@ -54,12 +54,13 @@ public class ServiceController(IServiceLifecycleManager lifecycleManager, IWindo
         ToActionResult(await serviceInstaller.StopAsync(cancellationToken));
 
     // Anonymous: this is the one action on this controller that must be callable before
-    // login, since its entire purpose is answering "is the API reachable at all" - see
+    // login, since it also doubles as "is the API reachable at all" - see
     // ProdHelperService.AdminApp's Program.cs (EnsureServiceReachableAsync), which opens
     // ServiceConfigForm when this call fails, before any session exists.
     [AllowAnonymous]
-    [HttpPost(ApiRoutes.ServiceIamAlive)]
-    public IActionResult IamAlive() => Ok(new ServiceAliveResponse { ServerUtcTime = DateTime.UtcNow });
+    [HttpPost(ApiRoutes.ServiceGetVersion)]
+    public IActionResult GetVersion() =>
+        Ok(new ServiceVersionResponse { Version = GetType().Assembly.GetName().Version?.ToString() ?? "0.0.0.0" });
 
     private IActionResult ToActionResult(ServiceOperationResult result)
     {

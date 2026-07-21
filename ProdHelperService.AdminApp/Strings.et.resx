@@ -290,10 +290,10 @@
     <value>Teenuse seadistus</value>
   </data>
   <data name="ServiceConfigDialogDescription" xml:space="preserve">
-    <value>ProdHelperService&apos;iga ei õnnestunud ühendust luua. Käivitage teenus, vajaduse korral muutke selle seadistust allpool ja seejärel kasutage nuppu Proovi teenust, et kinnitada selle vastamist. Muudatused jõustuvad teenuse järgmisel käivitamisel.</value>
+    <value>ProdHelperService&apos;iga ei õnnestunud ühendust luua. Käivitage teenus, vajaduse korral muutke selle seadistust allpool ja seejärel kasutage nuppu Hangi teenuse versioon, et kinnitada selle vastamist. Muudatused jõustuvad teenuse järgmisel käivitamisel.</value>
   </data>
-  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
-    <value>Proovi teenust</value>
+  <data name="ServiceConfigGetVersionButtonText" xml:space="preserve">
+    <value>Hangi teenuse versioon</value>
   </data>
   <data name="ServiceConfigCheckingMessage" xml:space="preserve">
     <value>Kontrollimine...</value>
@@ -318,6 +318,9 @@
   </data>
   <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
     <value>E-post</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingSectionHeader" xml:space="preserve">
+    <value>Tokenite jälgimine</value>
   </data>
   <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
     <value>Namespace</value>
@@ -352,6 +355,15 @@
   <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
     <value>Saatja aadress</value>
   </data>
+  <data name="ServiceConfigTokenTrackingBaseUrlLabel" xml:space="preserve">
+    <value>Baas-URL</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingApiKeyLabel" xml:space="preserve">
+    <value>API-võti</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingIntervalMinutesLabel" xml:space="preserve">
+    <value>Intervall (minutites)</value>
+  </data>
   <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
     <value>Proovi ühendust</value>
   </data>
@@ -372,6 +384,9 @@
   </data>
   <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
     <value>Sisestage positiivne päevade arv.</value>
+  </data>
+  <data name="ServiceConfigInvalidIntervalMinutesMessage" xml:space="preserve">
+    <value>Sisestage positiivne minutite arv.</value>
   </data>
   <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
     <value>JWT-võtme muutmine tühistab kõik olemasolevad seansid teenuse järgmisel käivitamisel. Kas jätkata?</value>
@@ -394,8 +409,8 @@
   <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
     <value>Genereeri</value>
   </data>
-  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
-    <value>Teenus töötab.</value>
+  <data name="ServiceConfigVersionMessage" xml:space="preserve">
+    <value>Teenuse versioon: {0}</value>
   </data>
   <data name="FoldersMenuText" xml:space="preserve">
     <value>Kaustad</value>

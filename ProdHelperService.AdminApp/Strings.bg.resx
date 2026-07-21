@@ -290,10 +290,10 @@
     <value>Конфигурация на услугата</value>
   </data>
   <data name="ServiceConfigDialogDescription" xml:space="preserve">
-    <value>ProdHelperService не можа да бъде достигнат. Стартирайте услугата, редактирайте конфигурацията ѝ по-долу, ако е необходимо, и след това използвайте „Изпробвай услугата“, за да потвърдите, че отговаря. Промените влизат в сила при следващото стартиране на услугата.</value>
+    <value>ProdHelperService не можа да бъде достигнат. Стартирайте услугата, редактирайте конфигурацията ѝ по-долу, ако е необходимо, и след това използвайте „Вземи версия на услугата“, за да потвърдите, че отговаря. Промените влизат в сила при следващото стартиране на услугата.</value>
   </data>
-  <data name="ServiceConfigTryServiceButtonText" xml:space="preserve">
-    <value>Изпробвай услугата</value>
+  <data name="ServiceConfigGetVersionButtonText" xml:space="preserve">
+    <value>Вземи версия на услугата</value>
   </data>
   <data name="ServiceConfigCheckingMessage" xml:space="preserve">
     <value>Проверка...</value>
@@ -318,6 +318,9 @@
   </data>
   <data name="ServiceConfigEmailSectionHeader" xml:space="preserve">
     <value>Имейл</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingSectionHeader" xml:space="preserve">
+    <value>Проследяване на токени</value>
   </data>
   <data name="ServiceConfigNamespaceLabel" xml:space="preserve">
     <value>Namespace</value>
@@ -352,6 +355,15 @@
   <data name="ServiceConfigSenderAddressLabel" xml:space="preserve">
     <value>Адрес на изпращача</value>
   </data>
+  <data name="ServiceConfigTokenTrackingBaseUrlLabel" xml:space="preserve">
+    <value>Основен URL адрес</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingApiKeyLabel" xml:space="preserve">
+    <value>API ключ</value>
+  </data>
+  <data name="ServiceConfigTokenTrackingIntervalMinutesLabel" xml:space="preserve">
+    <value>Интервал (минути)</value>
+  </data>
   <data name="ServiceConfigTryConnectionButtonText" xml:space="preserve">
     <value>Изпробвай връзката</value>
   </data>
@@ -372,6 +384,9 @@
   </data>
   <data name="ServiceConfigInvalidRefreshTokenDaysMessage" xml:space="preserve">
     <value>Въведете положителен брой дни.</value>
+  </data>
+  <data name="ServiceConfigInvalidIntervalMinutesMessage" xml:space="preserve">
+    <value>Въведете положителен брой минути.</value>
   </data>
   <data name="ServiceConfigJwtKeyChangeWarningMessage" xml:space="preserve">
     <value>Промяната на JWT ключа ще анулира всички съществуващи сесии при следващото стартиране на услугата. Продължаване?</value>
@@ -394,8 +409,8 @@
   <data name="ServiceConfigGenerateJwtKeyButtonText" xml:space="preserve">
     <value>Генериране</value>
   </data>
-  <data name="ServiceConfigServiceWorksMessage" xml:space="preserve">
-    <value>Услугата работи.</value>
+  <data name="ServiceConfigVersionMessage" xml:space="preserve">
+    <value>Версия на услугата: {0}</value>
   </data>
   <data name="FoldersMenuText" xml:space="preserve">
     <value>Папки</value>
