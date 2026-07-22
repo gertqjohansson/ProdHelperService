@@ -16,6 +16,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<EquipmentUpload> EquipmentUploads => Set<EquipmentUpload>();
     public DbSet<EquipmentLink> EquipmentLinks => Set<EquipmentLink>();
     public DbSet<EquipmentLog> EquipmentLogs => Set<EquipmentLog>();
+    public DbSet<ShiftScheduleVersion> ShiftScheduleVersions => Set<ShiftScheduleVersion>();
     public DbSet<ErrorLog> ErrorLogs => Set<ErrorLog>();
     public DbSet<ActionLog> ActionLogs => Set<ActionLog>();
 
@@ -82,6 +83,14 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
         builder.Entity<EquipmentLog>(entity =>
         {
             entity.HasIndex(x => x.EquipmentId);
+        });
+
+        // ShiftScheduleVersion is a pre-existing table the user created manually (not owned by our
+        // EF migrations) - same ExcludeFromMigrations treatment as Equipment/Language/etc. above.
+        // No navigation/FK to Equipment, same reasoning as EquipmentLog/EquipmentLink.
+        builder.Entity<ShiftScheduleVersion>(entity =>
+        {
+            entity.ToTable("ShiftScheduleVersion", t => t.ExcludeFromMigrations());
         });
 
         // ErrorLog is another pre-existing table, same ExcludeFromMigrations treatment as

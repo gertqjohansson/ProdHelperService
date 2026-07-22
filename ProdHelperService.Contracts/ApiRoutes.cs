@@ -25,6 +25,7 @@ public static class ApiRoutes
     public const string EquipmentUpdate = "Equipment/Update";
     public const string EquipmentDelete = "Equipment/Delete";
     public const string EquipmentSaveComment = "Equipment/SaveComment";
+    public const string EquipmentMoveSchiftParent = "Equipment/MoveSchiftParent";
 
     public const string EquipmentUploadList = "EquipmentUpload/List";
     public const string EquipmentUploadUpload = "EquipmentUpload/Upload";
@@ -39,6 +40,10 @@ public static class ApiRoutes
     public const string EquipmentLogCreate = "EquipmentLog/Create";
     public const string EquipmentLogUpdate = "EquipmentLog/Update";
     public const string EquipmentLogDelete = "EquipmentLog/Delete";
+
+    public const string ShiftScheduleVersionCreate = "ShiftScheduleVersion/Create";
+    public const string ShiftScheduleVersionListEquipmentIdsWithSchedule = "ShiftScheduleVersion/ListEquipmentIdsWithSchedule";
+    public const string ShiftScheduleVersionGetLatestForEquipment = "ShiftScheduleVersion/GetLatestForEquipment";
 
     public const string EquipmentCategoryList = "EquipmentCategory/List";
     public const string EquipmentCategoryCreate = "EquipmentCategory/Create";

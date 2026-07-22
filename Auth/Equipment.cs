@@ -6,6 +6,7 @@ public class Equipment
 {
     public int Id { get; set; }
     public int? ParentId { get; set; } // null = top-level/root (self-referencing FK, so 0 isn't valid)
+    public int? SchiftParentId { get; set; } // snapshot of ParentId taken at creation time; not touched on update/move
     public string? ExternalCode { get; set; }
     public bool? IsOee { get; set; }
     public bool IsPlannable { get; set; }

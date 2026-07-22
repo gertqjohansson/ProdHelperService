@@ -53,6 +53,7 @@ public class EquipmentController(ApplicationDbContext db, IActionLogService acti
             {
                 Id = e.Id,
                 ParentId = e.ParentId,
+                SchiftParentId = e.SchiftParentId,
                 Name = name,
                 ExternalCode = e.ExternalCode,
                 IsOee = e.IsOee,
@@ -123,6 +124,7 @@ public class EquipmentController(ApplicationDbContext db, IActionLogService acti
         var entity = new Equipment
         {
             ParentId = request.ParentId,
+            SchiftParentId = request.ParentId,
             ExternalCode = request.ExternalCode,
             IsOee = request.IsOee ?? false,
             IsPlannable = request.IsPlannable,
@@ -158,6 +160,7 @@ public class EquipmentController(ApplicationDbContext db, IActionLogService acti
         {
             Id = entity.Id,
             ParentId = entity.ParentId,
+            SchiftParentId = entity.SchiftParentId,
             Name = request.Name,
             ExternalCode = entity.ExternalCode,
             IsOee = entity.IsOee,
@@ -259,6 +262,7 @@ public class EquipmentController(ApplicationDbContext db, IActionLogService acti
         {
             Id = entity.Id,
             ParentId = entity.ParentId,
+            SchiftParentId = entity.SchiftParentId,
             Name = request.Name,
             ExternalCode = entity.ExternalCode,
             IsOee = entity.IsOee,
@@ -325,5 +329,28 @@ public class EquipmentController(ApplicationDbContext db, IActionLogService acti
         await db.SaveChangesAsync();
 
         return Ok(new EquipmentCommentDto { Id = entity.Id, Comment = entity.Comment, CommentLanguage = entity.CommentLanguage });
+    }
+
+    // Deliberately separate from Update, same reasoning as SaveComment: the Shifts & Calendar
+    // tree's "Move" action only ever changes SchiftParentId, never ParentId - a dedicated minimal
+    // action makes that guarantee structural instead of relying on callers to omit ParentId.
+    [HttpPost(ApiRoutes.EquipmentMoveSchiftParent)]
+    public async Task<IActionResult> MoveSchiftParent(MoveEquipmentSchiftParentRequest request)
+    {
+        Equipment? entity = await db.Equipment.FirstOrDefaultAsync(e => e.Id == request.Id && e.IsDeleted != true);
+        if (entity is null)
+        {
+            return NotFound(new AuthErrorResponse { Code = "NotFound", Message = "Equipment not found." });
+        }
+
+        if (request.SchiftParentId is not null && !await db.Equipment.AnyAsync(e => e.Id == request.SchiftParentId && e.IsDeleted != true))
+        {
+            return BadRequest(new AuthErrorResponse { Code = "ParentNotFound", Message = "Parent equipment does not exist." });
+        }
+
+        entity.SchiftParentId = request.SchiftParentId;
+        await db.SaveChangesAsync();
+
+        return Ok(new EquipmentSchiftParentDto { Id = entity.Id, SchiftParentId = entity.SchiftParentId });
     }
 }

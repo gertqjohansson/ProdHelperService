@@ -4,6 +4,7 @@ public class EquipmentDto
 {
     public int Id { get; set; }
     public int? ParentId { get; set; }
+    public int? SchiftParentId { get; set; }
     public string Name { get; set; } = string.Empty;
     public string? ExternalCode { get; set; }
     public bool? IsOee { get; set; }
